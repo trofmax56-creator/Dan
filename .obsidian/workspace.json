@@ -385,7 +385,7 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "cad053a0700e54c6",
+  "active": "4fa896d27a9c39c4",
   "lastOpenFiles": [
     "CLAUDE..md",
     "TEMPLATES",
@@ -393,8 +393,8 @@
     "04_PROJECTS",
     "03_GUIDES",
     "02_TOOLS",
-    "01_INBOX",
-    "00_RAW",
+    "02_TOOLS/01_INBOX",
+    "02_TOOLS/00_RAW",
     "CLAUDE.md/CLAUDE..md",
     "Тест.md",
     "obsidian",

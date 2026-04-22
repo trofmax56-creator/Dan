@@ -17,12 +17,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "CLAUDE..md",
+                    "file": "CLAUDE.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "CLAUDE."
+                  "title": "CLAUDE"
                 }
               },
               {
@@ -271,7 +271,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "CLAUDE..md",
+                "file": "CLAUDE.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -281,7 +281,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Обратные ссылки для CLAUDE."
+              "title": "Обратные ссылки для CLAUDE"
             }
           },
           {
@@ -290,12 +290,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "CLAUDE..md",
+                "file": "CLAUDE.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Исходящие ссылки из CLAUDE."
+              "title": "Исходящие ссылки из CLAUDE"
             }
           },
           {
@@ -333,13 +333,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "CLAUDE..md",
+                "file": "CLAUDE.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Структура CLAUDE."
+              "title": "Структура CLAUDE"
             }
           }
         ]
@@ -364,7 +364,7 @@
   },
   "active": "3b310175808c4ce3",
   "lastOpenFiles": [
-    "CLAUDE..md",
+    "CLAUDE.md",
     "00_RAW",
     "TEMPLATES",
     "05_BIZ_RECIPES",

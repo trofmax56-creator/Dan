@@ -4,6 +4,7 @@ from telethon import TelegramClient
 
 api_id = 38957544
 api_hash = 'bb31ab995b5956294a2e80f619a0a3de'
+phone_number = '+79606945766'
 channels = ['edvardgrishin27', 'gora_academy', 'zuevichigor']
 raw_folder = '00_RAW'
 
@@ -12,7 +13,9 @@ os.makedirs(raw_folder, exist_ok=True)
 client = TelegramClient('dan_session', api_id, api_hash)
 
 async def main():
-    await client.start()
+    # Номер передаем напрямую, чтобы скипнуть первый запрос
+    await client.start(phone=phone_number)
+    
     for channel in channels:
         try:
             print(f'Parsing: {channel}')

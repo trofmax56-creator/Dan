@@ -1,6 +1,7 @@
 ---
 date: 2026-03-17 15:43:21+00:00
 link: https://t.me/addmeto/6202
+tags: [archive]
 ---
 
 В переводчике kagi появился чудесный язык "Linkedin Speak". Только что мою фразу "Fuck off, I don't want to receive your spam anymore." они идеально перевели вот так:

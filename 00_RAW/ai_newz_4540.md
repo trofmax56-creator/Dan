@@ -1,6 +1,7 @@
 ---
 date: 2026-04-21 14:11:04+00:00
 link: https://t.me/ai_newz/4540
+tags: [archive]
 ---
 
 **OpenAI тизерят стрим через 5 часов**

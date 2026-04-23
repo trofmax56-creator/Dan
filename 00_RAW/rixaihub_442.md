@@ -1,6 +1,7 @@
 ---
 date: 2026-04-16 14:54:27+00:00
 link: https://t.me/rixaihub/442
+tags: [archive]
 ---
 
 **Anthropic выкатили Opus 4.7 — обновление своей топовой модели.

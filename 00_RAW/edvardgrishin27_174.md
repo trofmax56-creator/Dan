@@ -1,6 +1,7 @@
 ---
 date: 2026-04-21 19:29:45+00:00
 link: https://t.me/edvardgrishin27/174
+tags: [archive]
 ---
 
 GPT Image 2 доступна всем!

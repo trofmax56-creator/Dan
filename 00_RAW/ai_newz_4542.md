@@ -1,6 +1,7 @@
 ---
 date: 2026-04-22 05:02:05+00:00
 link: https://t.me/ai_newz/4542
+tags: [archive]
 ---
 
 **SpaceX может купить Cursor**

@@ -1,6 +1,7 @@
 ---
 date: 2026-04-19 17:20:36+00:00
 link: https://t.me/edvardgrishin27/172
+tags: [archive]
 ---
 
 НОВАЯ НЕДЕЛЯ И НОВЫЕ НОВОСТИ!

@@ -1,6 +1,7 @@
 ---
 date: 2026-04-21 21:39:23+00:00
 link: https://t.me/ai_newz/4541
+tags: [archive]
 ---
 
 **Вот и** вышла ChatGPT Images 2.0

@@ -1,6 +1,7 @@
 ---
 date: 2026-04-17 10:58:12+00:00
 link: https://t.me/gora_academy/1344
+tags: [archive]
 ---
 
 **Новый видео-урок****🤖**

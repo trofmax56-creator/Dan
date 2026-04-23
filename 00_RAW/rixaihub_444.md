@@ -1,6 +1,7 @@
 ---
 date: 2026-04-18 02:00:37+00:00
 link: https://t.me/rixaihub/444
+tags: [archive]
 ---
 
 **Затестил Claude Design. Скажу прямо - это то, чего Claude давно не хватало.

@@ -1,6 +1,7 @@
 ---
 date: 2026-04-21 08:21:44+00:00
 link: https://t.me/rixaihub/448
+tags: [archive]
 ---
 
 **Сделал для вас небольшое дополнение по Claude Design** 🤝

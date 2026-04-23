@@ -1,6 +1,7 @@
 ---
 date: 2026-04-20 16:49:27+00:00
 link: https://t.me/ai_newz/4539
+tags: [archive]
 ---
 
 **Moonshot обновили Kimi до версии 2.6**

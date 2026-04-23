@@ -1,6 +1,7 @@
 ---
 date: 2026-04-19 16:28:36+00:00
 link: https://t.me/ai_newz/4537
+tags: [archive]
 ---
 
 **Claude Design**

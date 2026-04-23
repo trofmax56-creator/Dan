@@ -1,6 +1,7 @@
 ---
 date: 2026-04-16 15:01:25+00:00
 link: https://t.me/edvardgrishin27/169
+tags: [archive]
 ---
 
 CLAUDE OPUS 4.7 УЖЕ ЗДЕСЬ!

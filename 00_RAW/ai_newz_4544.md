@@ -1,6 +1,7 @@
 ---
 date: 2026-04-22 13:16:57+00:00
 link: https://t.me/ai_newz/4544
+tags: [archive]
 ---
 
 **А вот и веса Qwen 3.6 27B выложили**

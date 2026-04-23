@@ -1,6 +1,7 @@
 ---
 date: 2026-04-16 14:56:30+00:00
 link: https://t.me/ai_newz/4535
+tags: [archive]
 ---
 
 **Вот и Opus 4.7 подоспел**

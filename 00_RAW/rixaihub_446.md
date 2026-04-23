@@ -1,6 +1,7 @@
 ---
 date: 2026-04-20 12:49:15+00:00
 link: https://t.me/rixaihub/446
+tags: [archive]
 ---
 
 **🔥 Только что OpenAI выкатили OpenAI Codex v3.**

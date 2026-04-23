@@ -1,6 +1,7 @@
 ---
 date: 2026-04-19 17:51:19+00:00
 link: https://t.me/edvardgrishin27/175
+tags: [archive]
 ---
 
 Всем привет! 👋

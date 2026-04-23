@@ -5,15 +5,21 @@ from telethon import TelegramClient
 api_id = 38957544
 api_hash = 'bb31ab995b5956294a2e80f619a0a3de'
 phone_number = '+79606945766'
-channels = ['edvardgrishin27', 'gora_academy', 'zuevichigor']
-raw_folder = '00_RAW'
 
+# Полный список 14 каналов для парсинга
+channels = [
+    'edvardgrishin27', 'gora_academy', 'zuevichigor', 'fomo_team', 
+    'maxryzhkov', 'juliangoldieseo', 'aikirichenkoy', 'rixaihub', 
+    'aiautomation_n8n', 'neuropros', 'addmeto', 'ai_newz', 
+    'neural_network_news', 'denis_ai'
+]
+
+raw_folder = '00_RAW'
 os.makedirs(raw_folder, exist_ok=True)
 
 client = TelegramClient('dan_session', api_id, api_hash)
 
 async def main():
-    # Номер передаем напрямую, чтобы скипнуть первый запрос
     await client.start(phone=phone_number)
     
     for channel in channels:
@@ -21,7 +27,7 @@ async def main():
             print(f'Parsing: {channel}')
             entity = await client.get_entity(channel)
             async for message in client.iter_messages(entity, limit=10):
-                if message.text:
+                if message.text and len(message.text) > 50: # Минимальный фильтр от коротких постов
                     filename = f"{raw_folder}/{channel}_{message.id}.md"
                     with open(filename, 'w', encoding='utf-8') as f:
                         f.write(f"---\ndate: {message.date}\nlink: https://t.me/{channel}/{message.id}\n---\n\n{message.text}")

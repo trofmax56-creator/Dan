@@ -1,6 +1,7 @@
 import asyncio
 import os
 import subprocess
+from datetime import datetime
 from telethon import TelegramClient
 
 api_id = 38957544
@@ -14,21 +15,26 @@ channels = [
     'neural_network_news', 'denis_ai', 'adept_ecommerce'
 ]
 
-raw_folder = '00_RAW'
-os.makedirs(raw_folder, exist_ok=True)
+# Организация папок по датам
+today = datetime.now().strftime('%Y-%m-%d')
+raw_root = '00_RAW'
+daily_folder = os.path.join(raw_root, today)
+os.makedirs(daily_folder, exist_ok=True)
 
 def run_git(commands):
     for cmd in commands:
         subprocess.run(cmd, shell=True)
 
 async def main():
-    # 1. Забираем изменения из облака
-    print("Синхронизация с GitHub...")
+    # 1. Синхронизация с GitHub
+    print("Обновляем локальные файлы...")
     run_git(['git pull'])
 
     # 2. Парсим Telegram
     client = TelegramClient('dan_session', api_id, api_hash)
     await client.start(phone=phone_number)
+    
+    print(f"Начинаем парсинг в папку: {daily_folder}")
     
     for channel in channels:
         try:
@@ -36,7 +42,7 @@ async def main():
             entity = await client.get_entity(channel)
             async for message in client.iter_messages(entity, limit=10):
                 if message.text and len(message.text) > 50:
-                    filename = f"{raw_folder}/{channel}_{message.id}.md"
+                    filename = f"{daily_folder}/{channel}_{message.id}.md"
                     if not os.path.exists(filename):
                         with open(filename, 'w', encoding='utf-8') as f:
                             f.write(f"---\ndate: {message.date}\nlink: https://t.me/{channel}/{message.id}\n---\n\n{message.text}")
@@ -45,14 +51,14 @@ async def main():
     
     await client.disconnect()
 
-    # 3. Отправляем все новое в GitHub автоматически
-    print("Отправка данных в Obsidian...")
+    # 3. Авто-пуш в GitHub
+    print("Отправляем новые данные...")
     run_git([
         'git add .',
-        'git commit -m "Auto-sync by Dan Parser"',
+        'git commit -m "Daily auto-sync: ' + today + '"',
         'git push origin main'
     ])
-    print("Done! Все готово.")
+    print(f"Done! Все посты за {today} в облаке.")
 
 if __name__ == '__main__':
     asyncio.run(main())

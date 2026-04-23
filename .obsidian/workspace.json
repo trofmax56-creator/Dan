@@ -196,7 +196,7 @@
                   },
                   "pinned": true,
                   "icon": "terminal",
-                  "title": "Terminal: cmd"
+                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
                 }
               }
             ],
@@ -364,10 +364,10 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "1c76f09f1c534af1",
+  "active": "08d94f82644f1edc",
   "lastOpenFiles": [
-    "05_BIZ_RECIPES/060_claude_code_routines_cron_bitrix_moysklad.md",
     "01_INBOX/Digest_2026_04_23_Morning.md",
+    "05_BIZ_RECIPES/060_claude_code_routines_cron_bitrix_moysklad.md",
     "07_CONSTRUCTION/Project_Brief.md",
     "07_CONSTRUCTION",
     "00_RAW/addmeto_short.md",

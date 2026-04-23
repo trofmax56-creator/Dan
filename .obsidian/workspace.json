@@ -31,12 +31,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "2026-04-24.md",
+                    "file": "00_RAW/addmeto_1776970843.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "2026-04-24"
+                  "title": "addmeto_1776970843"
                 }
               }
             ],
@@ -366,9 +366,23 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "00_RAW/edvardgrishin27_1776970828.md",
+    "00_RAW/neural_network_news_1776970846.md",
+    "2026-04-24.md",
+    "00_RAW/rixaihub_446.md",
+    "00_RAW/rixaihub_445.md",
+    "00_RAW/edvardgrishin27_176.md",
+    "00_RAW/edvardgrishin27_175.md",
+    "00_RAW/ai_newz_4539.md",
+    "00_RAW/addmeto_6202.md",
+    "00_RAW/addmeto_6201.md",
+    "00_RAW/addmeto_6200.md",
+    "00_RAW/addmeto_6197.md",
+    "00_RAW/addmeto_6196.md",
+    "00_RAW/addmeto_6195.md",
+    "00_RAW/addmeto_1776970843.md",
     "01_INBOX/Evening_Digest_23_04.md",
     "CLAUDE.md",
-    "2026-04-24.md",
     "07_CONSTRUCTION/Project_Brief.md",
     "01_INBOX/2026-04-23_AI_Summary.md",
     "00_RAW/habr_claude_news.md",
@@ -378,20 +392,8 @@
     "01_INBOX/Digest_2026_04_23.md",
     "01_INBOX/Digest_2026_04_23_Morning.md",
     "00_RAW/edvardgrishin27_164.md",
-    "05_BIZ_RECIPES/052_bitrix_ai_contract.md",
     "00_RAW/2026-04-23",
-    "05_BIZ_RECIPES/060_claude_code_routines_cron_bitrix_moysklad.md",
     "07_CONSTRUCTION",
-    "01_INBOX/Digest_2026_04_22.md",
-    "05_BIZ_RECIPES/051.md",
-    "01_INBOX/Digest_2026_04_22_Evening.md",
-    "01_INBOX/011.md",
-    "00_RAW/01.md",
-    "02_TOOLS/021.md",
-    "TEMPLATES/T1.md",
-    "04_PROJECTS/041.md",
-    "03_GUIDES/031.md",
-    "Без названия.md",
     "00_RAW",
     "TEMPLATES",
     "05_BIZ_RECIPES",
@@ -399,8 +401,6 @@
     "03_GUIDES",
     "02_TOOLS",
     "01_INBOX",
-    "02_TOOLS/01_INBOX",
-    "CLAUDE.md/CLAUDE..md",
-    "Тест.md"
+    "02_TOOLS/01_INBOX"
   ]
 }

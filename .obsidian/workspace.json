@@ -31,12 +31,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "00_RAW/habr_claude_news.md",
+                    "file": "01_INBOX/Digest_2026_04_23.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "habr_claude_news"
+                  "title": "Digest_2026_04_23"
                 }
               }
             ],
@@ -364,18 +364,18 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "4fa896d27a9c39c4",
+  "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
-    "01_INBOX/Digest_2026_04_23.md",
+    "01_INBOX/Digest_2026_04_23_Morning.md",
     "00_RAW/addmeto_short.md",
+    "00_RAW/habr_claude_news.md",
+    "01_INBOX/Digest_2026_04_23.md",
     "00_RAW/edvardgrishin27_164.md",
     "05_BIZ_RECIPES/052_bitrix_ai_contract.md",
     "00_RAW/2026-04-23/habr_n8n_ollama.md",
     "00_RAW/2026-04-23/habr_bitrix_robots.md",
     "00_RAW/2026-04-23",
-    "00_RAW/habr_claude_news.md",
     "05_BIZ_RECIPES/060_claude_code_routines_cron_bitrix_moysklad.md",
-    "01_INBOX/Digest_2026_04_23_Morning.md",
     "07_CONSTRUCTION/Project_Brief.md",
     "07_CONSTRUCTION",
     "01_INBOX/Digest_2026_04_22.md",

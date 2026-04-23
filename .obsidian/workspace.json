@@ -196,7 +196,7 @@
                   },
                   "pinned": true,
                   "icon": "terminal",
-                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
+                  "title": "Terminal: cmd"
                 }
               }
             ],
@@ -366,6 +366,9 @@
   },
   "active": "4fa896d27a9c39c4",
   "lastOpenFiles": [
+    "00_RAW/2026-04-23/habr_n8n_ollama.md",
+    "00_RAW/2026-04-23/habr_bitrix_robots.md",
+    "00_RAW/2026-04-23",
     "00_RAW/habr_claude_news.md",
     "05_BIZ_RECIPES/060_claude_code_routines_cron_bitrix_moysklad.md",
     "01_INBOX/Digest_2026_04_23_Morning.md",
@@ -391,7 +394,6 @@
     "02_TOOLS",
     "01_INBOX",
     "02_TOOLS/01_INBOX",
-    "02_TOOLS/00_RAW",
     "CLAUDE.md/CLAUDE..md",
     "Тест.md"
   ]

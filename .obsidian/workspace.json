@@ -31,12 +31,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "CLAUDE.md",
+                    "file": "03_GUIDES/System_Architecture.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "CLAUDE"
+                  "title": "System_Architecture"
                 }
               }
             ],
@@ -366,13 +366,13 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "CLAUDE.md",
     "03_GUIDES/System_Architecture.md",
     "05_BIZ_RECIPES/052_bitrix_ai_contract.md",
     "11_CONTENT_FACTORY/11.1_DRAFTS/README.md",
     "11_1_DRAFTS/post_003_managed_vs_selfbuilt_agents.md",
     "11_1_DRAFTS/post_002_n8n_vs_ai_agent.md",
     "11_1_DRAFTS/post_001_three_level_memory_agent.md",
-    "CLAUDE.md",
     "Dan_Manual.md",
     "01_INBOX/Digest_2026_04_23_n8n_automation.md",
     "01_INBOX/Digest_2026_04_24.md",

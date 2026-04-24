@@ -31,12 +31,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "07_CONSTRUCTION/Project_Brief.md",
+                    "file": "02_TOOLS/claude_gemini_chrome_novpn.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Project_Brief"
+                  "title": "claude_gemini_chrome_novpn"
                 }
               }
             ],
@@ -366,6 +366,7 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "07_CONSTRUCTION/Project_Brief.md",
     "03_GUIDES/031.md",
     "CLAUDE.md",
     "11_1_DRAFTS/post_003_managed_vs_selfbuilt_agents.md",
@@ -391,7 +392,6 @@
     "00_RAW/2026-04-23/ai_newz_4545.md",
     "00_RAW/2026-04-23/addmeto_6203.md",
     "00_RAW/2026-04-23/adept_ecommerce_410.md",
-    "00_RAW/2026-04-23/adept_ecommerce_407.md",
     "dan_session.session",
     "11_1_DRAFTS",
     "00_RAW/2026-04-23",

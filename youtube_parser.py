@@ -15,29 +15,30 @@ channels = [
     'https://youtube.com/@aikirichenkoy'
 ]
 
-raw_folder = '00_RAW/YouTube'
+# Автоматическое определение папки
+base_dir = os.path.dirname(os.path.abspath(__file__))
+raw_folder = os.path.join(base_dir, '00_RAW', 'YouTube')
+os.makedirs(raw_folder, exist_ok=True)
 
 def get_latest_videos():
     for channel in channels:
         try:
             print(f"Парсинг YouTube канала: {channel}")
-            # Получаем последние 2 видео для экономии
+            # Вызываем yt-dlp через модуль python для стабильности
             cmd = [
-                'yt-dlp', 
-                '--get-title', '--get-id', '--get-description',
+                'python3', '-m', 'yt_dlp', 
+                '--get-title', '--get-id', 
                 '--playlist-items', '1-2',
                 channel
             ]
             result = subprocess.check_output(cmd).decode('utf-8').split('\n')
             
-            # Сохраняем в файл
             if len(result) >= 2:
                 title = result[0]
                 video_id = result[1]
-                filename = f"{raw_folder}/{video_id}.md"
-                if not os.path.exists('00_RAW/YouTube'):
-                    os.makedirs('00_RAW/YouTube', exist_ok=True)
-                with open(filename, 'w', encoding='utf-8') as f:
+                filename = f"{video_id}.md"
+                full_path = os.path.join(raw_folder, filename)
+                with open(full_path, 'w', encoding='utf-8') as f:
                     f.write(f"---\ntitle: {title}\nlink: https://youtube.com/watch?v={video_id}\n---\n\n{title}")
         except Exception as e:
             print(f"Ошибка в канале {channel}: {e}")

@@ -1,0 +1,1 @@
+This folder is for active work projects. See 03_GUIDES/System_Architecture.md for instructions.

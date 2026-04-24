@@ -31,12 +31,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "03_GUIDES/System_Architecture.md",
+                    "file": "11_1_DRAFTS/post_001_three_level_memory_agent.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "System_Architecture"
+                  "title": "post_001_three_level_memory_agent"
                 }
               }
             ],
@@ -366,6 +366,11 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "CLAUDE.md",
+    "Dan_Manual.md",
+    "01_INBOX/Digest_2026_04_23_n8n_automation.md",
+    "01_INBOX/Digest_2026_04_24.md",
+    "03_GUIDES/System_Architecture.md",
     "04_PROJECTS/Partner_Marketing/Стратегия поиска партнёров в Яндексе.docx",
     "04_PROJECTS/Partner_Marketing/Yandex_Strategy_Context.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Partner_Agents_Architecture.md",
@@ -382,7 +387,6 @@
     "00_RAW/edvardgrishin27_177.md",
     "00_RAW/YouTube/NheTD-hN-Es.md",
     "00_RAW/YouTube",
-    "Dan_Manual.md",
     "TEMPLATES/T_Recipe.md",
     "TEMPLATES/T_Project.md",
     "TEMPLATES/T_Idea.md",
@@ -396,11 +400,7 @@
     "04_PROJECTS/README.md",
     "03_GUIDES/031.md",
     "youtube_parser.py",
-    "03_GUIDES/System_Architecture.md",
     "01_INBOX/Evening_Digest_23_04.md",
-    "01_INBOX/2026-04-23_AI_Summary.md",
-    "CLAUDE.md",
-    "2026-04-24.md",
-    "dan_session.session"
+    "01_INBOX/2026-04-23_AI_Summary.md"
   ]
 }

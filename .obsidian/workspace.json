@@ -366,6 +366,13 @@
   },
   "active": "4fa896d27a9c39c4",
   "lastOpenFiles": [
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Partner_Agents_Architecture.md",
+    "04_PROJECTS/Partner_Marketing/README.md",
+    "04_PROJECTS/Partner_Marketing/implementation_plan.md",
+    "04_PROJECTS/Partner_Marketing/Context.md",
+    "04_PROJECTS/Partner_Marketing",
+    "04_PROJECTS/Content_Marketing_Trofimov/README.md",
+    "04_PROJECTS/Content_Marketing_Trofimov",
     "08_IDEAS_LAB/08.3_IMPLEMENTATION_PLANS/Content_Distribution_via_n8n.md",
     "08_IDEAS_LAB/08.3_IMPLEMENTATION_PLANS",
     "07_CONSTRUCTION/Project_Complex_V1.md",
@@ -394,13 +401,6 @@
     "2026-04-24.md",
     "02_TOOLS/claude_gemini_chrome_novpn.md",
     "07_CONSTRUCTION/Project_Brief.md",
-    "11_1_DRAFTS/post_003_managed_vs_selfbuilt_agents.md",
-    "11_1_DRAFTS/post_002_n8n_vs_ai_agent.md",
-    "11_1_DRAFTS/post_001_three_level_memory_agent.md",
-    "05_BIZ_RECIPES/065_figma_mcp_claude_code_crm_ui.md",
-    "00_RAW/rixaihub_448.md",
-    "dan_session.session",
-    "11_1_DRAFTS",
-    "00_RAW/2026-04-23"
+    "dan_session.session"
   ]
 }

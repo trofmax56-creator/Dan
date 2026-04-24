@@ -31,12 +31,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "11_CONTENT_FACTORY/11.1_DRAFTS/README.md",
+                    "file": "03_GUIDES/System_Architecture.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "README"
+                  "title": "System_Architecture"
                 }
               }
             ],
@@ -366,6 +366,9 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "05_BIZ_RECIPES/052_bitrix_ai_contract.md",
+    "03_GUIDES/System_Architecture.md",
+    "11_CONTENT_FACTORY/11.1_DRAFTS/README.md",
     "11_1_DRAFTS/post_003_managed_vs_selfbuilt_agents.md",
     "11_1_DRAFTS/post_002_n8n_vs_ai_agent.md",
     "11_1_DRAFTS/post_001_three_level_memory_agent.md",
@@ -373,7 +376,6 @@
     "Dan_Manual.md",
     "01_INBOX/Digest_2026_04_23_n8n_automation.md",
     "01_INBOX/Digest_2026_04_24.md",
-    "03_GUIDES/System_Architecture.md",
     "04_PROJECTS/Partner_Marketing/Стратегия поиска партнёров в Яндексе.docx",
     "04_PROJECTS/Partner_Marketing/Yandex_Strategy_Context.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Partner_Agents_Architecture.md",
@@ -394,13 +396,11 @@
     "TEMPLATES/T_Project.md",
     "TEMPLATES/T_Idea.md",
     "TEMPLATES/README.md",
-    "11_CONTENT_FACTORY/11.1_DRAFTS/README.md",
     "11_CONTENT_FACTORY/11.1_DRAFTS",
     "11_CONTENT_FACTORY",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/Bitrix24_Biweekly_Pulse.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS",
     "08_IDEAS_LAB",
-    "04_PROJECTS/README.md",
     "youtube_parser.py"
   ]
 }

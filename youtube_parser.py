@@ -2,18 +2,18 @@ import os
 import xml.etree.ElementTree as ET
 import requests
 
-# Список каналов с проверенными ID (UC...)
+# Корректные ID каналов (UC...)
 channels = [
-    {'name': 'ivanbekunai', 'id': 'UCZ5mD7nE4jA8n3-u4Wv5hVg'},
-    {'name': 'nickvels_ai', 'id': 'UCuTX807i8wvA'},
-    {'name': 'igorzuevich', 'id': 'UCNheTD-hN-Es'},
-    {'name': 'sukhov_live', 'id': 'UCbgzOjVtKskI'},
-    {'name': 'yevgeniykovalenko', 'id': 'UCOlnRKsVZ58'},
-    {'name': 'serejaris', 'id': 'UCi49d_NnXAOI'},
-    {'name': 'neuropros', 'id': 'UCrcDsMsU_W9Q'},
-    {'name': 'rixaihub', 'id': 'UCFzgZg_ghsf0'},
-    {'name': 'rinatsuleyman', 'id': 'UCg0VGNfTtMtA'},
-    {'name': 'aikirichenkoy', 'id': 'UC5xeRaCykWbw'}
+    {'name': 'ivanbekunai', 'id': 'UChRz9BLuD2qEZMuvpAJ-lRQ'},
+    {'name': 'nickvels_ai', 'id': 'UC1acS1ETGlVRXBRQ25BNzVG'},
+    {'name': 'igorzuevich', 'id': 'UCO85GRCGUWMH08jjBZwdq7g'},
+    {'name': 'sukhov_live', 'id': 'UC4a4DzUtUjEW4tryyHoQxZQ'},
+    {'name': 'yevgeniykovalenko', 'id': 'UCZefZeIiyXYIrK2KaCu41Yw'},
+    {'name': 'serejaris', 'id': 'UCH6k750mdcOXU6PYHSCOlrA'},
+    {'name': 'neuropros', 'id': 'UCRdFU98_6_SVmtSfhPaKDKw'},
+    {'name': 'rixaihub', 'id': 'UC62WQvqor2eH87DrN3xbj_g'},
+    {'name': 'rinatsuleyman', 'id': 'UCXyfe8u58vBf2aSWLQjJtVA'},
+    {'name': 'aikirichenkoy', 'id': 'UCluhK-FEH0qF2s_-eHZ9B8A'}
 ]
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -33,7 +33,8 @@ def get_latest_videos_rss():
                 for entry in entries:
                     title = entry.find('{http://www.w3.org/2005/Atom}title').text
                     video_id = entry.find('{http://www.youtube.com/xml/schemas/2015}videoId').text
-                    with open(os.path.join(raw_folder, f\"{video_id}.md\"), 'w', encoding='utf-8') as f:
+                    full_path = os.path.join(raw_folder, f\"{video_id}.md\")
+                    with open(full_path, 'w', encoding='utf-8') as f:
                         f.write(f\"---\\ntitle: {title}\\nlink: https://youtube.com/watch?v={video_id}\\n---\\n\\n{title}\")
             else:
                 print(f"Ошибка {response.status_code} для {channel['name']}")

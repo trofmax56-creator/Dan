@@ -31,12 +31,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "02_TOOLS/claude_gemini_chrome_novpn.md",
+                    "file": "03_GUIDES/031.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "claude_gemini_chrome_novpn"
+                  "title": "031"
                 }
               }
             ],
@@ -366,6 +366,7 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "02_TOOLS/claude_gemini_chrome_novpn.md",
     "07_CONSTRUCTION/Project_Brief.md",
     "03_GUIDES/031.md",
     "CLAUDE.md",
@@ -373,7 +374,6 @@
     "11_1_DRAFTS/post_002_n8n_vs_ai_agent.md",
     "11_1_DRAFTS/post_001_three_level_memory_agent.md",
     "05_BIZ_RECIPES/065_figma_mcp_claude_code_crm_ui.md",
-    "02_TOOLS/claude_gemini_chrome_novpn.md",
     "00_RAW/rixaihub_448.md",
     "00_RAW/gora_academy_1349.md",
     "00_RAW/edvardgrishin27_176.md",

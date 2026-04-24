@@ -2,7 +2,7 @@ import os
 import xml.etree.ElementTree as ET
 import requests
 
-# Корректные ID каналов (UC...)
+# Список каналов с подтвержденными ID (UC...)
 channels = [
     {'name': 'ivanbekunai', 'id': 'UChRz9BLuD2qEZMuvpAJ-lRQ'},
     {'name': 'nickvels_ai', 'id': 'UC1acS1ETGlVRXBRQ25BNzVG'},
@@ -16,6 +16,7 @@ channels = [
     {'name': 'aikirichenkoy', 'id': 'UCluhK-FEH0qF2s_-eHZ9B8A'}
 ]
 
+# Автоматическое определение папки
 base_dir = os.path.dirname(os.path.abspath(__file__))
 raw_folder = os.path.join(base_dir, '00_RAW', 'YouTube')
 os.makedirs(raw_folder, exist_ok=True)
@@ -33,13 +34,16 @@ def get_latest_videos_rss():
                 for entry in entries:
                     title = entry.find('{http://www.w3.org/2005/Atom}title').text
                     video_id = entry.find('{http://www.youtube.com/xml/schemas/2015}videoId').text
-                    full_path = os.path.join(raw_folder, f\"{video_id}.md\")
+                    
+                    filename = f\"{video_id}.md\"
+                    full_path = os.path.join(raw_folder, filename)
+                    
                     with open(full_path, 'w', encoding='utf-8') as f:
                         f.write(f\"---\\ntitle: {title}\\nlink: https://youtube.com/watch?v={video_id}\\n---\\n\\n{title}\")
             else:
                 print(f"Ошибка {response.status_code} для {channel['name']}")
         except Exception as e:
-            print(f"Ошибка: {e}")
+            print(f"Ошибка в {channel['name']}: {e}")
 
 if __name__ == '__main__':
     get_latest_videos_rss()

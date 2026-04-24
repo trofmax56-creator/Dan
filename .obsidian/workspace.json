@@ -364,8 +364,10 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "1c76f09f1c534af1",
+  "active": "4fa896d27a9c39c4",
   "lastOpenFiles": [
+    "youtube_parser.py",
+    "03_GUIDES/System_Architecture.md",
     "01_INBOX/Evening_Digest_23_04.md",
     "01_INBOX/2026-04-23_AI_Summary.md",
     "CLAUDE.md",
@@ -390,8 +392,6 @@
     "00_RAW/2026-04-23/rixaihub_452.md",
     "00_RAW/2026-04-23/habr_n8n_ollama.md",
     "00_RAW/2026-04-23/habr_bitrix_robots.md",
-    "00_RAW/2026-04-23/gora_academy_1349.md",
-    "00_RAW/2026-04-23/ai_newz_4544.md",
     "dan_session.session",
     "11_1_DRAFTS",
     "00_RAW/2026-04-23",

@@ -364,8 +364,19 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "1c76f09f1c534af1",
+  "active": "4fa896d27a9c39c4",
   "lastOpenFiles": [
+    "TEMPLATES/T_Recipe.md",
+    "TEMPLATES/T_Project.md",
+    "TEMPLATES/T_Idea.md",
+    "TEMPLATES/README.md",
+    "11_CONTENT_FACTORY/11.1_DRAFTS/README.md",
+    "11_CONTENT_FACTORY/11.1_DRAFTS",
+    "11_CONTENT_FACTORY",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/Bitrix24_Biweekly_Pulse.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS",
+    "08_IDEAS_LAB",
+    "04_PROJECTS/README.md",
     "03_GUIDES/031.md",
     "youtube_parser.py",
     "03_GUIDES/System_Architecture.md",
@@ -386,20 +397,10 @@
     "00_RAW/addmeto_1776970843.md",
     "00_RAW/ai_newz_4541.md",
     "00_RAW/ai_newz_4542.md",
-    "00_RAW/ai_newz_4543.md",
-    "00_RAW/ai_newz_4544.md",
-    "00_RAW/2026-04-23/zuevichigor_1962.md",
-    "00_RAW/2026-04-23/rixaihub_452.md",
-    "00_RAW/2026-04-23/habr_n8n_ollama.md",
-    "00_RAW/2026-04-23/habr_bitrix_robots.md",
     "dan_session.session",
     "11_1_DRAFTS",
     "00_RAW/2026-04-23",
     "07_CONSTRUCTION",
-    "00_RAW",
-    "TEMPLATES",
-    "05_BIZ_RECIPES",
-    "04_PROJECTS",
-    "03_GUIDES"
+    "00_RAW"
   ]
 }

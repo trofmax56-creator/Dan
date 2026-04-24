@@ -31,12 +31,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "03_GUIDES/031.md",
+                    "file": "03_GUIDES/System_Architecture.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "031"
+                  "title": "System_Architecture"
                 }
               }
             ],
@@ -364,15 +364,15 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "4fa896d27a9c39c4",
+  "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "03_GUIDES/031.md",
     "youtube_parser.py",
     "03_GUIDES/System_Architecture.md",
     "01_INBOX/Evening_Digest_23_04.md",
     "01_INBOX/2026-04-23_AI_Summary.md",
     "CLAUDE.md",
     "2026-04-24.md",
-    "03_GUIDES/031.md",
     "02_TOOLS/claude_gemini_chrome_novpn.md",
     "07_CONSTRUCTION/Project_Brief.md",
     "11_1_DRAFTS/post_003_managed_vs_selfbuilt_agents.md",
@@ -400,7 +400,6 @@
     "TEMPLATES",
     "05_BIZ_RECIPES",
     "04_PROJECTS",
-    "03_GUIDES",
-    "02_TOOLS"
+    "03_GUIDES"
   ]
 }

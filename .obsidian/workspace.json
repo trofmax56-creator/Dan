@@ -181,7 +181,7 @@
                   },
                   "pinned": true,
                   "icon": "terminal",
-                  "title": "Terminal: cmd"
+                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
                 }
               }
             ],
@@ -351,6 +351,8 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "04_PROJECTS/Partner_Marketing/Implementation_Plan_V2_RU_Enriched.md",
+    "04_PROJECTS/AI_Factory_Setup.md",
     "Dan_Manual.md",
     "2026-04-24.md",
     "07_CONSTRUCTION/GIP_Handbook.md",
@@ -375,9 +377,7 @@
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_CRM_Tutor.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Content_Manager.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Arbitrage.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/01_Smart_Qualifier.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Video_Gen.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1_Common_Ideas_CRM_AI",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ",
     "08_IDEAS_LAB/08.2_SELECTED",

@@ -31,12 +31,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "08_IDEAS_LAB/08.2_SELECTED/AI_Sales_Booster_Plan.md",
+                    "file": "02_TOOLS/Booster_N8N_Schema.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "AI_Sales_Booster_Plan"
+                  "title": "Booster_N8N_Schema"
                 }
               }
             ],
@@ -364,8 +364,9 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "4fa896d27a9c39c4",
+  "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "08_IDEAS_LAB/08.2_SELECTED/AI_Sales_Booster_Plan.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Video_Gen.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Supply_Manager.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Sales_Director.md",
@@ -393,7 +394,6 @@
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1_Common_Ideas_CRM_AI/01_Smart_Qualifier.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1_Common_Ideas_CRM_AI",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ/27_Competitor_Monitor.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ/26_AI_Estimator.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ",
     "08_IDEAS_LAB/08.2_SELECTED",
     "00_RAW/YouTube",

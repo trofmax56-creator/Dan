@@ -12,35 +12,20 @@
             "type": "tabs",
             "children": [
               {
-                "id": "3b310175808c4ce3",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "CLAUDE.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "CLAUDE"
-                }
-              },
-              {
                 "id": "1c76f09f1c534af1",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "04_PROJECTS/Partner_Marketing/implementation_plan.md",
+                    "file": "Dan_Manual.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "implementation_plan"
+                  "title": "Dan_Manual"
                 }
               }
-            ],
-            "currentTab": 1
+            ]
           },
           {
             "id": "15f4831ae2e08bd2",
@@ -366,6 +351,13 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "2026-04-24.md",
+    "07_CONSTRUCTION/GIP_Handbook.md",
+    "CLAUDE.md",
+    "07_CONSTRUCTION/Project_Complex_V1.md",
+    "07_CONSTRUCTION/Project_Brief.md",
+    "03_GUIDES/System_Architecture.md",
+    "04_PROJECTS/Partner_Marketing/implementation_plan.md",
     "04_PROJECTS/Partner_Marketing/Context.md",
     "02_TOOLS/claude_gemini_chrome_novpn.md",
     "02_TOOLS/Booster_N8N_Schema.md",
@@ -386,13 +378,6 @@
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Video_Gen.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Supply_Manager.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Sales_Director.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Price_Monitor.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Partisan.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Offer_Gen.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_HR_Detector.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Estimator.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Content_Manager.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1_Common_Ideas_CRM_AI",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ",
     "08_IDEAS_LAB/08.2_SELECTED",

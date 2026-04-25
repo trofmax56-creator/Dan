@@ -17,12 +17,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Dan_Manual.md",
+                    "file": "04_PROJECTS/Content_Marketing_Trofimov/README.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Dan_Manual"
+                  "title": "README"
                 }
               }
             ]
@@ -351,6 +351,7 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "Dan_Manual.md",
     "2026-04-24.md",
     "07_CONSTRUCTION/GIP_Handbook.md",
     "CLAUDE.md",
@@ -377,7 +378,6 @@
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/01_Smart_Qualifier.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Video_Gen.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_Supply_Manager.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1_Common_Ideas_CRM_AI",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ",
     "08_IDEAS_LAB/08.2_SELECTED",

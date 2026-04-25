@@ -9,15 +9,15 @@ phone_number = '+79606945766'
 channels = [
     'ris_ai',
     'BekinAI',
-    'edvardgrishin27', 'gora_academy', 'zuevichigor', 'fomo_team', 
-    'maxryzhkov', 'juliangoldieseo', 'aikirichenkoy', 'rixaihub', 
-    'aiautomation_n8n', 'neuropros', 'addmeto', 'ai_newz', 
+    'edvardgrishin27', 'gora_academy', 'zuevichigor', 'FomoTeam0x',
+    'maxryzhkov', 'romarayt', 'aikirichenko', 'rixaihub',
+    'addmeto', 'ai_newz',
     'neural_network_news', 'denis_ai', 'adept_ecommerce'
 ]
 
 # Автоматическое определение папки скрипта
 base_dir = os.path.dirname(os.path.abspath(__file__))
-raw_folder = os.path.join(base_dir, '00_RAW')
+raw_folder = os.path.join(base_dir, '00_RAW', 'Telegram')
 os.makedirs(raw_folder, exist_ok=True)
 
 session_path = os.path.join(base_dir, 'dan_session')

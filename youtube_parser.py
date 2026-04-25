@@ -5,7 +5,7 @@ import requests
 # Список каналов с проверенными ID (UC...)
 channels = [
     {'name': 'ivanbekunai', 'id': 'UChRz9BLuD2qEZMuvpAJ-lRQ'},
-    {'name': 'nickvels_ai', 'id': 'UC1acS1ETGlVRXBRQ25BNzVG'},
+    {'name': 'nickvels_ai', 'id': 'UCgFaudM5mLnF4ixj6qeRhPQ'},
     {'name': 'igorzuevich', 'id': 'UCO85GRCGUWMH08jjBZwdq7g'},
     {'name': 'sukhov_live', 'id': 'UC4a4DzUtUjEW4tryyHoQxZQ'},
     {'name': 'yevgeniykovalenko', 'id': 'UCZefZeIiyXYIrK2KaCu41Yw'},

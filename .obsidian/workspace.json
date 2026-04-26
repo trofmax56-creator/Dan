@@ -12,35 +12,20 @@
             "type": "tabs",
             "children": [
               {
-                "id": "3b310175808c4ce3",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "CLAUDE.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "CLAUDE"
-                }
-              },
-              {
                 "id": "1c76f09f1c534af1",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "08_IDEAS_LAB/08.2_SELECTED/AI_Sales_Booster_Plan.md",
+                    "file": "07_CONSTRUCTION/Project_Complex_V1.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "AI_Sales_Booster_Plan"
+                  "title": "Project_Complex_V1"
                 }
               }
-            ],
-            "currentTab": 1
+            ]
           },
           {
             "id": "15f4831ae2e08bd2",
@@ -196,7 +181,7 @@
                   },
                   "pinned": true,
                   "icon": "terminal",
-                  "title": "Terminal: cmd"
+                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
                 }
               }
             ],
@@ -364,43 +349,42 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "1c76f09f1c534af1",
+  "active": "4fa896d27a9c39c4",
   "lastOpenFiles": [
-    "01_INBOX/Digest/Digest_2026_04_25.md",
-    "08_IDEAS_LAB/08.2_SELECTED/AI_Sales_Booster_Plan.md",
-    "08_IDEAS_LAB/08.2_SELECTED",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/AI_CRM_Tutor.md",
-    "03_GUIDES/System_Architecture.md",
+    "07_CONSTRUCTION/GIP_Handbook.md",
     "Dan_Manual.md",
-    "01_INBOX/Gold/addmeto_6195.md",
-    "01_INBOX/Gold/addmeto_6194.md",
-    "01_INBOX/Gold/YFMlpABJsB0.md",
-    "01_INBOX/Gold/KbdsoDIdUWc.md",
-    "01_INBOX/Gold/FomoTeam0x_2588.md",
-    "01_INBOX/Gold/FomoTeam0x_2587.md",
-    "01_INBOX/Gold/FomoTeam0x_2584.md",
-    "01_INBOX/Gold/FomoTeam0x_2582.md",
-    "01_INBOX/Gold/BekinAI_30.md",
-    "01_INBOX/Gold/B8LiPvPvXeM.md",
-    "01_INBOX/Gold/2SLsKZDGpi8.md",
-    "01_INBOX/Gold/1bfIs0MAh2k.md",
-    "00_RAW/YouTube/YFMlpABJsB0.md",
-    "00_RAW/YouTube/uTX807i8wvA.md",
-    "00_RAW/YouTube/xOi2g-XJ454.md",
-    "00_RAW/YouTube/rcDsMsU_W9Q.md",
-    "00_RAW/YouTube/OXlnRKsVZ58.md",
-    "00_RAW/YouTube/KbdsoDIdUWc.md",
-    "00_RAW/YouTube/JvW0jjl3gr0.md",
-    "00_RAW/YouTube/hQOPJotPig4.md",
-    "00_RAW/YouTube/foUsxuMa-lk.md",
+    "11_CONTENT_FACTORY/11.1_DRAFTS/11.1.1_n8n_Content",
+    "11_CONTENT_FACTORY/11.1_DRAFTS",
+    "11_CONTENT_FACTORY",
+    "02_TOOLS/Content_Factory_Protocol.md",
+    "04_PROJECTS/Content_Marketing_Trofimov/README.md",
+    "04_PROJECTS/Partner_Marketing/Implementation_Plan_V2_RU_Enriched.md",
+    "04_PROJECTS/AI_Factory_Setup.md",
+    "2026-04-24.md",
+    "CLAUDE.md",
+    "07_CONSTRUCTION/Project_Complex_V1.md",
+    "07_CONSTRUCTION/Project_Brief.md",
+    "03_GUIDES/System_Architecture.md",
+    "04_PROJECTS/Partner_Marketing/implementation_plan.md",
+    "04_PROJECTS/Partner_Marketing/Context.md",
+    "02_TOOLS/claude_gemini_chrome_novpn.md",
+    "02_TOOLS/Booster_N8N_Schema.md",
+    "08_IDEAS_LAB/08.2_SELECTED/AI_Sales_Booster_Plan.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Video_Gen.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Supply_Manager.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Sales_Director.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Price_Monitor.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Partner_Agents_Architecture.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Partisan.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Offer_Gen.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_HR_Detector.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Estimator.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1_Common_Ideas_CRM_AI",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ",
+    "08_IDEAS_LAB/08.2_SELECTED",
     "00_RAW/YouTube",
     "00_RAW/Telegram",
-    "00_RAW",
-    "11_CONTENT FACTORY/11_CONTENT FACTORY/11_1_DRAFTS",
-    "11_CONTENT FACTORY/11_CONTENT FACTORY",
-    "11_CONTENT FACTORY",
-    "01_INBOX/Gold",
-    "01_INBOX/Digest",
-    "04_PROJECTS/Partner_Marketing/Стратегия поиска партнёров в Яндексе.docx"
+    "00_RAW"
   ]
 }

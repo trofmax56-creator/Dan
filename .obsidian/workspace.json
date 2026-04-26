@@ -349,8 +349,9 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "1c76f09f1c534af1",
+  "active": "4fa896d27a9c39c4",
   "lastOpenFiles": [
+    "04_PROJECTS/Partner_Marketing/Yandex_Search_Queries.md",
     "04_PROJECTS/Partner_Marketing/Yandex_Strategy_Context.md",
     "04_PROJECTS/AI_Factory_Setup.md",
     "03_GUIDES/System_Architecture.md",
@@ -385,7 +386,6 @@
     "02_TOOLS/Content_Factory_Protocol.md",
     "04_PROJECTS/Content_Marketing_Trofimov/README.md",
     "04_PROJECTS/Partner_Marketing/Implementation_Plan_V2_RU_Enriched.md",
-    "2026-04-24.md",
-    "CLAUDE.md"
+    "2026-04-24.md"
   ]
 }

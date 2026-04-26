@@ -17,12 +17,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "03_GUIDES/System_Architecture.md",
+                    "file": "04_PROJECTS/Partner_Marketing/Context.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "System_Architecture"
+                  "title": "Context"
                 }
               }
             ]
@@ -349,8 +349,11 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "4fa896d27a9c39c4",
+  "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "04_PROJECTS/Partner_Marketing/Yandex_Strategy_Context.md",
+    "04_PROJECTS/AI_Factory_Setup.md",
+    "03_GUIDES/System_Architecture.md",
     "07_CONSTRUCTION/Complex_20m/04_SPEC/Smeta_Budget.md",
     "07_CONSTRUCTION/Complex_20m/03_ENG/VK_Water_Sewage.md",
     "07_CONSTRUCTION/Complex_20m/03_ENG/SS_Low_Voltage.md",
@@ -382,10 +385,7 @@
     "02_TOOLS/Content_Factory_Protocol.md",
     "04_PROJECTS/Content_Marketing_Trofimov/README.md",
     "04_PROJECTS/Partner_Marketing/Implementation_Plan_V2_RU_Enriched.md",
-    "04_PROJECTS/AI_Factory_Setup.md",
     "2026-04-24.md",
-    "CLAUDE.md",
-    "07_CONSTRUCTION/Project_Brief.md",
-    "03_GUIDES/System_Architecture.md"
+    "CLAUDE.md"
   ]
 }

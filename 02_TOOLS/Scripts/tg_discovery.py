@@ -1,14 +1,15 @@
 import os
 import asyncio
-import re
 from telethon import TelegramClient
-from telethon.tl.functions.search import SearchRequest
-from telethon.tl.types import InputMessagesFilterEmpty, Channel
+from telethon.tl.functions.messages import SearchGlobalRequest
+from telethon.tl.types import InputMessagesFilterEmpty, InputPeerEmpty
 
 # Настройки
 API_ID = 38957544
 API_HASH = 'bb31ab995b5956294a2e80f619a0a3de'
-SESSION_NAME = 'dan_discovery'
+PHONE = '+79606945766'
+# Используем существующую авторизованную сессию из корня проекта
+SESSION_NAME = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../dan_session')
 
 # Черный список (Стоп-слова для мусора)
 BLACKLIST = ["крипта", "сигналы", "трейдинг", "ставки", "сигнал", "p2p", "арбитраж", "заработок", "выплаты", "инвест"]
@@ -30,34 +31,42 @@ async def main():
         for query in KEYWORDS:
             print(f"Поиск по запросу: {query}")
             try:
-                result = await client(SearchRequest(
-                    q=query, 
-                    limit=50, 
-                    filter=InputMessagesFilterEmpty(), 
-                    min_date=None, max_date=None, offset_id=0, add_offset=0, 
-                    max_id=0, min_id=0, from_id=None, hash=0
+                result = await client(SearchGlobalRequest(
+                    q=query,
+                    filter=InputMessagesFilterEmpty(),
+                    min_date=None,
+                    max_date=None,
+                    offset_rate=0,
+                    offset_peer=InputPeerEmpty(),
+                    offset_id=0,
+                    limit=20
                 ))
 
+                # Строим словарь chat_id -> chat из result.chats
+                chats_by_id = {c.id: c for c in getattr(result, 'chats', [])}
+
                 for msg in result.messages:
-                    if msg.chat and isinstance(msg.chat, Channel):
-                        username = msg.chat.username
-                        if not username: continue
-                        
-                        title = (msg.chat.title or "").lower()
+                    peer_id = getattr(getattr(msg, 'peer_id', None), 'channel_id', None)
+                    chat = chats_by_id.get(peer_id)
+                    if chat and hasattr(chat, 'username') and chat.username:
+                        username = chat.username
+
+                        title = (getattr(chat, 'title', '') or "").lower()
                         about = (msg.message or "").lower()
-                        
-                        if any(bad in title or bad in about for bad in BLACKLIST): continue
-                        
+
+                        if any(bad in title or bad in about for bad in BLACKLIST):
+                            continue
+
                         if any(good in title or good in about for good in WHITELIST):
                             if username not in discovered_channels:
                                 discovered_channels[username] = {
-                                    'title': msg.chat.title,
-                                    'text': msg.message[:200].replace('\n', ' '),
+                                    'title': getattr(chat, 'title', username),
+                                    'text': (msg.message or '')[:200].replace('\n', ' '),
                                     'date': msg.date.strftime("%Y-%m-%d")
                                 }
             except Exception as e:
                 print(f"Ошибка при поиске '{query}': {e}")
-            
+
             await asyncio.sleep(2)
 
         output_path = 'tg_discovered_sources.md'

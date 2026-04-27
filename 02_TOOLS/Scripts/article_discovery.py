@@ -1,8 +1,11 @@
 import os
+import sys
 import requests
 
-# Ключ из профиля Максима
-FIRE_API_KEY = "fc-7174d5ce5e4046c78b04615503d7d771"
+FIRE_API_KEY = os.environ.get("FIRECRAWL_API_KEY")
+if not FIRE_API_KEY:
+    print("Ошибка: переменная окружения FIRECRAWL_API_KEY не задана.")
+    sys.exit(1)
 
 TAGS = ["n8n", "CRM", "Low-code", "API", "Bitrix24", "amoCRM", "Python", "Автоматизация"]
 PLATFORMS = ["habr.com", "vc.ru"]

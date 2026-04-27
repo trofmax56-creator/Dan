@@ -14,7 +14,7 @@ QUERIES = [
     "автоматизация 1С через n8n"
 ]
 
-TECHNICAL_KEYWORDS = ["настройка", "схема", "tutorial", "кейс", "workflow", "иньurrentрукция", "код"]
+TECHNICAL_KEYWORDS = ["настройка", "схема", "tutorial", "кейс", "workflow", "инструкция", "код"]
 
 def search_youtube():
     if API_KEY == "YOUR_API_KEY":
@@ -51,7 +51,7 @@ def search_youtube():
                             "title": title,
                             "channel": item["snippet"]["channelTitle"],
                             "channelId": item["snippet"]["channelId"],
-                            "link": f"https://youtube.com/watch?={item['id']['videoId']}",
+                            "link": f"https://youtube.com/watch?v={item['id']['videoId']}",
                             "date": item["snippet"]["publishTime"][:10]
                         })
         except Exception as e:

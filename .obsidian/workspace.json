@@ -17,12 +17,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "08_IDEAS_LAB/08.2_SELECTED/AI_Sales_Booster_Plan.md",
+                    "file": "07_CONSTRUCTION/Complex_20m/02_AR_KR/AR_Architecture.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "AI_Sales_Booster_Plan"
+                  "title": "AR_Architecture"
                 }
               }
             ]
@@ -351,6 +351,9 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "07_CONSTRUCTION/Complex_20m/01_ORG/PZU_Site_Layout.md",
+    "07_CONSTRUCTION/Complex_20m/01_ORG/PZ_Explanatory_Note.md",
+    "08_IDEAS_LAB/08.2_SELECTED/AI_Sales_Booster_Plan.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Arbitrage.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/01_Smart_Qualifier.md",
     "04_PROJECTS/AI_Factory_Setup.md",
@@ -366,8 +369,6 @@
     "07_CONSTRUCTION/Complex_20m/03_ENG/OV_Heating_Ventilation.md",
     "07_CONSTRUCTION/Complex_20m/02_AR_KR/KR_Construction.md",
     "07_CONSTRUCTION/Complex_20m/02_AR_KR/AR_Architecture.md",
-    "07_CONSTRUCTION/Complex_20m/01_ORG/PZ_Explanatory_Note.md",
-    "07_CONSTRUCTION/Complex_20m/01_ORG/PZU_Site_Layout.md",
     "07_CONSTRUCTION/Complex_20m/04_SPEC",
     "07_CONSTRUCTION/Complex_20m/03_ENG",
     "07_CONSTRUCTION/Complex_20m/02_AR_KR",
@@ -383,7 +384,6 @@
     "11_CONTENT FACTORY/11_1_DRAFTS/post_002_n8n_vs_ai_agent.md",
     "11_CONTENT FACTORY/11_1_DRAFTS/post_001_three_level_memory_agent.md",
     "11_CONTENT FACTORY/11_1_DRAFTS",
-    "07_CONSTRUCTION/GIP_Handbook.md",
     "11_CONTENT_FACTORY/11.1_DRAFTS/11.1.1_n8n_Content",
     "11_CONTENT_FACTORY/11.1_DRAFTS",
     "11_CONTENT_FACTORY"

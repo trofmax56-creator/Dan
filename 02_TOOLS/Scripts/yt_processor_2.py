@@ -1,6 +1,7 @@
 import re
 import os
 import json
+import time
 from pathlib import Path
 from datetime import date
 
@@ -406,6 +407,7 @@ def main():
         print(f"  [{i}/{len(videos)}] {video['title'][:65]}...")
 
         transcript = fetch_transcript(vid)
+        time.sleep(3)
         full_text = " ".join(filter(None, [video["title"], transcript])) or video["title"]
 
         category = classify(full_text)

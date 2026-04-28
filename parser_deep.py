@@ -13,7 +13,8 @@ channels = [
     'maxryzhkov', 'romarayt', 'aikirichenko', 'rixaihub',
     'addmeto', 'ai_newz',
     'neural_network_news', 'denis_ai', 'adept_ecommerce',
-    'alexyarygin'
+    'alexyarygin',
+    'TochkiNadAI', 'n8node', 'vibecod3rs', 'kyloai', 'denissexy'
 ]
 
 base_dir = os.path.dirname(os.path.abspath(__file__))

@@ -208,22 +208,23 @@ def extract_with_claude(text: str, title: str) -> dict | None:
     try:
         response = _claude.messages.create(
             model="claude-haiku-4-5",
-            max_tokens=1024,
+            max_tokens=2048,
             system=[{
                 "type": "text",
                 "text": CLAUDE_SYSTEM,
                 "cache_control": {"type": "ephemeral"},
             }],
             messages=[{"role": "user", "content": user_prompt}],
-            output_config={
-                "format": {
-                    "type": "json_schema",
-                    "schema": EXTRACTION_SCHEMA,
-                }
-            },
+            tools=[{
+                "name": "extract_video_info",
+                "description": "Извлечь структурированную информацию из транскрипта YouTube-видео",
+                "input_schema": EXTRACTION_SCHEMA,
+            }],
+            tool_choice={"type": "tool", "name": "extract_video_info"},
         )
-        raw = next((b.text for b in response.content if b.type == "text"), "{}")
-        result = json.loads(raw)
+        result = next((b.input for b in response.content if b.type == "tool_use"), None)
+        if not result:
+            return None
         usage = response.usage
         cached = getattr(usage, "cache_read_input_tokens", 0)
         if cached:

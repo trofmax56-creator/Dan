@@ -21,7 +21,7 @@ QUERIES = [
 
 
 def search_youtube():
-    if API_KEY == "YOUR_API_KEY":
+    if not API_KEY or API_KEY == "YOUR_API_KEY":
         print("Ошибка: задайте YOUTUBE_API_KEY в переменных окружения.")
         return
 

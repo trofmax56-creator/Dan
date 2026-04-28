@@ -1,8 +1,12 @@
 ---
-date: 2026-04-23 18:01:01+00:00
-link: https://t.me/zuevichigor/1962
+source: @zuevichigor
+date: 2026-04-23
+original: https://t.me/zuevichigor/1962
+category: GOLD
+tags: [n8n, Claude, промпт]
 ---
 
+## Главная мысль
 🎞 **Claude Design: честный обзор с реальными лимитами токенов и живыми задачами**
 
 🔍 **Что вы узнаете из видео:** 
@@ -21,9 +25,19 @@ link: https://t.me/zuevichigor/1962
 **Рекомендую смотреть на YouTube:** 
 Видео: [**https://www.youtube.com/watch?v=NheTD-hN-Es**](https://www.youtube.com/watch?v=NheTD-hN-Es) (в Telegram оно много весит).
 
+## Схема / Workflow
 ➡️ **Шаблоны n8n и Все промпты** **и раздаточные материалы для Claude**, использованные в видео есть в нашей базе AI-Сообщества:** **[**https://l.igorzuevich.com/aicl**](https://l.igorzuevich.com/aicl)
-
 ➡️ **Полная** программа по искусственному интеллекту **для фрилансеров, предпринимателей, блогеров и всех **людей: "Как использовать искусственный интеллект в качестве личного помощника": [**https://l.igorzuevich.com/ai2**](https://l.igorzuevich.com/ai2)
 ➡️ Ваш **личный AI-копирайтер** и создатель сценариев: [**https://l.igorzuevich.com/aicopy**](https://l.igorzuevich.com/aicopy)
 
-**P.S. **Под этим тегом #подкаст другие полезные видео на канале.
+## Технические связки
+- claude → anthropic
+- n8n → claude → http
+
+## Мясо
+- 🎞 **Claude Design: честный обзор с реальными лимитами токенов и живыми задачами**
+- – Claude Design: сырок, дорогой и странный инструмент от Anthropic;
+- – Как устроен интерфейс нового инструмента Claude Design и какие режимы в нем доступны;
+- – Как Claude Design создаёт презентацию по скриншотам YouTube канала и экспортирует её в pptx;
+- – Можно ли использовать Claude Design для создания анимированного логотипа;
+- – Мой честный вывод: убьёт ли Claude Design дизайнеров и стоит ли им пользоваться сейчас

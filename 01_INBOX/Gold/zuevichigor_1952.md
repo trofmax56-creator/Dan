@@ -1,8 +1,12 @@
 ---
-date: 2026-04-11 17:06:33+00:00
-link: https://t.me/zuevichigor/1952
+source: @zuevichigor
+date: 2026-04-11
+original: https://t.me/zuevichigor/1952
+category: GOLD
+tags: [n8n, Claude, ChatGPT, Gemini, AI-агент]
 ---
 
+## Главная мысль
 🎞 **AI-сотрудник на Claude Code: создай AI-сотрудника за несколько минут: пошаговый разбор Claude Code**
 
 🔍 **Что вы узнаете из видео:** 
@@ -18,9 +22,22 @@ link: https://t.me/zuevichigor/1952
 **Рекомендую смотреть на YouTube:** 
 Видео: [**https://www.youtube.com/watch?v=WADKRc4eTJw**](https://www.youtube.com/watch?v=WADKRc4eTJw)  (в Telegram оно много весит).
 
+## Схема / Workflow
+🎞 **AI-сотрудник на Claude Code: создай AI-сотрудника за несколько минут: пошаговый разбор Claude Code**
+– 5 шагов для создания ИИ помощника на базе Claude Code;
 ➡️ **Шаблоны n8n и Все промпты** **и раздаточные материалы для Claude**, использованные в видео есть в нашей базе AI-Сообщества:** **[**https://l.igorzuevich.com/aicl**](https://l.igorzuevich.com/aicl)
-
 ➡️ **Полная** программа по искусственному интеллекту **для фрилансеров, предпринимателей, блогеров и всех **людей: "Как использовать искусственный интеллект в качестве личного помощника": [**https://l.igorzuevich.com/ai2**](https://l.igorzuevich.com/ai2)
 ➡️ Ваш **личный AI-копирайтер** и создатель сценариев: [**https://l.igorzuevich.com/aicopy**](https://l.igorzuevich.com/aicopy)
 
-**P.S. **Под этим тегом #подкаст другие полезные видео на канале.
+## Технические связки
+- claude → gemini
+- claude → chatgpt → gpt
+- n8n → claude → http
+
+## Мясо
+- 🎞 **AI-сотрудник на Claude Code: создай AI-сотрудника за несколько минут: пошаговый разбор Claude Code**
+- – Терминал: главная проблема ИИ сотрудников созданных через Claude Code и как это легко обойти;
+- – Почему Claude Code, Codex и Gemini CLI — это инструменты, которые можно использовать как полноценных сотрудников, а не только как помощников для программистов;
+- – Как создать ИИ сотрудника на базе Claude Code или Codex;
+- – 5 шагов для создания ИИ помощника на базе Claude Code;
+- – Как на одной подписке Claude или ChatGPT создать неограниченное количество сотрудников через разные сессии;

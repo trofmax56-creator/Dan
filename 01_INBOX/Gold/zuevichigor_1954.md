@@ -1,8 +1,12 @@
 ---
-date: 2026-04-14 17:55:27+00:00
-link: https://t.me/zuevichigor/1954
+source: @zuevichigor
+date: 2026-04-14
+original: https://t.me/zuevichigor/1954
+category: GOLD
+tags: [n8n, Claude, ChatGPT, AI-агент, промпт]
 ---
 
+## Главная мысль
 🎞 **Полный гайд по Codex от ChatGPT: AI Агент с памятью, скилами от OpenAI и Telegram интерфесом**
 
 🔍 **Что вы узнаете из видео:** 
@@ -19,9 +23,22 @@ link: https://t.me/zuevichigor/1954
 **Рекомендую смотреть на YouTube:** 
 Видео: [**https://www.youtube.com/watch?v=ozlhPa3CzQM**](https://www.youtube.com/watch?v=ozlhPa3CzQM) (в Telegram оно много весит).
 
+## Схема / Workflow
+– Как за 8 шагов точно настроить Codex для работы с мощным ИИ Агентом;
 ➡️ **Шаблоны n8n и Все промпты** **и раздаточные материалы для Claude**, использованные в видео есть в нашей базе AI-Сообщества:** **[**https://l.igorzuevich.com/aicl**](https://l.igorzuevich.com/aicl)
-
 ➡️ **Полная** программа по искусственному интеллекту **для фрилансеров, предпринимателей, блогеров и всех **людей: "Как использовать искусственный интеллект в качестве личного помощника": [**https://l.igorzuevich.com/ai2**](https://l.igorzuevich.com/ai2)
 ➡️ Ваш **личный AI-копирайтер** и создатель сценариев: [**https://l.igorzuevich.com/aicopy**](https://l.igorzuevich.com/aicopy)
 
-**P.S. **Под этим тегом #подкаст другие полезные видео на канале.
+## Технические связки
+- telegram → chatgpt → gpt
+- chatgpt → gpt
+- openai → github
+- n8n → claude → http
+
+## Мясо
+- 🎞 **Полный гайд по Codex от ChatGPT: AI Агент с памятью, скилами от OpenAI и Telegram интерфесом**
+- – Полная видео инструкция по настройке Codex от ChatGPT с нуля для новичков;
+- – Как за 8 шагов точно настроить Codex для работы с мощным ИИ Агентом;
+- – Как к ИИ Агенту на Codex добавить поддержку голосовых сообщений, фото, видео и файлов;
+- – Как настроить трёхуровневую память ИИ агента Codex: оперативную, долгосрочную через Obsidian и файл Agent.md;
+- – Как установить Codex скилы от OpenAI с официального GitHub и расширить возможности агента;

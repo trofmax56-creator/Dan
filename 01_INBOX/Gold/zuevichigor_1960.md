@@ -1,8 +1,12 @@
 ---
-date: 2026-04-21 16:59:57+00:00
-link: https://t.me/zuevichigor/1960
+source: @zuevichigor
+date: 2026-04-21
+original: https://t.me/zuevichigor/1960
+category: GOLD
+tags: [n8n, Claude, Gemini, AI-агент, промпт]
 ---
 
+## Главная мысль
 🎞 **AI агент не забывает и не тупит: 7 рабочих для Gemini CLI, Codex и Claude Code команд**
 
 🔍 **Что вы узнаете из видео:** 
@@ -17,9 +21,18 @@ link: https://t.me/zuevichigor/1960
 **Рекомендую смотреть на YouTube:** 
 Видео: [**https://www.youtube.com/watch?v=1PeBB5Nvzyw**](https://www.youtube.com/watch?v=1PeBB5Nvzyw) (в Telegram оно много весит).
 
+## Схема / Workflow
 ➡️ **Шаблоны n8n и Все промпты** **и раздаточные материалы для Claude**, использованные в видео есть в нашей базе AI-Сообщества:** **[**https://l.igorzuevich.com/aicl**](https://l.igorzuevich.com/aicl)
-
 ➡️ **Полная** программа по искусственному интеллекту **для фрилансеров, предпринимателей, блогеров и всех **людей: "Как использовать искусственный интеллект в качестве личного помощника": [**https://l.igorzuevich.com/ai2**](https://l.igorzuevich.com/ai2)
 ➡️ Ваш **личный AI-копирайтер** и создатель сценариев: [**https://l.igorzuevich.com/aicopy**](https://l.igorzuevich.com/aicopy)
 
-**P.S. **Под этим тегом #подкаст другие полезные видео на канале.
+## Технические связки
+- claude → gemini
+- n8n → claude → http
+
+## Мясо
+- 🎞 **AI агент не забывает и не тупит: 7 рабочих для Gemini CLI, Codex и Claude Code команд**
+- – 7 важных команд для управления ИИ агентом Gemini CLI, Claude Code или Codex;
+- – как внедрить планировщик, чтобы ИИ агент выполнял задачи ночью;
+- – Как и за счёт чего эти команды позволяют оставаться дольше на связи ИИ агенту и не тратить много токенов на ответы;
+- ➡️ **Шаблоны n8n и Все промпты** **и раздаточные материалы для Claude**, использованные в видео есть в нашей базе AI-Сообщества:** **[**https://l.igorzuevich.com/aicl**](https://l.igorzuevich.com/aicl)

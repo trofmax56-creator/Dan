@@ -17,12 +17,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "02_TOOLS/Scripts/README_DISCOVERY.md",
+                    "file": "02_TOOLS/Scripts/tg_discovered_sources.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "README_DISCOVERY"
+                  "title": "tg_discovered_sources"
                 }
               }
             ]
@@ -349,43 +349,43 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "4fa896d27a9c39c4",
+  "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
-    "02_TOOLS/Scripts/yt_discovery_report.md",
-    "02_TOOLS/Scripts/tg_discovered_sources.md",
+    "processor.py",
+    "parser_deep.py",
+    "02_TOOLS/Scripts/tg_discovery_v2.py",
+    "02_TOOLS/Scripts/tg_discovered_v2.md",
+    "01_INBOX/Gold/zuevichigor_1965.md",
+    "01_INBOX/Gold/zuevichigor_1964.md",
+    "01_INBOX/Gold/zuevichigor_1963.md",
+    "01_INBOX/Gold/zuevichigor_1961.md",
+    "01_INBOX/Gold/zuevichigor_1959.md",
+    "01_INBOX/Gold/zuevichigor_1922.md",
+    "01_INBOX/Gold/zuevichigor_1921.md",
+    "01_INBOX/Gold/zuevichigor_1920.md",
+    "01_INBOX/Gold/zuevichigor_1919.md",
+    "01_INBOX/Gold/zuevichigor_1918.md",
+    "01_INBOX/Gold/zuevichigor_1917.md",
+    "01_INBOX/Gold/zuevichigor_1916.md",
+    "01_INBOX/Gold/vibecod3rs_65988.md",
+    "01_INBOX/Gold/vibecod3rs_65986.md",
+    "01_INBOX/Gold/ris_ai_600.md",
+    "01_INBOX/Gold/ris_ai_598.md",
+    "01_INBOX/Gold/ris_ai_597.md",
+    "01_INBOX/Gold/ris_ai_591.md",
+    "01_INBOX/Gold/ris_ai_586.md",
+    "01_INBOX/Gold/ris_ai_585.md",
+    "01_INBOX/Gold/ris_ai_583.md",
+    "01_INBOX/Gold/ris_ai_582.md",
+    "01_INBOX/Gold/aikirichenko_99.md",
+    "01_INBOX/Gold/aikirichenko_98.md",
     "02_TOOLS/Scripts/dan_discovery.session",
-    "02_TOOLS/Booster_Field_Mapping.md",
-    "02_TOOLS/Booster_N8N_Workflow_Blueprint.md",
-    "02_TOOLS/Booster_N8N_Schema.md",
-    "02_TOOLS/Content_Factory_Protocol.md",
-    "02_TOOLS/Market_Intelligence_Protocol.md",
-    "02_TOOLS/crm-ai-ideator.md",
-    "07_CONSTRUCTION/Complex_20m/02_AR_KR/AR_Architecture.md",
-    "07_CONSTRUCTION/Complex_20m/01_ORG/PZU_Site_Layout.md",
-    "07_CONSTRUCTION/Complex_20m/01_ORG/PZ_Explanatory_Note.md",
-    "08_IDEAS_LAB/08.2_SELECTED/AI_Sales_Booster_Plan.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Arbitrage.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/01_Smart_Qualifier.md",
-    "04_PROJECTS/AI_Factory_Setup.md",
-    "03_GUIDES/System_Architecture.md",
-    "00_RAW/YouTube/5xeRaCykWbw.md",
-    "04_PROJECTS/Partner_Marketing/Context.md",
-    "04_PROJECTS/Partner_Marketing/Yandex_Search_Queries.md",
-    "04_PROJECTS/Partner_Marketing/Yandex_Strategy_Context.md",
-    "07_CONSTRUCTION/Complex_20m/04_SPEC/Smeta_Budget.md",
-    "07_CONSTRUCTION/Complex_20m/03_ENG/VK_Water_Sewage.md",
-    "07_CONSTRUCTION/Complex_20m/03_ENG/SS_Low_Voltage.md",
-    "07_CONSTRUCTION/Complex_20m/03_ENG/EO_Power_Lighting.md",
-    "07_CONSTRUCTION/Complex_20m/03_ENG/OV_Heating_Ventilation.md",
-    "07_CONSTRUCTION/Complex_20m/02_AR_KR/KR_Construction.md",
     "07_CONSTRUCTION/Complex_20m/04_SPEC",
     "07_CONSTRUCTION/Complex_20m/03_ENG",
     "07_CONSTRUCTION/Complex_20m/02_AR_KR",
     "07_CONSTRUCTION/Complex_20m/01_ORG",
     "07_CONSTRUCTION/Complex_20m",
     "11_CONTENT FACTORY/11_2_n8n_Content",
-    "11_CONTENT FACTORY/11_1_DRAFTS",
-    "11_CONTENT_FACTORY/11.1_DRAFTS/11.1.1_n8n_Content",
-    "11_CONTENT_FACTORY/11.1_DRAFTS"
+    "11_CONTENT FACTORY/11_1_DRAFTS"
   ]
 }

@@ -15,14 +15,10 @@
                 "id": "1c76f09f1c534af1",
                 "type": "leaf",
                 "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "Dan_Manual.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "Dan_Manual"
+                  "type": "graph",
+                  "state": {},
+                  "icon": "lucide-git-fork",
+                  "title": "Граф"
                 }
               }
             ]
@@ -181,7 +177,7 @@
                   },
                   "pinned": true,
                   "icon": "terminal",
-                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
+                  "title": "Terminal: cmd"
                 }
               }
             ],
@@ -351,6 +347,10 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "01_INBOX/Gold/yt_rOJlfcggfBA.md",
+    "01_INBOX/Gold/yt_u4jMbC_43fU.md",
+    "01_INBOX/Gold/yt_ut6vt0ZbQCY.md",
+    "Dan_Manual.md",
     "__pycache__/processor.cpython-312.pyc",
     "__pycache__/parser_deep.cpython-312.pyc",
     "__pycache__",
@@ -366,10 +366,7 @@
     "01_INBOX/Gold/yt_xwI6hP67ZAE.md",
     "01_INBOX/Gold/yt_wMzUVQT8VeE.md",
     "01_INBOX/Gold/yt_vZZ_Y8scanc.md",
-    "01_INBOX/Gold/yt_ut6vt0ZbQCY.md",
     "01_INBOX/Gold/yt_uckxNqMM6UQ.md",
-    "01_INBOX/Gold/yt_u4jMbC_43fU.md",
-    "01_INBOX/Gold/yt_rOJlfcggfBA.md",
     "01_INBOX/Gold/yt_oi7JtLjUapo.md",
     "01_INBOX/Gold/yt_nUJfHYQKrIo.md",
     "01_INBOX/Gold/yt_mFwhI5Lf1Fg.md",
@@ -385,7 +382,6 @@
     "00_RAW/YouTube/yt_UtkQ5YOIva8.md",
     "02_TOOLS/Scripts/yt_processor_2.py",
     "processor.py",
-    "parser_deep.py",
-    "02_TOOLS/Scripts/tg_discovery_v2.py"
+    "parser_deep.py"
   ]
 }

@@ -1,4 +1,6 @@
 import re
+import os
+import json
 from pathlib import Path
 from datetime import date
 
@@ -8,6 +10,12 @@ try:
 except ImportError:
     print("Установи библиотеку: pip install youtube-transcript-api")
     exit(1)
+
+try:
+    import anthropic as anthropic_lib
+    _claude = anthropic_lib.Anthropic() if os.environ.get('ANTHROPIC_API_KEY') else None
+except ImportError:
+    _claude = None
 
 _yt_api = YouTubeTranscriptApi()
 
@@ -47,6 +55,41 @@ TOOLS = [
     'docker', 'vps', 'server', 'github',
 ]
 
+CLAUDE_SYSTEM = """Ты — эксперт по автоматизации бизнеса, ИИ-инструментам и CRM-системам.
+Анализируй контент YouTube-видео об автоматизации и извлекай структурированную практическую информацию.
+Отвечай строго на русском языке, кратко и по делу."""
+
+EXTRACTION_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "main_idea": {
+            "type": "string",
+            "description": "Главная практическая мысль видео — 1-2 предложения"
+        },
+        "workflow": {
+            "type": "string",
+            "description": "Пошаговая схема автоматизации или workflow. Формат: шаг1 → шаг2 → шаг3. Если схемы нет — '_Не описана_'"
+        },
+        "tech_links": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Технические связки инструментов. Пример: ['n8n → Bitrix24', 'Claude API → CRM']. Пустой массив если нет"
+        },
+        "key_insights": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "3-5 ключевых практических выводов — конкретные факты, цифры, приёмы"
+        },
+        "tags": {
+            "type": "array",
+            "items": {"type": "string"},
+            "description": "Теги из списка: n8n, make.com, zapier, Claude, ChatGPT, Gemini, LangChain, RAG, AI-агент, автоматизация, Bitrix24, amoCRM, Python, API, workflow"
+        }
+    },
+    "required": ["main_idea", "workflow", "tech_links", "key_insights", "tags"],
+    "additionalProperties": False
+}
+
 
 def load_processed_ids():
     if not PROCESSED_LOG.exists():
@@ -66,7 +109,6 @@ def update_processed_log(new_ids: list):
 def parse_report(report_path: Path) -> list[dict]:
     videos = []
     content = report_path.read_text(encoding='utf-8')
-    # Парсим строки таблицы Markdown: | Канал | Заголовок | Дата | [Смотреть](url) |
     pattern = r'\|\s*(.+?)\s*\|\s*(.+?)\s*\|\s*(\d{4}-\d{2}-\d{2})\s*\|\s*\[Смотреть\]\((https://youtube\.com/watch\?v=([a-zA-Z0-9_-]+))\)\s*\|'
     for m in re.finditer(pattern, content):
         videos.append({
@@ -107,47 +149,93 @@ def classify(text: str) -> str:
     return 'TRASH'
 
 
-def extract_main_idea(text: str) -> str:
+# --- Извлечение через Claude API ---
+
+def extract_with_claude(text: str, title: str) -> dict | None:
+    """Извлекает структурированную информацию через Claude Haiku."""
+    if not _claude:
+        return None
+
+    # Ограничиваем транскрипт до ~6000 слов чтобы уложиться в контекст и бюджет
+    content = text[:12000] if len(text) > 12000 else text
+
+    user_prompt = f"Заголовок видео: {title}\n\nТранскрипт:\n{content}"
+
+    try:
+        response = _claude.messages.create(
+            model="claude-haiku-4-5",
+            max_tokens=1024,
+            system=[{
+                "type": "text",
+                "text": CLAUDE_SYSTEM,
+                "cache_control": {"type": "ephemeral"}  # кэшируем системный промпт
+            }],
+            messages=[{"role": "user", "content": user_prompt}],
+            output_config={
+                "format": {
+                    "type": "json_schema",
+                    "schema": EXTRACTION_SCHEMA
+                }
+            }
+        )
+        raw = next((b.text for b in response.content if b.type == "text"), "{}")
+        result = json.loads(raw)
+
+        # Логируем стоимость (кэш-хиты снижают цену)
+        usage = response.usage
+        cached = getattr(usage, 'cache_read_input_tokens', 0)
+        if cached:
+            print(f"    💾 Кэш: {cached} токенов сэкономлено")
+
+        return result
+
+    except Exception as e:
+        print(f"    ⚠️  Claude API ошибка: {e}")
+        return None
+
+
+# --- Fallback: извлечение через regex (если нет API ключа) ---
+
+def _regex_main_idea(text: str) -> str:
     sentences = re.split(r'(?<=[.!?])\s+', text.strip())
     sentences = [s.strip() for s in sentences if len(s.strip()) > 30]
     return sentences[0] if sentences else text[:200]
 
 
-def extract_schema(text: str) -> str:
+def _regex_schema(text: str) -> str:
     lines = text.split('\n')
     schema_lines = []
     for line in lines:
         line = line.strip()
         if not line:
             continue
-        if any(marker in line for marker in ['→', '->', '➡', '⟶', '▶']):
+        if any(m in line for m in ['→', '->', '➡', '⟶', '▶']):
             schema_lines.append(line)
         elif re.match(r'^\d+[\.\)]\s', line):
             schema_lines.append(line)
-        elif any(w in line.lower() for w in ['шаг', 'сначала', 'затем', 'потом', 'далее', 'после этого']):
+        elif any(w in line.lower() for w in ['шаг', 'сначала', 'затем', 'потом', 'далее']):
             schema_lines.append(line)
     return '\n'.join(schema_lines[:8]) if schema_lines else '_Не описана_'
 
 
-def extract_tech_links(text: str) -> list:
+def _regex_tech_links(text: str) -> list:
     text_lower = text.lower()
-    found_tools = [t for t in TOOLS if t in text_lower]
-    if len(found_tools) < 2:
-        return found_tools
+    found = [t for t in TOOLS if t in text_lower]
+    if len(found) < 2:
+        return found
     links = []
-    sentences = re.split(r'[.!?\n]', text_lower)
-    for sentence in sentences:
-        tools_in_sentence = [t for t in found_tools if t in sentence]
-        if len(tools_in_sentence) >= 2:
-            link = ' → '.join(tools_in_sentence[:3])
+    for sentence in re.split(r'[.!?\n]', text_lower):
+        tools_in = [t for t in found if t in sentence]
+        if len(tools_in) >= 2:
+            link = ' → '.join(tools_in[:3])
             if link not in links:
                 links.append(link)
-    return links[:5] if links else [t for t in found_tools[:4]]
+    return links[:5] if links else found[:4]
 
 
-def extract_meat(text: str) -> str:
+def _regex_meat(text: str) -> list:
     lines = text.split('\n')
-    meat_lines = []
+    result = []
     for line in lines:
         line = line.strip()
         if len(line) < 20:
@@ -155,18 +243,18 @@ def extract_meat(text: str) -> str:
         has_numbers = bool(re.search(r'\d+[%\+\-×xX]|\d{4,}|\d+\s*(руб|тыс|млн|мин|час|сек)', line))
         has_tech = any(kw in line.lower() for kw in GOLD_KEYWORDS)
         if has_numbers or has_tech:
-            meat_lines.append(f"- {line}")
-    if not meat_lines:
+            result.append(line)
+    if not result:
         for line in lines:
             line = line.strip()
             if len(line) > 40:
-                meat_lines.append(f"- {line}")
-            if len(meat_lines) >= 4:
+                result.append(line)
+            if len(result) >= 4:
                 break
-    return '\n'.join(meat_lines[:6])
+    return result[:6]
 
 
-def extract_tags(text: str) -> list:
+def _regex_tags(text: str) -> list:
     text_lower = text.lower()
     tag_map = {
         'n8n': 'n8n', 'make.com': 'make.com', 'zapier': 'zapier',
@@ -179,16 +267,33 @@ def extract_tags(text: str) -> list:
     return [v for k, v in tag_map.items() if k in text_lower][:5]
 
 
-def save_gold(video_id: str, video: dict, text: str):
-    main_idea = extract_main_idea(text)
-    schema = extract_schema(text)
-    tech_links = extract_tech_links(text)
-    meat = extract_meat(text)
-    tags = extract_tags(text)
+# --- Сохранение ---
 
-    tech_links_str = '\n'.join(f'- {t}' for t in tech_links) or '_Не найдены_'
-    tags_str = ', '.join(tags)
+def save_gold(video_id: str, video: dict, text: str):
     filename = f"yt_{video_id}"
+
+    # Пробуем Claude API
+    extracted = extract_with_claude(text, video['title'])
+
+    if extracted:
+        main_idea = extracted.get('main_idea', '_Не определена_')
+        schema = extracted.get('workflow', '_Не описана_')
+        tech_links = extracted.get('tech_links', [])
+        key_insights = extracted.get('key_insights', [])
+        tags = extracted.get('tags', [])
+        mode = 'Claude Haiku'
+    else:
+        # Fallback: regex
+        main_idea = _regex_main_idea(text)
+        schema = _regex_schema(text)
+        tech_links = _regex_tech_links(text)
+        key_insights = _regex_meat(text)
+        tags = _regex_tags(text)
+        mode = 'regex'
+
+    tech_links_str = '\n'.join(f'- {t}' for t in tech_links) if tech_links else '_Не найдены_'
+    insights_str = '\n'.join(f'- {i}' for i in key_insights) if key_insights else '_Нет данных_'
+    tags_str = ', '.join(tags)
 
     content = f"""---
 source: YouTube / {video['channel']}
@@ -196,6 +301,7 @@ date: {video['date']}
 original: {video['url']}
 category: GOLD
 tags: [{tags_str}]
+extracted_by: {mode}
 ---
 
 ## Главная мысль
@@ -208,13 +314,17 @@ tags: [{tags_str}]
 {tech_links_str}
 
 ## Мясо
-{meat}
+{insights_str}
 """
     (GOLD_DIR / f"{filename}.md").write_text(content, encoding='utf-8')
+    return mode
 
 
 def main():
-    print("🎬 YT Processor 2 запущен...")
+    if _claude:
+        print("🤖 YT Processor 2 запущен (режим: Claude Haiku)")
+    else:
+        print("🔧 YT Processor 2 запущен (режим: regex — установи ANTHROPIC_API_KEY для Claude)")
 
     if not REPORT_PATH.exists():
         print(f"Файл не найден: {REPORT_PATH}")
@@ -246,16 +356,14 @@ def main():
         text = fetch_transcript(vid)
 
         if not text or len(text) < 50:
-            # Если нет транскрипта — классифицируем по заголовку
             text = video['title']
 
         category = classify(text)
 
         if category == 'GOLD':
-            save_gold(vid, video, text)
+            mode = save_gold(vid, video, text)
             gold_count += 1
-            tags = ', '.join(extract_tags(text))
-            print(f"    ✅ GOLD | {tags}")
+            print(f"    ✅ GOLD [{mode}]")
         else:
             trash_count += 1
             print(f"    🗑️  TRASH")

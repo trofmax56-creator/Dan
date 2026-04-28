@@ -12,7 +12,8 @@ channels = [
     'edvardgrishin27', 'gora_academy', 'zuevichigor', 'FomoTeam0x',
     'maxryzhkov', 'romarayt', 'aikirichenko', 'rixaihub',
     'addmeto', 'ai_newz',
-    'neural_network_news', 'denis_ai', 'adept_ecommerce'
+    'neural_network_news', 'denis_ai', 'adept_ecommerce',
+    'alexyarygin'
 ]
 
 # Автоматическое определение папки скрипта

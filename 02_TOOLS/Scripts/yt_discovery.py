@@ -1,9 +1,12 @@
 import os
 import requests
-import json
+from pathlib import Path
 
-# Для работы требуется API_KEY от Google Cloud Console (YouTube Data API v3)
 API_KEY = os.environ.get("YOUTUBE_API_KEY", "YOUR_API_KEY")
+
+BASE_DIR = Path(__file__).parent.parent.parent
+RAW_YT_DIR = BASE_DIR / "00_RAW" / "YouTube"
+RAW_YT_DIR.mkdir(parents=True, exist_ok=True)
 
 QUERIES = [
     "автоматизация бизнеса n8n 2026",
@@ -11,21 +14,23 @@ QUERIES = [
     "настройка Claude API для amoCRM",
     "n8n workflow crm integration tutorial",
     "ИИ агенты для отдела продаж n8n",
-    "автоматизация 1С через n8n"
+    "автоматизация 1С через n8n",
+    "make.com automation crm 2026",
+    "ai agent workflow automation 2026",
 ]
 
-TECHNICAL_KEYWORDS = ["настройка", "схема", "tutorial", "кейс", "workflow", "инструкция", "код"]
 
 def search_youtube():
     if API_KEY == "YOUR_API_KEY":
-        print("Ошибка: Укажите YOUTUBE_API_KEY в переменных окружения.")
+        print("Ошибка: задайте YOUTUBE_API_KEY в переменных окружения.")
         return
 
-    discovered_videos = []
+    new_count = 0
+    skip_count = 0
     base_url = "https://www.googleapis.com/youtube/v3/search"
 
     for query in QUERIES:
-        print(f"Поиск YouTube: {query}")
+        print(f"Поиск: {query}")
         params = {
             "part": "snippet",
             "q": query,
@@ -33,39 +38,55 @@ def search_youtube():
             "maxResults": 10,
             "order": "date",
             "relevanceLanguage": "ru",
-            "key": API_KEY
+            "key": API_KEY,
         }
-        
+
         try:
-            res = requests.get(base_url, params=params)
+            res = requests.get(base_url, params=params, timeout=15)
             data = res.json()
-            
-            if "items" in data:
-                for item in data["items"]:
-                    title = item["snippet"]["title"]
-                    desc = item["snippet"]["description"]
-                    
-                    content_to_check = (title + " " + desc).lower()
-                    if any(word in content_to_check for word in TECHNICAL_KEYWORDS):
-                        discovered_videos.append({
-                            "title": title,
-                            "channel": item["snippet"]["channelTitle"],
-                            "channelId": item["snippet"]["channelId"],
-                            "link": f"https://youtube.com/watch?v={item['id']['videoId']}",
-                            "date": item["snippet"]["publishTime"][:10]
-                        })
+
+            if "error" in data:
+                print(f"  API ошибка: {data['error']['message']}")
+                continue
+
+            for item in data.get("items", []):
+                video_id = item["id"].get("videoId")
+                if not video_id:
+                    continue
+
+                filepath = RAW_YT_DIR / f"yt_{video_id}.md"
+                if filepath.exists():
+                    skip_count += 1
+                    continue
+
+                title = item["snippet"]["title"]
+                channel = item["snippet"]["channelTitle"]
+                pub_date = item["snippet"]["publishTime"][:10]
+                url = f"https://youtube.com/watch?v={video_id}"
+                description = item["snippet"].get("description", "").replace("\n", " ").strip()
+
+                content = f"""---
+video_id: {video_id}
+title: {title}
+channel: {channel}
+date: {pub_date}
+url: {url}
+status: raw
+---
+
+## Описание
+{description}
+"""
+                filepath.write_text(content, encoding="utf-8")
+                new_count += 1
+                print(f"  + {title[:70]}")
+
         except Exception as e:
-            print(f" Ошибка поиска '{query}': {e}")
+            print(f"  Ошибка '{query}': {e}")
 
-    output_path = 'yt_discovery_report.md'
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write("# 📽️ Результаты глубокой разведки YouTube\n\n")
-        f.write("| Канал | Видео | Дата | Ссылка |\n")
-        f.write("| :--- | :--- | :--- | :--- |\n")
-        for v in discovered_videos:
-            f.write(f"| {v['channel']} | {v['title']} | {v['date']} | [Смотреть]({v['link']}) |\n")
-            
-    print(f"Разведка YouTube завершена. Найдено видео: {len(discovered_videos)}")
+    print(f"\nГотово: новых={new_count} | пропущено (уже есть)={skip_count}")
+    print(f"Папка: {RAW_YT_DIR}")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     search_youtube()

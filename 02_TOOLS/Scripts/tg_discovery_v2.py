@@ -27,22 +27,23 @@ WHITELIST = [
     "midjourney", "stable diffusion", "генерация",
 ]
 
-# Ключевые запросы — язык практиков ИИ и n8n (ориентир: edvardgrishin27, maxryzhkov, rixaihub)
+# Короткие запросы — больше результатов от Telegram Search
 KEYWORDS = [
-    "n8n агент автоматизация",
-    "chatgpt промпт кейс",
-    "AI агент python workflow",
-    "нейросеть инструмент обзор",
-    "автоматизация n8n telegram бот",
-    "LLM агент своими руками",
-    "GPT API интеграция кейс",
-    "make.com n8n автоматизация",
-    "второй мозг obsidian notion",
-    "claude api практика",
-    "нейросети для работы инструменты",
-    "AI агент без кода",
-    "prompt engineering кейс",
-    "ии автоматизация рутины",
+    "n8n автоматизация",
+    "chatgpt кейс",
+    "AI агент",
+    "нейросеть бизнес",
+    "prompt engineering",
+    "llm агент",
+    "make.com автоматизация",
+    "claude api",
+    "второй мозг",
+    "нейросети инструменты",
+    "gpt автоматизация",
+    "telegram бот gpt",
+    "obsidian notion",
+    "ии рутина",
+    "автоматизация workflow",
 ]
 
 async def main():
@@ -61,7 +62,7 @@ async def main():
                     offset_rate=0,
                     offset_peer=InputPeerEmpty(),
                     offset_id=0,
-                    limit=30
+                    limit=100
                 ))
 
                 chats_by_id = {c.id: c for c in getattr(result, 'chats', [])}

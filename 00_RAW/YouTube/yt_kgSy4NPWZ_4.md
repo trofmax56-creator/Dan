@@ -4,11 +4,8 @@ title: AI агенты в 2026: всё что работает прямо сей
 channel: Олег Стефанов
 date: 2026-03-02
 url: https://youtube.com/watch?v=kgSy4NPWZ_4
-status: gold
+status: raw
 ---
 
 ## Описание
 Регистрируйтесь по моей ссылке в облаке immers.cloud и получите +20% к пополнению счета: ...
-
-## Транскрипт
-

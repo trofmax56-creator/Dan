@@ -4,11 +4,8 @@ title: Связь со мной - @rehyautomation До встречи! #ai #auto
 channel: REHY | AUTOMATION
 date: 2026-04-15
 url: https://youtube.com/watch?v=7kGF6Z7MxuU
-status: gold
+status: raw
 ---
 
 ## Описание
 Автоответы с n8n помогут обогнать клиентов в два мига! Связь со мной - тгк или лс. @rehyautomation До встречи!
-
-## Транскрипт
-

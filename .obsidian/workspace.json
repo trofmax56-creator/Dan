@@ -17,12 +17,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "02_TOOLS/Scripts/tg_discovered_sources.md",
+                    "file": "Dan_Manual.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "tg_discovered_sources"
+                  "title": "Dan_Manual"
                 }
               }
             ]
@@ -351,6 +351,7 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "02_TOOLS/Scripts/tg_discovered_sources.md",
     "processor.py",
     "parser_deep.py",
     "02_TOOLS/Scripts/tg_discovery_v2.py",
@@ -385,7 +386,6 @@
     "07_CONSTRUCTION/Complex_20m/02_AR_KR",
     "07_CONSTRUCTION/Complex_20m/01_ORG",
     "07_CONSTRUCTION/Complex_20m",
-    "11_CONTENT FACTORY/11_2_n8n_Content",
-    "11_CONTENT FACTORY/11_1_DRAFTS"
+    "11_CONTENT FACTORY/11_2_n8n_Content"
   ]
 }

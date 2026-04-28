@@ -4,8 +4,11 @@ title: The Perfect Workflow: SmartLead to Attio, Analyzing Positive Replies in M
 channel: Business Workflow
 date: 2026-04-14
 url: https://youtube.com/watch?v=u4jMbC_43fU
-status: raw
+status: gold
 ---
 
 ## Описание
 Smartlead to Attio Make.com automation tutorial. Smartlead CRM integration with Attio CRM. AI email reply analysis, sales ...
+
+## Транскрипт
+

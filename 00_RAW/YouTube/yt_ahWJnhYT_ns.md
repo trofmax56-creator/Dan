@@ -4,8 +4,11 @@ title: Mautic, SuiteCRM &amp; n8n: Syncronizing ⁄ Creating a Contact to the CR
 channel: Bastian Hammer
 date: 2026-03-23
 url: https://youtube.com/watch?v=ahWJnhYT_ns
-status: raw
+status: gold
 ---
 
 ## Описание
 Mautic & SuiteCRM Integration – Built for Growing Companies https://bastianhammer.de/en/mautic-suitecrm-integration/ Bring ...
+
+## Транскрипт
+

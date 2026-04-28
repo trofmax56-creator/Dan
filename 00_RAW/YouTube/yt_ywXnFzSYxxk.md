@@ -4,8 +4,11 @@ title: SmartLead to Attio, Analyzing Positive Replies in Make.com #automation #c
 channel: Business Workflow
 date: 2026-04-15
 url: https://youtube.com/watch?v=ywXnFzSYxxk
-status: raw
+status: gold
 ---
 
 ## Описание
 Smartlead to Attio Make.com automation tutorial. Smartlead CRM integration with Attio CRM. AI email reply analysis, sales ...
+
+## Транскрипт
+

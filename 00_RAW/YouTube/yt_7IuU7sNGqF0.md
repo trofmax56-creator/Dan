@@ -4,8 +4,11 @@ title: n8n + Zoho CRM Integration (Step-by-Step) | Automate Leads &amp; Workflow
 channel: BrightN8 | Ai Automation
 date: 2026-03-19
 url: https://youtube.com/watch?v=7IuU7sNGqF0
-status: raw
+status: gold
 ---
 
 ## Описание
 Want to automate your Zoho CRM without coding? In this video, I'll show you how to connect n8n with Zoho CRM using API and ...
+
+## Транскрипт
+

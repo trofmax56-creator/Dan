@@ -77,17 +77,16 @@ async def main():
                         
                         if any(bad in title or bad in text for bad in BLACKLIST):
                             continue
-                            
-                        if any(good in title or good in text for good in WHITELIST):
-                            views = getattr(msg, 'views', 0) or 0
-                            if views > 20:
-                                if username not in discovered_channels:
-                                    discovered_channels[username] = {
-                                        'title': chat.title,
-                                        'text': (msg.message or '')[:250].replace('\n', ' '),
-                                        'date': msg.date.strftime("%Y-%m-%d"),
-                                        'views': views
-                                    }
+
+                        views = getattr(msg, 'views', 0) or 0
+                        if views > 20:
+                            if username not in discovered_channels:
+                                discovered_channels[username] = {
+                                    'title': chat.title,
+                                    'text': (msg.message or '')[:250].replace('\n', ' '),
+                                    'date': msg.date.strftime("%Y-%m-%d"),
+                                    'views': views
+                                }
             except Exception as e:
                 print(f"Ошибка поиска '{query}': {e}")
 

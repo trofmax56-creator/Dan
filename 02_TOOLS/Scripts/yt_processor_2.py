@@ -140,12 +140,15 @@ def parse_raw_dir() -> list[dict]:
         video_id = fm.get("video_id", "")
         if not video_id:
             continue
+        desc_match = re.search(r"## Описание\n(.+?)(?:\n##|$)", content, re.DOTALL)
+        description = desc_match.group(1).strip() if desc_match else ""
         videos.append({
             "video_id": video_id,
             "title": fm.get("title", ""),
             "channel": fm.get("channel", ""),
             "date": fm.get("date", ""),
             "url": fm.get("url", ""),
+            "description": description,
             "filepath": filepath,
             "content": content,
         })
@@ -169,12 +172,17 @@ def update_processed_log(new_ids: list):
 
 # --- Транскрипт ---
 
+_yt_blocked = False  # показываем предупреждение только один раз
+
 def fetch_transcript(video_id: str) -> str:
+    global _yt_blocked
     try:
         transcript = _yt_api.fetch(video_id, languages=["ru", "en"])
         return " ".join(entry.text for entry in transcript)
     except RequestBlocked:
-        print("  ⚠️  YouTube блокирует запросы с этого IP. Запусти скрипт локально.")
+        if not _yt_blocked:
+            print("  ⚠️  YouTube блокирует транскрипты — классификация по заголовку и описанию.")
+            _yt_blocked = True
         return ""
     except (NoTranscriptFound, TranscriptsDisabled):
         return ""
@@ -409,7 +417,7 @@ def main():
 
         transcript = fetch_transcript(vid)
         time.sleep(3)
-        full_text = " ".join(filter(None, [video["title"], transcript])) or video["title"]
+        full_text = " ".join(filter(None, [video["title"], video["description"], transcript])) or video["title"]
 
         category = classify(full_text)
 

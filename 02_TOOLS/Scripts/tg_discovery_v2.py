@@ -11,15 +11,24 @@ API_HASH = 'bb31ab995b5956294a2e80f619a0a3de'
 SESSION_NAME = os.path.join(os.path.dirname(os.path.abspath(__file__)), '../../dan_session')
 
 # Черный список (Стоп-слова для мусора)
-BLACKLIST = ["крипта", "сигналы", "трейдинг", "ставки", "сигнал", "p2p", "арбитраж", "заработок", "выплаты", "инвест", "казино"]
+BLACKLIST = ["крипта", "сигналы", "трейдинг", "ставки", "сигнал", "p2p", "арбитраж", "заработок", "выплаты", "казино", "инвестиции крипта", "сигналы трейдинг"]
 # Белый список (Маркеры инженеров)
-WHITELIST = ["интегратор", "автоматизация", "кейс", "n8n", "bitrix24", "битрикс", "amocrm", "api", "внедрение", "разработка", "схема", "workflow"]
+WHITELIST = [
+    "интегратор", "автоматизация", "кейс", "n8n", "bitrix24", "битрикс", "amocrm", "api",
+    "внедрение", "разработка", "схема", "workflow", "промпт", "нейросеть", "gpt", "claude",
+    "chatgpt", "make.com", "zapier", "инструмент", "практика", "бот", "агент", "llm",
+    "obsidian", "notion", "контент", "маркетинг",
+]
 
-# НОВЫЕ ХУКИ (из анализа топовых каналов Максима)
+# Хуки на языке практиков (как пишут целевые каналы)
 KEYWORDS = [
-    "n8n workflow crm", "интеграция ии в crm", "схема n8n amocrm", "bitrix24 rest api кейс",
-    "LLM RAG crm", "AI Agent автоматизация", "no-code интеграция crm", "второй мозг obsidian ии",
-    "автоматизация продаж агенты", "разработка ИИ сотрудников", "n8n 1С интеграция"
+    "n8n автоматизация telegram", "make.com сценарий crm",
+    "chatgpt бизнес кейс", "claude api автоматизация",
+    "нейросеть контент маркетинг", "GPT бот telegram",
+    "автоматизация бизнес процессов ии", "ии сотрудник кейс",
+    "промпт инжиниринг практика", "нейросети для бизнеса",
+    "amocrm автоматизация ии", "bitrix24 автоматизация n8n",
+    "второй мозг notion obsidian", "AI инструменты обзор",
 ]
 
 async def main():
@@ -57,7 +66,7 @@ async def main():
                             
                         if any(good in title or good in text for good in WHITELIST):
                             views = getattr(msg, 'views', 0) or 0
-                            if views > 50:
+                            if views > 20:
                                 if username not in discovered_channels:
                                     discovered_channels[username] = {
                                         'title': chat.title,

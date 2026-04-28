@@ -1,9 +1,6 @@
-import os
-import json
-import asyncio
 import re
 from pathlib import Path
-import anthropic
+from datetime import date
 
 # Пути
 BASE_DIR = Path(__file__).parent
@@ -13,144 +10,205 @@ PROCESSED_LOG = BASE_DIR / '01_INBOX' / 'processed_log.md'
 
 GOLD_DIR.mkdir(parents=True, exist_ok=True)
 
-# Claude клиент
-client = anthropic.Anthropic(api_key=os.environ.get('ANTHROPIC_API_KEY'))
+# GOLD — практический AI/автоматизация контент
+GOLD_KEYWORDS = [
+    'n8n', 'make.com', 'zapier', 'workflow', 'автоматизация', 'автоматизировать',
+    'claude', 'chatgpt', 'gpt-', 'openai', 'anthropic', 'gemini', 'llm', 'llama',
+    'агент', 'agent', 'prompt', 'промпт', 'api', 'интеграция', 'интегратор',
+    'bitrix', 'amocrm', 'retailcrm', '1с', 'crm',
+    'кейс', 'схема', 'гайд', 'инструкция', 'пошагово', 'туториал',
+    'python', 'langchain', 'rag', 'vector', 'embeddings',
+    'claude code', 'obsidian', 'notion', 'второй мозг',
+    'нейросет', 'нейронн', 'модель', 'релиз',
+]
 
-SYSTEM_PROMPT = """Ты — старший контент-менеджер AI/автоматизация проекта Brief AI Agent.
+# TRASH — мусор, не берём
+TRASH_KEYWORDS = [
+    'крипт', 'биткоин', 'токен', 'nft', 'майнинг', 'трейдинг',
+    'заработок', 'заработай', 'пассивный доход', 'доход от',
+    'похудей', 'похудение', 'диет', 'астролог', 'гадани',
+    'ретрит', 'медитаци', 'эзотерик', 'нейрографик',
+    'подработка', 'казино', 'ставки', 'форекс',
+    'скидка', 'акция', 'промокод', 'реклама',
+]
 
-Твоя задача — анализировать Telegram-посты и выносить вердикт GOLD или TRASH.
-
-GOLD — если пост содержит РЕАЛЬНУЮ ПРАКТИКУ:
-- AI+CRM связки, n8n/Make схемы с конкретными шагами
-- Кейсы внедрения с результатами (%, рубли, часы)
-- Новые AI-модели (Claude, GPT, Gemini) с техническими данными
-- Гайды по автоматизации, workflow-схемы
-- Claude Code, n8n, Make.com — практические примеры
-- Prompt engineering с реальными примерами промптов
-
-TRASH — если пост содержит:
-- Новости без практики («вышла модель X» без деталей)
-- Мотивацию, лайфстайл, личные истории без техники
-- Рекламу курсов без конкретного контента
-- Общие рассуждения об ИИ без инструкций
-- Крипта, заработок, инвестиции
-
-Отвечай СТРОГО в JSON без markdown-блоков:
-{
-  "category": "GOLD" или "TRASH",
-  "main_idea": "Главная мысль в 1-2 предложениях (только для GOLD, иначе null)",
-  "schema": "Схема/workflow если есть — опиши шаги или инструменты (только для GOLD, иначе null)",
-  "tech_links": ["Tool1 → Tool2", "Claude API → n8n → Telegram"] (только для GOLD, иначе []),
-  "meat": "Ключевые практические инсайты — конкретные факты, цифры, шаги (только для GOLD, иначе null)",
-  "tags": ["n8n", "Claude", "автоматизация"] (3-5 тегов, только для GOLD, иначе [])
-}"""
+# Инструменты для поиска технических связок
+TOOLS = [
+    'n8n', 'make.com', 'zapier', 'telegram', 'whatsapp', 'notion', 'obsidian',
+    'claude', 'chatgpt', 'gpt', 'gemini', 'openai', 'anthropic',
+    'bitrix24', 'amocrm', 'retailcrm', '1с', 'python', 'langchain',
+    'api', 'webhook', 'http', 'rest', 'graphql',
+    'google sheets', 'airtable', 'postgresql', 'mysql', 'redis',
+    'docker', 'vps', 'server', 'github',
+]
 
 
 def load_processed_files():
-    """Читает processed_log.md и возвращает set уже обработанных файлов."""
-    processed = set()
     if not PROCESSED_LOG.exists():
-        return processed
+        return set()
     content = PROCESSED_LOG.read_text(encoding='utf-8')
-    # Ищем имена файлов в формате channelname_id
-    matches = re.findall(r'\b([a-zA-Z0-9_]+_\d+)\b', content)
-    processed.update(matches)
-    return processed
+    return set(re.findall(r'\b([a-zA-Z0-9_]+_\d+)\b', content))
 
 
 def update_processed_log(new_files: list):
-    """Добавляет новые файлы в processed_log.md."""
-    from datetime import date
     today = date.today().strftime('%Y-%m-%d')
-
     entry = f"\n### Telegram ({len(new_files)} файлов) — {today}\n"
     entry += ', '.join(new_files) + '\n'
-
     with open(PROCESSED_LOG, 'a', encoding='utf-8') as f:
         f.write(entry)
 
 
-def classify_post(text: str, source_info: str) -> dict:
-    """Вызывает Claude API для классификации поста."""
-    response = client.messages.create(
-        model='claude-haiku-4-5-20251001',
-        max_tokens=1024,
-        system=SYSTEM_PROMPT,
-        messages=[
-            {
-                'role': 'user',
-                'content': f"Источник: {source_info}\n\nТекст поста:\n{text[:3000]}"
-            }
-        ]
-    )
-    raw = response.content[0].text.strip()
-    # Убираем markdown-блоки если модель всё же добавила
-    raw = re.sub(r'^```(?:json)?\s*', '', raw)
-    raw = re.sub(r'\s*```$', '', raw)
-    return json.loads(raw)
-
-
-def save_gold(filename: str, result: dict, source_info: str, original_link: str, date_str: str):
-    """Сохраняет GOLD пост в 01_INBOX/Gold/."""
-    channel = filename.rsplit('_', 1)[0]
-    tags = ', '.join(result.get('tags', []))
-    tech_links = '\n'.join(f'- {t}' for t in result.get('tech_links', []))
-
-    content = f"""---
-source: @{channel}
-date: {date_str}
-original: {original_link}
-category: GOLD
-tags: [{tags}]
----
-
-## Главная мысль
-{result.get('main_idea', '')}
-
-## Схема / Workflow
-{result.get('schema') or '_Не описана_'}
-
-## Технические связки
-{tech_links or '_Не указаны_'}
-
-## Мясо
-{result.get('meat', '')}
-"""
-    out_path = GOLD_DIR / f"{filename}.md"
-    out_path.write_text(content, encoding='utf-8')
-
-
 def parse_raw_file(filepath: Path):
-    """Читает .md файл из 00_RAW и извлекает метаданные."""
     content = filepath.read_text(encoding='utf-8')
     date_match = re.search(r'date:\s*(.+)', content)
     link_match = re.search(r'link:\s*(.+)', content)
-    # Текст поста — всё после второго ---
     parts = content.split('---')
     text = parts[-1].strip() if len(parts) >= 3 else content
-
-    date_str = date_match.group(1).strip() if date_match else ''
+    date_str = date_match.group(1).strip()[:10] if date_match else ''
     link = link_match.group(1).strip() if link_match else ''
     return text, date_str, link
 
 
+def classify(text: str) -> str:
+    text_lower = text.lower()
+    trash_score = sum(1 for kw in TRASH_KEYWORDS if kw in text_lower)
+    gold_score = sum(1 for kw in GOLD_KEYWORDS if kw in text_lower)
+
+    if trash_score >= 2:
+        return 'TRASH'
+    if gold_score >= 2:
+        return 'GOLD'
+    if gold_score == 1 and trash_score == 0:
+        return 'GOLD'
+    return 'TRASH'
+
+
+def extract_main_idea(text: str) -> str:
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+    sentences = [s.strip() for s in sentences if len(s.strip()) > 30]
+    return sentences[0] if sentences else text[:200]
+
+
+def extract_schema(text: str) -> str:
+    lines = text.split('\n')
+    schema_lines = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        # Строки со стрелками, шагами, нумерацией
+        if any(marker in line for marker in ['→', '->', '➡', '⟶', '▶']):
+            schema_lines.append(line)
+        elif re.match(r'^\d+[\.\)]\s', line):
+            schema_lines.append(line)
+        elif any(w in line.lower() for w in ['шаг', 'сначала', 'затем', 'потом', 'далее', 'после этого']):
+            schema_lines.append(line)
+    return '\n'.join(schema_lines[:8]) if schema_lines else '_Не описана_'
+
+
+def extract_tech_links(text: str) -> list:
+    text_lower = text.lower()
+    found_tools = [t for t in TOOLS if t in text_lower]
+    if len(found_tools) < 2:
+        return found_tools
+
+    links = []
+    # Ищем пары инструментов в одном предложении
+    sentences = re.split(r'[.!?\n]', text_lower)
+    for sentence in sentences:
+        tools_in_sentence = [t for t in found_tools if t in sentence]
+        if len(tools_in_sentence) >= 2:
+            link = ' → '.join(tools_in_sentence[:3])
+            if link not in links:
+                links.append(link)
+    return links[:5] if links else [t for t in found_tools[:4]]
+
+
+def extract_meat(text: str) -> str:
+    lines = text.split('\n')
+    meat_lines = []
+    for line in lines:
+        line = line.strip()
+        if len(line) < 20:
+            continue
+        # Строки с числами, процентами, конкретными данными
+        has_numbers = bool(re.search(r'\d+[%\+\-×xX]|\d{4,}|\d+\s*(руб|тыс|млн|мин|час|сек)', line))
+        has_tech = any(kw in line.lower() for kw in GOLD_KEYWORDS)
+        if has_numbers or has_tech:
+            meat_lines.append(f"- {line}")
+    if not meat_lines:
+        # Если ничего не нашли — берём первые содержательные строки
+        for line in lines:
+            line = line.strip()
+            if len(line) > 40:
+                meat_lines.append(f"- {line}")
+            if len(meat_lines) >= 4:
+                break
+    return '\n'.join(meat_lines[:6])
+
+
+def extract_tags(text: str) -> list:
+    text_lower = text.lower()
+    tag_map = {
+        'n8n': 'n8n', 'make.com': 'make.com', 'zapier': 'zapier',
+        'claude': 'Claude', 'chatgpt': 'ChatGPT', 'gemini': 'Gemini',
+        'langchain': 'LangChain', 'rag': 'RAG', 'агент': 'AI-агент',
+        'автоматизаци': 'автоматизация', 'bitrix': 'Bitrix24',
+        'amocrm': 'amoCRM', 'python': 'Python', 'api': 'API',
+        'промпт': 'промпт', 'workflow': 'workflow',
+    }
+    return [v for k, v in tag_map.items() if k in text_lower][:5]
+
+
+def save_gold(filename: str, text: str, date_str: str, link: str, channel: str):
+    main_idea = extract_main_idea(text)
+    schema = extract_schema(text)
+    tech_links = extract_tech_links(text)
+    meat = extract_meat(text)
+    tags = extract_tags(text)
+
+    tech_links_str = '\n'.join(f'- {t}' for t in tech_links) or '_Не найдены_'
+    tags_str = ', '.join(tags)
+
+    content = f"""---
+source: @{channel}
+date: {date_str}
+original: {link}
+category: GOLD
+tags: [{tags_str}]
+---
+
+## Главная мысль
+{main_idea}
+
+## Схема / Workflow
+{schema}
+
+## Технические связки
+{tech_links_str}
+
+## Мясо
+{meat}
+"""
+    (GOLD_DIR / f"{filename}.md").write_text(content, encoding='utf-8')
+
+
 def main():
-    print("🤖 Processor запущен...")
+    print("🤖 Processor (keyword mode) запущен...")
 
     processed = load_processed_files()
     raw_files = sorted(RAW_DIR.glob('*.md'))
     new_files = [f for f in raw_files if f.stem not in processed]
 
-    print(f"📂 Всего файлов: {len(raw_files)} | Новых для обработки: {len(new_files)}\n")
+    print(f"📂 Всего: {len(raw_files)} | Новых: {len(new_files)}\n")
 
     if not new_files:
-        print("✅ Нет новых файлов для обработки.")
+        print("✅ Нет новых файлов.")
         return
 
     gold_count = 0
     trash_count = 0
     processed_names = []
-    errors = []
 
     for i, filepath in enumerate(new_files, 1):
         filename = filepath.stem
@@ -163,12 +221,12 @@ def main():
                 processed_names.append(filename)
                 continue
 
-            result = classify_post(text, f"@{channel} | {link}")
+            category = classify(text)
 
-            if result['category'] == 'GOLD':
-                save_gold(filename, result, f"@{channel}", link, date_str)
+            if category == 'GOLD':
+                save_gold(filename, text, date_str, link, channel)
                 gold_count += 1
-                tags = ', '.join(result.get('tags', []))
+                tags = ', '.join(extract_tags(text))
                 print(f"  ✅ GOLD [{i}/{len(new_files)}] {filename} | {tags}")
             else:
                 trash_count += 1
@@ -176,25 +234,14 @@ def main():
 
             processed_names.append(filename)
 
-        except json.JSONDecodeError as e:
-            errors.append(filename)
-            print(f"  ⚠️  JSON error [{filename}]: {e}")
         except Exception as e:
-            errors.append(filename)
-            print(f"  ❌ Error [{filename}]: {e}")
-
-        # Пауза чтобы не упереться в rate limit
-        if i % 10 == 0:
-            import time
-            time.sleep(1)
+            print(f"  ❌ [{filename}]: {e}")
 
     if processed_names:
         update_processed_log(processed_names)
 
-    print(f"\n✅ Готово: GOLD={gold_count} | TRASH={trash_count} | Ошибок={len(errors)}")
-    print(f"📁 Gold файлы: {GOLD_DIR}")
-    if errors:
-        print(f"⚠️  Ошибки: {', '.join(errors)}")
+    print(f"\n✅ Готово: GOLD={gold_count} | TRASH={trash_count}")
+    print(f"📁 Результат: {GOLD_DIR}")
 
 
 if __name__ == '__main__':

@@ -4,8 +4,11 @@ title: Подключи ИИ к Телеграм боту за 7 минут че
 channel: Игорь Зуевич
 date: 2026-01-20
 url: https://youtube.com/watch?v=VQEpvwHFhzI
-status: raw
+status: gold
 ---
 
 ## Описание
 База: Шаблоны, промпты, образы и инструкции для ИИ в удобном Telegram: ...
+
+## Транскрипт
+

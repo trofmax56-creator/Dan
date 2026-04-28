@@ -1,5 +1,4 @@
 ---
-status: TRASH
 date: 2026-03-16 18:05:39+00:00
 link: https://t.me/addmeto/6201
 ---

@@ -1,5 +1,4 @@
 ---
-status: TRASH
 date: 2026-04-17 16:15:13+00:00
 link: https://t.me/ris_ai/598
 ---

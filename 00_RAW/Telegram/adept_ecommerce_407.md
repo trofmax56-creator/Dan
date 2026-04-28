@@ -1,5 +1,4 @@
 ---
-status: TRASH
 date: 2026-04-16 14:16:08+00:00
 link: https://t.me/adept_ecommerce/407
 ---

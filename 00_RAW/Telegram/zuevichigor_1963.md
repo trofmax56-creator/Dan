@@ -1,5 +1,4 @@
 ---
-status: TRASH
 date: 2026-04-24 13:54:16+00:00
 link: https://t.me/zuevichigor/1963
 ---

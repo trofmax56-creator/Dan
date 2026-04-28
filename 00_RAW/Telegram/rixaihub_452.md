@@ -1,5 +1,4 @@
 ---
-status: TRASH
 date: 2026-04-23 15:51:04+00:00
 link: https://t.me/rixaihub/452
 ---

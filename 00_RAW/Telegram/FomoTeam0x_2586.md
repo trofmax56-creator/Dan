@@ -1,5 +1,4 @@
 ---
-status: TRASH
 date: 2026-04-22 18:53:21+00:00
 link: https://t.me/FomoTeam0x/2586
 ---

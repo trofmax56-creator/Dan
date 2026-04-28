@@ -1,5 +1,4 @@
 ---
-status: TRASH
 date: 2026-04-24 17:30:36+00:00
 link: https://t.me/romarayt/3280
 ---

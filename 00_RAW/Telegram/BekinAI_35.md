@@ -1,5 +1,4 @@
 ---
-status: TRASH
 date: 2026-04-04 09:37:25+00:00
 link: https://t.me/BekinAI/35
 ---

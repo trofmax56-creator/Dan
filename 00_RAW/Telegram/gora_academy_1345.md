@@ -1,5 +1,4 @@
 ---
-status: TRASH
 date: 2026-04-18 11:03:27+00:00
 link: https://t.me/gora_academy/1345
 ---

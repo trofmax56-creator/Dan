@@ -1,5 +1,4 @@
 ---
-status: TRASH
 date: 2026-03-18 08:50:48+00:00
 link: https://t.me/aikirichenko/137
 ---

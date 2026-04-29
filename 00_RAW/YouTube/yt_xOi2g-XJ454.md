@@ -4,8 +4,11 @@ title: Хватит ОБЪЯСНЯТЬ Claude по 10 раз. Этот файл 
 channel: _неизвестно_
 date: _неизвестно_
 url: https://youtube.com/watch?v=xOi2g-XJ454
-status: raw
+status: gold
 ---
 
 ## Описание
 Хватит ОБЪЯСНЯТЬ Claude по 10 раз. Этот файл решает ВСЁ
+
+## Транскрипт
+

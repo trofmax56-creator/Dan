@@ -4,8 +4,11 @@ title: Кто-то собрал библиотеку бесплатных Skills
 channel: _неизвестно_
 date: _неизвестно_
 url: https://youtube.com/watch?v=2SLsKZDGpi8
-status: raw
+status: trash
 ---
 
 ## Описание
 Кто-то собрал библиотеку бесплатных Skills
+
+## Транскрипт
+

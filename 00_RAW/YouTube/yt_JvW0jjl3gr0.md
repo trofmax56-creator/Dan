@@ -4,8 +4,11 @@ title: Claude Code новый навык Dream 99% людей не знают о
 channel: _неизвестно_
 date: _неизвестно_
 url: https://youtube.com/watch?v=JvW0jjl3gr0
-status: raw
+status: gold
 ---
 
 ## Описание
 Claude Code новый навык Dream 99% людей не знают о нем
+
+## Транскрипт
+

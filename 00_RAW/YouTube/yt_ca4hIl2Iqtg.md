@@ -4,8 +4,11 @@ title: GPT-5.5 в Codex: 5 тестов в день релиза — что ум
 channel: _неизвестно_
 date: _неизвестно_
 url: https://youtube.com/watch?v=ca4hIl2Iqtg
-status: raw
+status: gold
 ---
 
 ## Описание
 GPT-5.5 в Codex: 5 тестов в день релиза — что умеет и где ломается
+
+## Транскрипт
+

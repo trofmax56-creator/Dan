@@ -4,8 +4,11 @@ title: Claude Code + NoteBookLM = Делает невероятные Skills
 channel: _неизвестно_
 date: _неизвестно_
 url: https://youtube.com/watch?v=DK16tR1bNjg
-status: raw
+status: gold
 ---
 
 ## Описание
 Claude Code + NoteBookLM = Делает невероятные Skills
+
+## Транскрипт
+

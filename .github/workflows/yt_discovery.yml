@@ -20,11 +20,12 @@ jobs:
           python-version: "3.11"
 
       - name: Install dependencies
-        run: pip install requests
+        run: pip install requests anthropic youtube-transcript-api
 
-      - name: Check API key
+      - name: Check API keys
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           if [ -z "$YOUTUBE_API_KEY" ]; then
             echo "ERROR: YOUTUBE_API_KEY is empty or not set"
@@ -32,16 +33,26 @@ jobs:
           else
             echo "YOUTUBE_API_KEY is set, length=${#YOUTUBE_API_KEY}"
           fi
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "WARNING: ANTHROPIC_API_KEY not set — processor will use regex fallback"
+          else
+            echo "ANTHROPIC_API_KEY is set, length=${#ANTHROPIC_API_KEY}"
+          fi
 
       - name: Run yt_discovery.py
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: python 02_TOOLS/Scripts/yt_discovery.py
 
-      - name: Commit new raw files
+      - name: Run yt_processor_2.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python 02_TOOLS/Scripts/yt_processor_2.py
+
+      - name: Commit processed files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add 00_RAW/YouTube/
-          git diff --cached --quiet || git commit -m "chore: yt_discovery — new raw files $(date +%Y-%m-%d)"
+          git add 00_RAW/YouTube/ 01_INBOX/Gold/ 01_INBOX/processed_log.md
+          git diff --cached --quiet || git commit -m "process: yt_discovery + yt_processor — $(date +%Y-%m-%d)"
           git push

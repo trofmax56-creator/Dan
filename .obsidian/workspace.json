@@ -10,6 +10,7 @@
           {
             "id": "cb4ce8a8d96bc1ac",
             "type": "tabs",
+            "dimension": 75.49019607843137,
             "children": [
               {
                 "id": "1c76f09f1c534af1",
@@ -17,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "04_PROJECTS/AI_Factory_Master_Strategy.md",
+                    "file": "07_CONSTRUCTION/Project_Complex_V1.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "AI_Factory_Master_Strategy"
+                  "title": "Project_Complex_V1"
                 }
               }
             ]
@@ -30,6 +31,7 @@
           {
             "id": "15f4831ae2e08bd2",
             "type": "tabs",
+            "dimension": 24.509803921568626,
             "children": [
               {
                 "id": "cc4c47e84ed7d9a5",
@@ -351,32 +353,32 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "08_IDEAS_LAB/Demand_Matrix.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/YT_Ideas_Sprint2_2026_04_29.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/infra_автоматизация_закупок_в_bitrix24_2026-04-30.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/Bitrix24_Biweekly_Pulse.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Sales_Director.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Partner_Agents_Architecture.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Estimator.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Content_Manager.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/01_Smart_Qualifier.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ/07_AI_PR_Manager.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ/05_Supply_Assistant.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ/03_RAG_Base.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ/01_Smart_Qualifier.md",
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ/02_AI_Call_QC.md",
+    "08_IDEAS_LAB/08.2_SELECTED/AI_Sales_Booster_Plan.md",
+    "08_IDEAS_LAB/08.2_SELECTED/infra_12_n8nавтоматизаций_для_бизнеса_2026-04-30.md",
+    "04_PROJECTS/AI_Factory_Master_Strategy.md",
     "07_CONSTRUCTION/Complex_20m/01_ORG/PZU_Site_Layout.md",
     "03_GUIDES/System_Architecture.md",
     "02_TOOLS/Market_Intelligence_Protocol.md",
     "Dan_Manual.md",
     "README.md",
     "02_TOOLS/Scripts/README_DISCOVERY.md",
-    "04_PROJECTS/AI_Factory_Master_Strategy.md",
     "01_INBOX/Gold/yt_xU7Llr8DUUk.md",
     "01_INBOX/Gold/yt_xOi2g-XJ454.md",
     "01_INBOX/Gold/yt_uTX807i8wvA.md",
-    "01_INBOX/Gold/yt_rcDsMsU_W9Q.md",
-    "01_INBOX/Gold/yt_mKtP3abyi0k.md",
-    "01_INBOX/Gold/yt_laxRbudJRIg.md",
-    "01_INBOX/Gold/yt_iDwseBpfi5A.md",
-    "01_INBOX/Gold/yt_hQOPJotPig4.md",
-    "01_INBOX/Gold/yt_foUsxuMa-lk.md",
-    "01_INBOX/Gold/yt_eAek19gPfTI.md",
-    "01_INBOX/Gold/yt_deRdOc0eysE.md",
-    "01_INBOX/Gold/yt_cpjTnB_43SI.md",
-    "01_INBOX/Gold/yt_ca4hIl2Iqtg.md",
-    "01_INBOX/Gold/yt_bgzOjVtKskI.md",
-    "01_INBOX/Gold/yt_YFMlpABJsB0.md",
-    "01_INBOX/Gold/yt_Sf1UYFe8INs.md",
-    "01_INBOX/Gold/yt_PQWpSrj6Mas.md",
-    "01_INBOX/Gold/yt_OXlnRKsVZ58.md",
-    "01_INBOX/Gold/yt_N4m-H7timeg.md",
     "__pycache__/processor.cpython-312.pyc",
     "__pycache__/parser_deep.cpython-312.pyc",
     "__pycache__",

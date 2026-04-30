@@ -1,4 +1,6 @@
 ---
+status: archive
+score: Pain=4 Dev=4 Profit=3 ИТОГ=11
 date: 2026-04-22 08:33:15+00:00
 link: https://t.me/ai_newz/4543
 ---

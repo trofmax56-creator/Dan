@@ -3,6 +3,8 @@ source: @zuevichigor
 date: 2026-04-01
 original: https://t.me/zuevichigor/1943
 category: GOLD
+status: ideas_lab
+score: Pain=7 Dev=8 Profit=6 ИТОГ=21
 tags: [n8n, AI-агент, автоматизация]
 ---
 

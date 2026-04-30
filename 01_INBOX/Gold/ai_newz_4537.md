@@ -3,6 +3,8 @@ source: @ai_newz
 date: 2026-04-19
 original: https://t.me/ai_newz/4537
 category: GOLD
+status: archive
+score: Pain=4 Dev=4 Profit=3 ИТОГ=11
 tags: [Claude, ChatGPT, Gemini, API]
 ---
 

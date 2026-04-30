@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=7kGF6Z7MxuU
 category: GOLD
 tags: [n8n, автоматизация, автоответы, мессенджер, вебхук, AI, business, Telegram, workflow, API, реал-тайм]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=6 Dev=8 Profit=5 ИТОГ=19
 ---
 
 ## Суть

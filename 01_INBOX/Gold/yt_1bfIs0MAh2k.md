@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=1bfIs0MAh2k
 category: GOLD
 tags: [Claude API, Code Routines, Таймеры, Автоматизация, Scheduling, Cron, Python, Node.js, API, Workflow, Агенты AI]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=6 Profit=4 ИТОГ=15
 ---
 
 ## Суть

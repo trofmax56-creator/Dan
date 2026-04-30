@@ -1,4 +1,6 @@
 ---
+status: archive
+score: Pain=4 Dev=4 Profit=3 ИТОГ=11
 date: 2026-03-03 20:54:14+00:00
 link: https://t.me/addmeto/6195
 ---

@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=JZLkre7zWK0
 category: GOLD
 tags: [n8n, OpenAI, Claude, Odoo, CRM, автоматизация, классификация лидов, API, webhook, RPA, бизнес-процессы, JSON парсинг, REST API]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=6 Dev=7 Profit=6 ИТОГ=19
 ---
 
 ## Суть

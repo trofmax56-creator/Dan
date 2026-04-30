@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=UPooW4VoXo8
 category: GOLD
 tags: [OpenClawLab, No-code, AI-автоматизация, Workflow, Founders, Business automation, Low-code, AI models]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=6 Dev=8 Profit=6 ИТОГ=20
 ---
 
 ## Суть

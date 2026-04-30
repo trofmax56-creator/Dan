@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=_C5Pd2InGLU
 category: GOLD
 tags: [Substrate AI, AI-агент, автоматизация, workflow automation, API интеграция, LLM, Claude, GPT, webhook, REST API, CRM интеграция, no-code, multi-step workflow, асинхронная обработка]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=6 Dev=5 Profit=6 ИТОГ=17
 ---
 
 ## Суть

@@ -3,6 +3,8 @@ source: @kyloai
 date: 2026-04-26
 original: https://t.me/kyloai/1339
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Claude, workflow]
 ---
 

@@ -3,6 +3,8 @@ source: @addmeto
 date: 2025-09-19
 original: https://t.me/addmeto/6166
 category: GOLD
+status: archive
+score: Pain=4 Dev=4 Profit=3 ИТОГ=11
 tags: []
 ---
 

@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=laxRbudJRIg
 category: GOLD
 tags: [AI-агент, open-source LLM, Ollama, LangChain, CrewAI, n8n, автоматизация, SaaS замена, Docker, workflow automation, Python, API интеграция, cost reduction, 2026]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=7 Dev=6 Profit=7 ИТОГ=20
 ---
 
 ## Суть

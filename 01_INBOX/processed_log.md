@@ -1,5 +1,37 @@
 # Processed Log
 
+## 2026-04-29 — Полная обработка YouTube GOLD (скоринг + упаковка)
+
+**Операция:** Скоринг + создание карточек продуктов, BIZ_RECIPE, IDEAS_LAB, CONTENT
+
+| Этап | Результат |
+|---|---|
+| 9 PROJECT-карточек | `04_PROJECTS/AI_ROP_Sales_Monitor.md` и др. |
+| 17 BIZ_RECIPE (066–082) | `05_BIZ_RECIPES/` — каталог достиг 32 рецептов |
+| 21 IDEAS_LAB | `08_IDEAS_LAB/08.1_RAW_IDEAS/YT_Ideas_Sprint2_2026_04_29.md` |
+| 3 черновика постов | `11_CONTENT FACTORY/11_1_DRAFTS/` (post_004–006) |
+| 53 ARCHIVE | frontmatter помечены `status: archive` |
+
+---
+
+## 2026-04-29 — Скоринг YouTube GOLD
+
+**Операция:** Скоринг 100 YouTube GOLD-файлов по Demand Matrix (Pain + Dev + Profit)
+**Отчёт:** `08_IDEAS_LAB/YT_Scoring_Matrix_2026_04_29.md`
+
+| Категория | Файлов |
+|---|---|
+| 🔴 PROJECT (≥25) | 9 |
+| 🟠 BIZ_RECIPE (22–24) | 17 |
+| 🟡 IDEAS_LAB (18–21) | 21 |
+| 🔵 CONTENT (<18, обзоры) | ~6 |
+| ⚫ ARCHIVE (<18) | 53 |
+
+**Приоритет #1:** `wMzUVQT8VeE` — AI-РОП на n8n (ИТОГ=27, Pain=10, Profit=10)
+**Архив обновлён:** 53 файла получили `status: archive` в frontmatter.
+
+---
+
 ## 2026-04-25
 
 **Дайджест:** `Digest/Digest_2026_04_25.md`

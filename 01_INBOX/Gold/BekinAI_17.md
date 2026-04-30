@@ -3,6 +3,8 @@ source: @BekinAI
 date: 2026-03-10
 original: https://t.me/BekinAI/17
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [API]
 ---
 

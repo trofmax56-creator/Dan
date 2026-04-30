@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=OXlnRKsVZ58
 category: GOLD
 tags: [GPT 5.5, OpenAI, AI agents, агентный интеллект, LLM, кодинг, автоматизация, Transformer, API, Machine Learning, Artificial Intelligence]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=4 Dev=4 Profit=4 ИТОГ=12
 ---
 
 ## Суть

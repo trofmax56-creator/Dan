@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=B8LiPvPvXeM
 category: GOLD
 tags: [Codex, AI-агент, LLM, память агента, векторная база данных, скилы (skills), мультиагентный контроль, автоматизация, Python SDK, REST API, WebSocket, JSON Schema]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=6 Dev=5 Profit=6 ИТОГ=17
 ---
 
 ## Суть

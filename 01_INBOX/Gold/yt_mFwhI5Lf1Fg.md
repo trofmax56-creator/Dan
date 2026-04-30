@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=mFwhI5Lf1Fg
 category: GOLD
 tags: [Claude, Claude API, AI Development, LLM, Automation, n8n, Zapier, Make.com, Python, REST API, Workflow automation, AI-агент, RAG, LangChain, JSON, API integration]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 ---
 
 ## Суть

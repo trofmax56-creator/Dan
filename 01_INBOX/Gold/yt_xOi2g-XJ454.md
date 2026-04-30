@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=xOi2g-XJ454
 category: GOLD
 tags: [Claude, Claude API, Files API, System prompts, Context management, AI-агент, Автоматизация, Промпт-инженерия, n8n, Make.com, API, Масштабирование, Оптимизация токенов]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=8 Profit=4 ИТОГ=17
 ---
 
 ## Суть

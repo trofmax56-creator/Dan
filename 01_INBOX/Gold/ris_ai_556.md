@@ -3,6 +3,8 @@ source: @ris_ai
 date: 2026-01-09
 original: https://t.me/ris_ai/556
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Claude, Gemini, AI-агент, API]
 ---
 

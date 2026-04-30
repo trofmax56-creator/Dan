@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=mKtP3abyi0k
 category: GOLD
 tags: [Claude, AI-агенты, API, Prompting, LangChain, Python, automation, tool calling, streaming, batch processing]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 ---
 
 ## Суть

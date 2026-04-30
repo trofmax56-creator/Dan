@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=0gE9-8LG0dU
 category: GOLD
 tags: [make.com, smartlead, attio, CRM, automation, API, webhook, Claude, ChatGPT, AI, email-marketing, lead-scoring]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=7 Profit=5 ИТОГ=17
 ---
 
 ## Суть

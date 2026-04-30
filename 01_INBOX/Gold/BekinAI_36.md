@@ -3,6 +3,8 @@ source: @BekinAI
 date: 2026-04-08
 original: https://t.me/BekinAI/36
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Claude, ChatGPT]
 ---
 

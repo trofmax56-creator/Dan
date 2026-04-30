@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=oi7JtLjUapo
 category: GOLD
 tags: [n8n, workflow, automation, n8n-advanced, API-integration, business-automation, scaling, performance-optimization, error-handling, production-deployment]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=7 Dev=7 Profit=6 ИТОГ=20
 ---
 
 ## Суть

@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=JvW0jjl3gr0
 category: GOLD
 tags: [Claude, Claude Code, Code Interpreter, AI-агент, автоматизация, Python, JavaScript, API, n8n, make.com, zapier, RAG, LangChain, no-code, workflow, AI-assistance]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=6 Profit=5 ИТОГ=16
 ---
 
 ## Суть

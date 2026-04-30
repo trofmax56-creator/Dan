@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=foUsxuMa-lk
 category: GOLD
 tags: [Claude, Claude Design, Claude API, Vision API, AI-дизайн, HTML/CSS генерация, SVG, Автоматизация дизайна, Генерация макетов, AI automation, n8n, Zapier, API integration]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=6 Profit=5 ИТОГ=16
 ---
 
 ## Суть

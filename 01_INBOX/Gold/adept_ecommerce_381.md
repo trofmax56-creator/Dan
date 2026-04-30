@@ -3,6 +3,8 @@ source: @adept_ecommerce
 date: 2026-04-04
 original: https://t.me/adept_ecommerce/381
 category: GOLD
+status: ideas_lab
+score: Pain=6 Dev=7 Profit=6 ИТОГ=19
 tags: [автоматизация, API]
 ---
 

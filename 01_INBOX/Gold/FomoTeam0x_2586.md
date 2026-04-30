@@ -3,6 +3,8 @@ source: @FomoTeam0x
 date: 2026-04-22
 original: https://t.me/FomoTeam0x/2586
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Claude]
 ---
 

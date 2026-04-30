@@ -3,6 +3,8 @@ source: @kyloai
 date: 2026-04-23
 original: https://t.me/kyloai/1333
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [ChatGPT]
 ---
 

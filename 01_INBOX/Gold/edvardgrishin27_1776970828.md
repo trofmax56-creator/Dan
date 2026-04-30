@@ -1,4 +1,6 @@
 ---
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 date: 2026-04-23 09:02:31.989768
 link: https://t.me/s/edvardgrishin27
 ---

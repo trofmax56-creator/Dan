@@ -3,6 +3,8 @@ source: @edvardgrishin27
 date: 2026-04-03
 original: https://t.me/edvardgrishin27/159
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: []
 ---
 

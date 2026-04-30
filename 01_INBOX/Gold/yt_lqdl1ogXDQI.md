@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=lqdl1ogXDQI
 category: GOLD
 tags: [Zapier, n8n, Make.com, Claude, ChatGPT, Gemini, AI-автоматизация, Free vs Paid, Workflow, API интеграции, 2026, Сравнение инструментов, Бизнес-автоматизация]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=5 Profit=3 ИТОГ=13
 ---
 
 ## Суть

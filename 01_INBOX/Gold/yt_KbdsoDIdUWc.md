@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=KbdsoDIdUWc
 category: GOLD
 tags: [OpenAI, GPT Image 2, DALL-E, Генерация изображений, AI, API, Компьютерное зрение, Обзор, Python]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=4 Dev=5 Profit=5 ИТОГ=14
 ---
 
 ## Суть

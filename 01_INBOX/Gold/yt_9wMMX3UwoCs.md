@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=9wMMX3UwoCs
 category: GOLD
 tags: [AI-агент, автоматизация, AI, automation, агент, фоновая работа, scheduling, workflow, бизнес-автоматизация]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=4 Profit=4 ИТОГ=13
 ---
 
 ## Суть

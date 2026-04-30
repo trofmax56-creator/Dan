@@ -3,6 +3,8 @@ source: @TochkiNadAI
 date: 2026-04-25
 original: https://t.me/TochkiNadAI/2279
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Claude, AI-агент]
 ---
 

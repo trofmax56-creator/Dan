@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=ca4hIl2Iqtg
 category: GOLD
 tags: [GPT-5.5, Codex, API интеграция, тестирование LLM, автоматизация кода, OpenAI, граничные случаи, нагрузочное тестирование, quality assurance, production-ready]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=4 Dev=5 Profit=4 ИТОГ=13
 ---
 
 ## Суть

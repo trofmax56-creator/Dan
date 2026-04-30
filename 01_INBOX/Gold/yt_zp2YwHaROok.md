@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=zp2YwHaROok
 category: GOLD
 tags: [n8n, Zapier, Make.com, автоматизация, workflow, AI-агенты, интеграция API, альтернативы, миграция, масштабирование, no-code, LangChain, Python, Webhook, разработка]
 extracted_by: Claude Haiku
+status: archive
+reason: no_ru_crm_relevance
+score: Pain=4 Dev=3 Profit=3 ИТОГ=10
 ---
 
 ## Суть

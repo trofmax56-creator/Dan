@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=xwI6hP67ZAE
 category: GOLD
 tags: [n8n, Claude API, ChatGPT, Gemini, LangChain, AI-агент, ETL автоматизация, No-code automation, Python, API, workflow, Make.com, Airflow, RAG, Data Engineering]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=7 Dev=6 Profit=7 ИТОГ=20
 ---
 
 ## Суть

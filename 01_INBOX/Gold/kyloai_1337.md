@@ -3,6 +3,8 @@ source: @kyloai
 date: 2026-04-25
 original: https://t.me/kyloai/1337
 category: GOLD
+status: ideas_lab
+score: Pain=7 Dev=7 Profit=6 ИТОГ=20
 tags: [Claude, ChatGPT, API]
 ---
 

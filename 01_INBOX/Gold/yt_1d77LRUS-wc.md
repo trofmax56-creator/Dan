@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=1d77LRUS-wc
 category: GOLD
 tags: [n8n, Make.com, Zapier, автоматизация, AI-агентство, 2026, workflow, альтернативы, масштабирование, ChatGPT, Claude, Gemini]
 extracted_by: Claude Haiku
+status: archive
+reason: no_ru_crm_relevance
+score: Pain=4 Dev=3 Profit=3 ИТОГ=10
 ---
 
 ## Суть

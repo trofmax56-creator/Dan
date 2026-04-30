@@ -3,6 +3,8 @@ source: @BekinAI
 date: 2026-02-22
 original: https://t.me/BekinAI/10
 category: GOLD
+status: ideas_lab
+score: Pain=6 Dev=7 Profit=5 ИТОГ=18
 tags: [Claude, API, промпт]
 ---
 

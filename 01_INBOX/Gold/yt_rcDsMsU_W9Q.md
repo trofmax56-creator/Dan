@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=rcDsMsU_W9Q
 category: GOLD
 tags: []
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=6 Dev=9 Profit=6 ИТОГ=21
 ---
 
 ## Суть

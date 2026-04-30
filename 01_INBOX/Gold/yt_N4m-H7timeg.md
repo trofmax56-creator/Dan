@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=N4m-H7timeg
 category: GOLD
 tags: [Claude Code, AI-агенты, удаленное управление, мобильное приложение, API, WebSocket, автоматизация, remote control, Claude API, токены доступа, real-time, workflow, облачная синхронизация]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=6 Profit=5 ИТОГ=16
 ---
 
 ## Суть

@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=9sor5jfqLGs
 category: GOLD
 tags: [n8n, Claude API, Claude Code, Python, Execute Python, HTTP Request, API интеграция, автоматизация, AI-агент, код-генерация, Webhook, workflow, без кода, low-code]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=6 Dev=7 Profit=6 ИТОГ=19
 ---
 
 ## Суть

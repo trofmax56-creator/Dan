@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=5B9NBdsE3-0
 category: GOLD
 tags: [n8n, workflow automation, no-code, API интеграция, автоматизация бизнеса, webhook, trigger nodes, JavaScript, cloud automation, self-hosted, JSON, function node, условная логика, видео-обучение для начинающих]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=8 Profit=4 ИТОГ=17
 ---
 
 ## Суть

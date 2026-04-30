@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=2XIWaQdFc1E
 category: GOLD
 tags: [n8n, n8n 2.0, OpenAI, Responses API, breaking changes, workflow, автоматизация, API интеграции, Node.js, миграция версий]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=4 Dev=6 Profit=3 ИТОГ=13
 ---
 
 ## Суть

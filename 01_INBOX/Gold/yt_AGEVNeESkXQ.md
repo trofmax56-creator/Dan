@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=AGEVNeESkXQ
 category: GOLD
 tags: [Claude, Claude Code, Claude AI, AI-кодирование, Автоматизация разработки, IDE интеграция, Productivity, Terminal, Code Generation, REST API, Git интеграция, DevOps, LangChain]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=6 Profit=5 ИТОГ=16
 ---
 
 ## Суть

@@ -3,6 +3,8 @@ source: @adept_ecommerce
 date: 2026-04-28
 original: https://t.me/adept_ecommerce/414
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [API]
 ---
 

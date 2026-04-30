@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=TFY5Z-52yjQ
 category: GOLD
 tags: [n8n, GitHub, templates, automation, AI-agents, workflows, JSON, API, no-code, integration, готовые решения, автоматизация]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=7 Dev=9 Profit=5 ИТОГ=21
 ---
 
 ## Суть

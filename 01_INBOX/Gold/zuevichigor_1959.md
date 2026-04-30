@@ -3,6 +3,8 @@ source: @zuevichigor
 date: 2026-04-20
 original: https://t.me/zuevichigor/1959
 category: GOLD
+status: ideas_lab
+score: Pain=6 Dev=6 Profit=6 ИТОГ=18
 tags: [n8n, Claude, Gemini, AI-агент, автоматизация]
 ---
 

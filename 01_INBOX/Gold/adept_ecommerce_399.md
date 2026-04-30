@@ -3,6 +3,8 @@ source: @adept_ecommerce
 date: 2026-04-11
 original: https://t.me/adept_ecommerce/399
 category: GOLD
+status: project
+score: Pain=9 Dev=9 Profit=8 ИТОГ=26
 tags: [n8n, Gemini, автоматизация, API]
 ---
 

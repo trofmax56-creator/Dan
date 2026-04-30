@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=7IuU7sNGqF0
 category: GOLD
 tags: [n8n, Zoho CRM, API интеграция, OAuth 2.0, автоматизация, лиды, workflow, webhook, бизнес-процессы, REST API, без кода]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=5 Dev=7 Profit=6 ИТОГ=18
 ---
 
 ## Суть

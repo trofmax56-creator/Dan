@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=Hm4vC8o1IkE
 category: GOLD
 tags: [n8n, OpenClaw, автоматизация, низкокодовые платформы, workflow, интеграции, API, сравнение платформ, бизнес-автоматизация]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 ---
 
 ## Суть

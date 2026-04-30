@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=I3sepIEiuEc
 category: GOLD
 tags: [Zapier, Make.com, n8n, автоматизация, workflow, интеграции, API, REST, Webhook, CRM, сравнение, облачные платформы, 2026, self-hosted, no-code]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=6 Dev=7 Profit=4 ИТОГ=17
 ---
 
 ## Суть

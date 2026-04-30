@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=ezDhzb_NAHE
 category: GOLD
 tags: [Make.com, SmartLead, Attio, CRM, Автоматизация, API интеграция, Webhook, Лид-генерация, Синхронизация данных, No-code automation]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=7 Profit=5 ИТОГ=17
 ---
 
 ## Суть

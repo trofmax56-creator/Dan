@@ -3,6 +3,8 @@ source: @rixaihub
 date: 2026-04-28
 original: https://t.me/rixaihub/454
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Claude, API]
 ---
 

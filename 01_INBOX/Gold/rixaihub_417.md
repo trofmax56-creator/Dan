@@ -3,6 +3,8 @@ source: @rixaihub
 date: 2026-04-06
 original: https://t.me/rixaihub/417
 category: GOLD
+status: ideas_lab
+score: Pain=7 Dev=6 Profit=7 ИТОГ=20
 tags: [Claude, RAG, AI-агент]
 ---
 

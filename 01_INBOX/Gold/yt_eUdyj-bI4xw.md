@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=eUdyj-bI4xw
 category: GOLD
 tags: [AI-workflows, automation, n8n, Make.com, Claude API, ChatGPT, error-handling, retry-logic, rate-limiting, monitoring, logging, edge-cases, production-readiness, chaos-engineering]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=6 Dev=7 Profit=5 ИТОГ=18
 ---
 
 ## Суть

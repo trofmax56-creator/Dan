@@ -3,6 +3,8 @@ source: @aikirichenko
 date: 2025-12-12
 original: https://t.me/aikirichenko/119
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [n8n, автоматизация]
 ---
 

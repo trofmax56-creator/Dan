@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=xU7Llr8DUUk
 category: GOLD
 tags: [Claude, Claude Code, Obsidian, RAG, LLM, AI-агент, automation, prompt engineering, knowledge base, API, file processing, Andrej Karpathy]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=7 Profit=5 ИТОГ=17
 ---
 
 ## Суть

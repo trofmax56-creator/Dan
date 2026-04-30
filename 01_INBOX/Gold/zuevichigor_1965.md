@@ -3,6 +3,8 @@ source: @zuevichigor
 date: 2026-04-27
 original: https://t.me/zuevichigor/1965
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Claude, ChatGPT, Gemini, AI-агент]
 ---
 

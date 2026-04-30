@@ -5,6 +5,8 @@ original: https://youtube.com/watch?v=fCLSH21s2cs
 category: GOLD
 tags: [n8n, DeepSeek, AI, автоматизация, home-server, workflow, API, REST, локальное развертывание, GPU, ChatGPT альтернатива, открытые модели, экономия затрат, no-code, Docker]
 extracted_by: Claude Haiku
+status: ideas_lab
+score: Pain=7 Dev=6 Profit=7 ИТОГ=20
 ---
 
 ## Суть

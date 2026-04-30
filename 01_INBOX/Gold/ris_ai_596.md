@@ -1,4 +1,6 @@
 ---
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 date: 2026-04-02 17:55:33+00:00
 link: https://t.me/ris_ai/596
 ---

@@ -1,4 +1,6 @@
 ---
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 date: 2026-04-04 10:31:30+00:00
 link: https://t.me/aikirichenko/140
 ---

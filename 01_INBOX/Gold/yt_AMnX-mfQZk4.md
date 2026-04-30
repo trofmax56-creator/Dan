@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=AMnX-mfQZk4
 category: GOLD
 tags: [Make.com, SmartLead, Attio, ChatGPT, API, Lead Management, CRM, automation, workflow, Webhook, JSON, no-code]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=7 Profit=5 ИТОГ=17
 ---
 
 ## Суть

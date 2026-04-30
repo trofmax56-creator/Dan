@@ -3,6 +3,8 @@ source: @aikirichenko
 date: 2025-12-15
 original: https://t.me/aikirichenko/120
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Claude, ChatGPT, Gemini]
 ---
 

@@ -3,6 +3,8 @@ source: @adept_ecommerce
 date: 2026-04-13
 original: https://t.me/adept_ecommerce/403
 category: GOLD
+status: biz_recipe
+score: Pain=7 Dev=8 Profit=7 ИТОГ=22
 tags: [n8n, Claude, AI-агент, автоматизация, API]
 ---
 

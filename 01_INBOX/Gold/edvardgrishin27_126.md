@@ -3,6 +3,8 @@ source: @edvardgrishin27
 date: 2026-02-27
 original: https://t.me/edvardgrishin27/126
 category: GOLD
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Claude, AI-агент]
 ---
 

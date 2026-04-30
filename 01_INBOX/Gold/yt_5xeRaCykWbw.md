@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=5xeRaCykWbw
 category: GOLD
 tags: [Claude, Claude Design, Claude API, AI, обзор, новые функции, интеграция, автоматизация, не содержит деталей реализации]
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=4 Dev=4 Profit=4 ИТОГ=12
 ---
 
 ## Суть

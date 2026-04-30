@@ -5,6 +5,9 @@ original: https://youtube.com/watch?v=0R4BkDuxEH8
 category: GOLD
 tags: []
 extracted_by: Claude Haiku
+status: archive
+reason: low_score
+score: Pain=5 Dev=8 Profit=4 ИТОГ=17
 ---
 
 ## Суть

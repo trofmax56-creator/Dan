@@ -1,4 +1,6 @@
 ---
+status: archive
+score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 date: 2026-04-23 09:35:51+00:00
 link: https://t.me/FomoTeam0x/2587
 ---

@@ -4,21 +4,21 @@
 > От парсинга сырых данных до готового продукта и продажи.
 
 **Владелец:** Максим Трофимов | **Студия Трофимов** | Москва
+**Версия:** 2.0 | **Обновлено:** 2026-04-30
 
 ---
 
-## 🗺️ Навигация по репозиторию
+## 🗺️ Навигация
 
-### Стартовая точка
 | Что хочу сделать | Куда идти |
 |---|---|
 | Понять всю стратегию целиком | [`04_PROJECTS/AI_Factory_Master_Strategy.md`](04_PROJECTS/AI_Factory_Master_Strategy.md) |
-| Запустить сбор новых данных | [`02_TOOLS/readme/pipeline.md`](02_TOOLS/readme/pipeline.md) |
-| Выбрать идею для продукта | [`08_IDEAS_LAB/Demand_Matrix.md`](08_IDEAS_LAB/Demand_Matrix.md) |
-| Посмотреть готовые рецепты | [`05_BIZ_RECIPES/`](05_BIZ_RECIPES/) |
+| Посмотреть готовые продукты | [`05_BIZ_RECIPES/`](05_BIZ_RECIPES/) |
+| Отобрать идею для следующего спринта | [`08_IDEAS_LAB/08.2_SELECTED/`](08_IDEAS_LAB/08.2_SELECTED/) |
 | Написать пост / контент | [`11_CONTENT FACTORY/11_1_DRAFTS/`](11_CONTENT%20FACTORY/11_1_DRAFTS/) |
-| Посмотреть структуру Завода | [`04_PROJECTS/AI_Factory_Setup.md`](04_PROJECTS/AI_Factory_Setup.md) |
-| Скоринг Pain+Dev+Profit | [`08_IDEAS_LAB/Demand_Matrix.md`](08_IDEAS_LAB/Demand_Matrix.md) |
+| Структура 5 цехов Завода | [`04_PROJECTS/AI_Factory_Setup.md`](04_PROJECTS/AI_Factory_Setup.md) |
+| Дайджест идей этой недели | [`01_INBOX/Gold/infra_digest_*.md`](01_INBOX/Gold/) |
+| Дайджест продуктов из Gold | [`08_IDEAS_LAB/08.2_SELECTED/products_digest_*.md`](08_IDEAS_LAB/08.2_SELECTED/) |
 
 ---
 
@@ -26,105 +26,114 @@
 
 ```
 Dan/
-├── 00_RAW/                    ← Сырые данные (YouTube, Telegram, статьи)
-│   ├── YouTube/               ← yt_*.md со status: raw / gold / trash
-│   └── Articles/
+├── 00_RAW/                    ← Сырые данные
+│   ├── Telegram/              ← посты из TG-каналов
+│   ├── YouTube/               ← видео из YT-каналов
+│   ├── Infra/                 ← infra_discovery JSON + MD дайджесты
+│   └── Articles/              ← статьи Habr/VC.ru
 │
-├── 01_INBOX/                  ← Обработанные и отфильтрованные данные
-│   ├── Gold/                  ← 407 GOLD-файлов (68 YT + 339 TG)
-│   ├── Digest/                ← Аналитические дайджесты
+├── 01_INBOX/                  ← Обработанные данные
+│   ├── Gold/                  ← 600+ GOLD-файлов (TG + YT + Infra дайджесты)
 │   └── processed_log.md       ← Лог обработанных ID
 │
-├── 02_TOOLS/                  ← Скрипты, протоколы, инструменты
+├── 02_TOOLS/                  ← Инструменты и протоколы
 │   ├── Scripts/               ← Python-скрипты пайплайна
-│   ├── readme/pipeline.md     ← Порядок запуска скриптов
-│   ├── crm-ai-ideator.md      ← Скилл генерации идей CRM+AI
-│   ├── Content_Factory_Protocol.md  ← Протокол Якорь+Эхо
-│   └── Market_Intelligence_Protocol.md ← Критерии отбора источников
+│   ├── crm-ai-product-factory.md  ← Стандарт продукта (9 пунктов)
+│   ├── crm-ai-ideator.md      ← Векторы генерации идей
+│   ├── Content_Factory_Protocol.md
+│   └── Market_Intelligence_Protocol.md
 │
-├── 03_GUIDES/                 ← Техническая документация
-│   ├── System_Architecture.md ← Архитектура системы
-│   └── clients/               ← Базы знаний по клиентам
+├── 04_PROJECTS/               ← Активные проекты и стратегия
+│   ├── AI_Factory_Master_Strategy.md  ← ⭐ ГЛАВНЫЙ РЕФЕРЕНС
+│   └── AI_Factory_Setup.md    ← Структура 5 цехов
 │
-├── 04_PROJECTS/               ← Активные проекты
-│   ├── AI_Factory_Master_Strategy.md ← ⭐ ГЛАВНЫЙ РЕФЕРЕНС
-│   └── AI_Factory_Setup.md    ← Структура 4 цехов Завода
-│
-├── 05_BIZ_RECIPES/            ← Библиотека готовых решений (15 рецептов)
-│   └── 0XX_название.md        ← Каждый рецепт = ТЗ + КП + скрипт продаж
+├── 05_BIZ_RECIPES/            ← 108+ готовых продуктов
+│   ├── 051–082_*.md           ← Ручные рецепты (YT-каналы)
+│   ├── 083–108_infra_*.md     ← Из infra_processor (YouTube поиск)
+│   └── 1XX_gold_*.md          ← Из gold_synthesizer (синтез Gold)
 │
 ├── 08_IDEAS_LAB/              ← Лаборатория идей
-│   ├── Demand_Matrix.md       ← Скоринг Pain+Dev+Profit
-│   ├── 08.1_RAW_IDEAS/        ← Сырые идеи из GOLD
-│   ├── 08.2_SELECTED/         ← Отобранные для реализации
-│   └── 08.3_IMPLEMENTATION_PLANS/ ← Планы реализации
+│   ├── Demand_Matrix.md
+│   ├── 08.1_RAW_IDEAS/        ← score < 20
+│   ├── 08.2_SELECTED/         ← score 20–24, products_digest_*.md
+│   └── 08.3_IMPLEMENTATION_PLANS/
 │
-├── 11_CONTENT FACTORY/        ← Контент-фабрика
-│   ├── 11_1_DRAFTS/           ← Черновики постов и статей
-│   └── 11_2_n8n_Content/      ← n8n-контент
+├── 11_CONTENT FACTORY/
+│   ├── 11_1_DRAFTS/           ← Черновики постов
+│   └── 11_2_n8n_Content/
+│
+├── .claude/commands/
+│   └── crm-ai-product-factory.md  ← /crm-ai-product-factory slash-команда
 │
 ├── .github/workflows/
-│   └── yt_discovery.yml       ← CI/CD: сбор + обработка YouTube
+│   ├── yt_discovery.yml       ← YouTube-каналы (вручную)
+│   ├── infra_discovery.yml    ← Поиск по 60 запросам (пн 09:00 МСК)
+│   └── gold_synthesizer.yml   ← Синтез Gold → продукты (вс 08:00 МСК)
 │
-├── CLAUDE.md                  ← Инструкции для AI-агента
-├── Dan_Manual.md              ← Правила работы системы
-└── README.md                  ← Этот файл
+├── infra_discovery.py         ← YouTube API, 60 запросов, → 00_RAW/Infra/
+├── infra_processor.py         ← Claude → паспорта идей из Infra
+├── gold_synthesizer.py        ← Claude → продукты из Gold (формат vern_ideas)
+├── processor.py               ← Классификация TG → Gold
+├── parser_deep.py             ← Telegram парсер (локально)
+├── youtube_parser.py          ← YouTube RSS (каналы)
+├── vern_ideas                 ← 30 продуктов, синтезированных агентом
+└── CLAUDE.md                  ← Инструкции для AI-агента
 ```
 
 ---
 
-## ⚙️ Скрипты пайплайна
+## ⚙️ Скрипты и потоки
 
-| Скрипт | Назначение | Запуск | Ключи |
-|---|---|---|---|
-| `yt_discovery.py` | Сбор YouTube видео | GitHub Actions | `YOUTUBE_API_KEY` |
-| `yt_processor_2.py` | Классификация + Claude Haiku | GitHub Actions | `ANTHROPIC_API_KEY` |
-| `tg_discovery.py` | Сбор постов Telegram | Локально | Telegram сессия |
-| `tg_discovery_v2.py` | Новые TG-каналы | Локально | Telegram сессия |
-| `article_discovery.py` | Статьи Habr/VC.ru | Локально | `FIRECRAWL_API_KEY` |
+### Поток 1 — Telegram (вручную, раз в 2 недели)
+```
+parser_deep.py → 00_RAW/Telegram/ → processor.py → 01_INBOX/Gold/
+```
 
-### Быстрый запуск YouTube-пайплайна
+### Поток 2 — YouTube-каналы (вручную через GitHub Actions)
 ```
-GitHub → Actions → YouTube Discovery → Run workflow
+youtube_parser.py → 00_RAW/YouTube/ → yt_processor_2.py → 01_INBOX/Gold/
 ```
-После завершения:
-```bash
-git pull
+
+### Поток 3 — Infra Discovery (авто, каждый понедельник)
+```
+infra_discovery.py → 00_RAW/Infra/ → infra_processor.py
+  → 05_BIZ_RECIPES/ (score ≥22)
+  → 08_IDEAS_LAB/08.2_SELECTED/ (score 18–21)
+  → 01_INBOX/Gold/infra_digest_*.md
+```
+
+### Поток 4 — Gold Synthesizer (авто, каждое воскресенье)
+```
+01_INBOX/Gold/ (последние 40 файлов) → gold_synthesizer.py → Claude
+  → 05_BIZ_RECIPES/ (score >24)
+  → 08_IDEAS_LAB/08.2_SELECTED/ (score 20–24)
+  → 08_IDEAS_LAB/08.2_SELECTED/products_digest_*.md
 ```
 
 ---
 
-## 🔄 Конвейер (полная схема)
+## 🤖 GitHub Actions
 
+| Workflow | Триггер | Что делает |
+|---|---|---|
+| `yt_discovery.yml` | Вручную | YouTube-каналы → Gold |
+| `infra_discovery.yml` | **Авто пн 09:00 МСК** + вручную | 60 запросов → паспорта идей |
+| `gold_synthesizer.yml` | **Авто вс 08:00 МСК** + вручную | Gold → синтез продуктов |
+
+### Ручной запуск
 ```
-СБОР                  ОБРАБОТКА             ОТБОР
-────────────          ────────────          ────────────
-yt_discovery    →     yt_processor_2  →     Demand Matrix
-tg_discovery    →     (в разработке)  →     Pain+Dev+Profit
-article_disc.   →     (в разработке)  →     Роутинг по цехам
-      ↓                     ↓                     ↓
-00_RAW/             01_INBOX/Gold/          04_PROJECTS/
-                                            05_BIZ_RECIPES/
-                                            08_IDEAS_LAB/
-                                            11_1_DRAFTS/
-
-УПАКОВКА              РАЗРАБОТКА            МАРКЕТИНГ → ПРОДАЖА
-────────────          ────────────          ────────────────────
-BIZ_RECIPE      →     n8n workflow    →     Habr/VC.ru (Якорь)
-crm-ai-ideator        self-hosted n8n       TG/TenChat/ВК (Эхо)
-Шаблон ТЗ+КП          Docker/VPS            → Лид → Демо → Договор
+GitHub → Actions → [название workflow] → Run workflow
 ```
 
 ---
 
 ## 🔑 API-ключи
 
-| Ключ | Где хранится | Для чего |
+| Ключ | Где хранится | Используется в |
 |---|---|---|
-| `YOUTUBE_API_KEY` | GitHub Secrets | yt_discovery.py |
-| `ANTHROPIC_API_KEY` | GitHub Secrets | yt_processor_2.py + Claude API |
-| `FIRECRAWL_API_KEY` | Локально (.env) | article_discovery.py |
-| Telegram сессия | `dan_session` в корне | tg_discovery*.py |
+| `ANTHROPIC_API_KEY` | GitHub Secrets | infra_processor, gold_synthesizer, yt_processor |
+| `YOUTUBE_API_KEY` | GitHub Secrets | infra_discovery, yt_discovery |
+| Telegram сессия | `dan_session` в корне | parser_deep.py (только локально) |
 
 ---
 
@@ -132,24 +141,25 @@ crm-ai-ideator        self-hosted n8n       TG/TenChat/ВК (Эхо)
 
 | Метрика | Значение |
 |---|---|
-| GOLD-файлов в 01_INBOX | **407** (68 YT + 339 TG) |
-| BIZ_RECIPES готовых | **15** (051–065) |
-| Цель по рецептам | **30+** |
-| Продуктов в работе | в процессе скоринга |
+| GOLD-файлов в 01_INBOX | **600+** |
+| BIZ_RECIPES готовых | **108+** (051–108) |
+| SELECTED в Ideas Lab | **130+** |
+| Продуктов-идей (vern_ideas) | **30** |
+| Автоматических потоков | **2** (infra + gold, еженедельно) |
 
 ---
 
 ## 📅 Недельный ритм
 
-| День | Действие | Время |
+| День | Действие | Участие Максима |
 |---|---|---|
-| Понедельник | Run workflow → git pull | 15 мин |
-| Вторник | Скоринг новых GOLD по Demand Matrix | 1–2 ч |
-| Среда | Упаковка 1–2 BIZ_RECIPE + черновик поста | 2–3 ч |
-| Четверг | Сборка n8n workflow по рецепту | весь день |
-| Пятница | Публикация якоря (Habr/VC.ru) + эхо | 1 ч |
-| Раз в 2 нед. | tg_discovery + article_discovery | 30 мин |
+| Воскресенье | Gold Synthesizer — авто | — |
+| Понедельник | Infra Discovery — авто | `git pull` — 5 мин |
+| Вторник | Разбор дайджестов, выбор продукта в работу | 30–60 мин |
+| Среда–Четверг | Сборка n8n workflow по BIZ_RECIPE | Разработка |
+| Пятница | Публикация контента (якорь + эхо) | 1 час |
+| Раз в 2 нед. | `parser_deep.py` + `youtube_parser.py` (локально) | 15 мин |
 
 ---
 
-*Главный документ проекта: [`04_PROJECTS/AI_Factory_Master_Strategy.md`](04_PROJECTS/AI_Factory_Master_Strategy.md)*
+*Главный документ: [`04_PROJECTS/AI_Factory_Master_Strategy.md`](04_PROJECTS/AI_Factory_Master_Strategy.md)*

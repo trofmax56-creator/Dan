@@ -93,6 +93,7 @@ def build_prompt(gold_content: str) -> str:
 
 def load_gold_batch(batch_size: int) -> tuple[str, list[str]]:
     files = sorted(GOLD_DIR.glob("*.md"), key=lambda f: f.stat().st_mtime, reverse=True)
+    files = [f for f in files if not f.name.startswith("infra_digest")]
     files = files[:batch_size]
 
     chunks = []

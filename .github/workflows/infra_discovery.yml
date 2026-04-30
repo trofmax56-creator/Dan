@@ -1,0 +1,61 @@
+name: Infra Discovery
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 6 * * 1"  # Каждый понедельник в 06:00 UTC
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install requests anthropic
+
+      - name: Check API keys
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$YOUTUBE_API_KEY" ]; then
+            echo "ERROR: YOUTUBE_API_KEY is not set"
+            exit 1
+          else
+            echo "YOUTUBE_API_KEY is set, length=${#YOUTUBE_API_KEY}"
+          fi
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "ERROR: ANTHROPIC_API_KEY is not set"
+            exit 1
+          else
+            echo "ANTHROPIC_API_KEY is set, length=${#ANTHROPIC_API_KEY}"
+          fi
+
+      - name: Run infra_discovery.py
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+        run: python infra_discovery.py
+
+      - name: Run infra_processor.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python infra_processor.py
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add 00_RAW/Infra/ 05_BIZ_RECIPES/ 08_IDEAS_LAB/ 01_INBOX/Gold/
+          git diff --cached --quiet || git commit -m "process: infra_discovery + infra_processor — $(date +%Y-%m-%d)"
+          git push

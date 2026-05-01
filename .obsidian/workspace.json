@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "07_CONSTRUCTION/Project_Complex_V1.md",
+                    "file": "02_TOOLS/crm-ai-product-factory.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "Project_Complex_V1"
+                  "title": "crm-ai-product-factory"
                 }
               }
             ]
@@ -351,8 +351,16 @@
       "terminal:Open terminal": false
     }
   },
-  "active": "1c76f09f1c534af1",
+  "active": "08d94f82644f1edc",
   "lastOpenFiles": [
+    "02_TOOLS/crm-ai-product-factory.md",
+    "02_TOOLS/crm-ai-ideator.md",
+    "02_TOOLS/Brief_AI_KPI_Prompt.md",
+    "02_TOOLS/Booster_N8N_Workflow_Blueprint.md",
+    "02_TOOLS/Booster_N8N_Schema.md",
+    "02_TOOLS/Booster_Field_Mapping.md",
+    "02_TOOLS/Scripts/README_DISCOVERY.md",
+    "07_CONSTRUCTION/Project_Complex_V1.md",
     "08_IDEAS_LAB/Demand_Matrix.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/YT_Ideas_Sprint2_2026_04_29.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/infra_автоматизация_закупок_в_bitrix24_2026-04-30.md",
@@ -371,14 +379,6 @@
     "08_IDEAS_LAB/08.2_SELECTED/infra_12_n8nавтоматизаций_для_бизнеса_2026-04-30.md",
     "04_PROJECTS/AI_Factory_Master_Strategy.md",
     "07_CONSTRUCTION/Complex_20m/01_ORG/PZU_Site_Layout.md",
-    "03_GUIDES/System_Architecture.md",
-    "02_TOOLS/Market_Intelligence_Protocol.md",
-    "Dan_Manual.md",
-    "README.md",
-    "02_TOOLS/Scripts/README_DISCOVERY.md",
-    "01_INBOX/Gold/yt_xU7Llr8DUUk.md",
-    "01_INBOX/Gold/yt_xOi2g-XJ454.md",
-    "01_INBOX/Gold/yt_uTX807i8wvA.md",
     "__pycache__/processor.cpython-312.pyc",
     "__pycache__/parser_deep.cpython-312.pyc",
     "__pycache__",

@@ -31,7 +31,7 @@
           {
             "id": "15f4831ae2e08bd2",
             "type": "tabs",
-            "dimension": 24.509803921568626,
+            "dimension": 24.50980392156863,
             "children": [
               {
                 "id": "cc4c47e84ed7d9a5",
@@ -183,7 +183,7 @@
                   },
                   "pinned": true,
                   "icon": "terminal",
-                  "title": "Terminal: cmd"
+                  "title": "Terminal: C:\\Windows\\System32\\conhost.exe"
                 }
               }
             ],

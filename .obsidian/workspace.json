@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "01_INBOX/Gold_Tools/kyloai_1349.md",
+                    "file": "01_INBOX/Gold_Tools/zuevichigor_1945.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "kyloai_1349"
+                  "title": "zuevichigor_1945"
                 }
               }
             ]
@@ -353,6 +353,9 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "01_INBOX/Gold_Tools/ris_ai_595.md",
+    "01_INBOX/Gold_Tools/ris_ai_597.md",
+    "01_INBOX/Gold_Tools/kyloai_1349.md",
     "01_INBOX/Gold_Tools/gora_academy_1359.md",
     "01_INBOX/Gold_Tools/FomoTeam0x_2584.md",
     "01_INBOX/Gold_Tools/edvardgrishin27_181.md",
@@ -376,9 +379,6 @@
     "08_IDEAS_LAB/08.1_RAW_IDEAS/YT_Ideas_Sprint2_2026_04_29.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/infra_автоматизация_закупок_в_bitrix24_2026-04-30.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/Bitrix24_Biweekly_Pulse.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Sales_Director.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Partner_Agents_Architecture.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Estimator.md",
     "__pycache__/processor.cpython-312.pyc",
     "__pycache__/parser_deep.cpython-312.pyc",
     "__pycache__",

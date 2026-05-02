@@ -14,7 +14,8 @@ channels = [
     'addmeto', 'ai_newz',
     'neural_network_news', 'denis_ai', 'adept_ecommerce',
     'alexyarygin',
-    'TochkiNadAI', 'n8node', 'vibecod3rs', 'kyloai', 'denissexy'
+    'TochkiNadAI', 'n8node', 'vibecod3rs', 'kyloai', 'denissexy',
+    'startupfomo'
 ]
 
 # Автоматическое определение папки скрипта

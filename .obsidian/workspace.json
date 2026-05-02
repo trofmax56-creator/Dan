@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "01_INBOX/Gold_Tools/yt_6foQ-cefuUc.md",
+                    "file": "01_INBOX/Gold_Tools/yt_38YP2PUNGdg.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "yt_6foQ-cefuUc"
+                  "title": "yt_38YP2PUNGdg"
                 }
               }
             ]
@@ -353,6 +353,9 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "01_INBOX/Gold_Tools/yt_9dg_vht7pL4.md",
+    "01_INBOX/Gold_Tools/yt_8BfLQeCrBB8.md",
+    "01_INBOX/Gold_Tools/yt_6foQ-cefuUc.md",
     "01_INBOX/Gold_Tools/addmeto_6164.md",
     "01_INBOX/Gold_Tools/ai_newz_4535.md",
     "01_INBOX/Gold_Tools/adept_ecommerce_355.md",
@@ -376,9 +379,6 @@
     "TEMPLATES/T_Idea.md",
     "Dan_Manual.md",
     "04_PROJECTS/WhatsApp_Bitrix24_Construction.md",
-    "04_PROJECTS/WhatsApp_AI_Agent_n8n.md",
-    "04_PROJECTS/Bitrix24_Telegram_Integration_Guide.md",
-    "04_PROJECTS/AI_Factory_Setup.md",
     "__pycache__/processor.cpython-312.pyc",
     "__pycache__/parser_deep.cpython-312.pyc",
     "__pycache__",

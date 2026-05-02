@@ -5,52 +5,53 @@ from datetime import date
 # Пути
 BASE_DIR = Path(__file__).parent
 RAW_DIR = BASE_DIR / '00_RAW' / 'Telegram'
-GOLD_DIR = BASE_DIR / '01_INBOX' / 'Gold'
+GOLD_DIR = BASE_DIR / '01_INBOX' / 'Gold'           # → gold_synthesizer (продукты CRM)
+GOLD_TOOLS_DIR = BASE_DIR / '01_INBOX' / 'Gold_Tools'  # → справочник инструментов
 PROCESSED_LOG = BASE_DIR / '01_INBOX' / 'processed_log.md'
 
 GOLD_DIR.mkdir(parents=True, exist_ok=True)
+GOLD_TOOLS_DIR.mkdir(parents=True, exist_ok=True)
 
-# GOLD — практический AI/автоматизация контент
-GOLD_KEYWORDS = [
-    # CRM и автоматизация (основной фокус)
+# ── GOLD_CRM — контент для синтеза продуктов (→ gold_synthesizer) ────────────
+GOLD_CRM_KEYWORDS = [
     'n8n', 'make.com', 'zapier', 'workflow', 'автоматизация', 'автоматизировать',
     'bitrix', 'amocrm', 'retailcrm', '1с', 'crm', 'интеграция', 'интегратор',
     'api', 'webhook',
-
-    # AI модели и платформы
-    'claude', 'chatgpt', 'gpt-', 'gpt-5', 'openai', 'anthropic', 'gemini',
-    'llm', 'llama', 'deepseek', 'mistral', 'qwen', 'sonnet', 'opus',
+    'агент', 'agent', 'prompt', 'промпт',
+    'claude', 'chatgpt', 'gpt-', 'openai', 'anthropic', 'gemini', 'llm',
     'нейросет', 'нейронн', 'модель', 'релиз',
+    'python', 'langchain', 'rag', 'vector', 'embeddings',
+    'кейс', 'схема', 'гайд', 'инструкция', 'пошагово', 'туториал',
+    'obsidian', 'notion', 'второй мозг',
+    'аналитик', 'дашборд', 'визуализаци', 'метрик',
+]
 
+# ── GOLD_TOOLS — инструменты, платформы, вайбкодинг (→ Gold_Tools, не в synthesizer) ─
+GOLD_TOOLS_KEYWORDS = [
     # Мультиагентные системы
-    'мультиагент', 'multiagent', 'multi-agent', 'агентн',
-    'langgraph', 'crewai', 'autogen', 'агентная архитектур',
-    'оркестратор', 'orchestrat',
+    'мультиагент', 'multiagent', 'multi-agent', 'агентная архитектур',
+    'langgraph', 'crewai', 'autogen', 'оркестратор',
 
-    # Vibe coding и AI-разработка
+    # Vibe coding и AI-IDE
     'вайбкодинг', 'vibecoding', 'vibe coding', 'vibe-coding',
-    'cursor', 'windsurf', 'bolt', 'lovable', 'replit',
-    'claude code', 'copilot',
+    'cursor', 'windsurf', 'bolt', 'lovable', 'replit', 'claude code', 'copilot',
 
-    # Новые AI-платформы и инструменты
+    # Новые AI-платформы
     'emergent', 'same.dev', 'v0.dev', 'vercel ai', 'atoms',
     'dify', 'flowise', 'langflow',
 
-    # Промпты и агенты
-    'агент', 'agent', 'prompt', 'промпт', 'system prompt', 'контекст окн',
+    # Установка и деплой
+    'деплой', 'deploy', 'self-hosted', 'установка', 'настройк', 'docker compose',
 
-    # Разработка и инфраструктура
-    'python', 'langchain', 'rag', 'vector', 'embeddings',
-    'docker', 'деплой', 'deploy', 'self-hosted', 'установка', 'настройк',
+    # Модели нового поколения
+    'deepseek', 'mistral', 'qwen', 'llama', 'ollama', 'sonnet', 'opus', 'gpt-5',
 
-    # Аналитика и контент
-    'аналитик', 'дашборд', 'визуализаци', 'метрик',
+    # Контент и публикации
     'контент', 'публикаци', 'постинг',
-
-    # Форматы знаний
-    'кейс', 'схема', 'гайд', 'инструкция', 'пошагово', 'туториал', 'гайды',
-    'obsidian', 'notion', 'второй мозг',
 ]
+
+# ── Ключевые CRM-якоря (если есть — всегда Gold, не Tools) ───────────────────
+CRM_ANCHORS = ['bitrix', 'amocrm', 'retailcrm', 'crm', 'n8n', 'make.com', 'webhook', 'интеграц']
 
 # TRASH — мусор, не берём
 TRASH_KEYWORDS = [
@@ -104,16 +105,27 @@ def parse_raw_file(filepath: Path):
 
 
 def classify(text: str) -> str:
+    """Возвращает: GOLD_CRM | GOLD_TOOLS | TRASH"""
     text_lower = text.lower()
     trash_score = sum(1 for kw in TRASH_KEYWORDS if kw in text_lower)
-    gold_score = sum(1 for kw in GOLD_KEYWORDS if kw in text_lower)
-
     if trash_score >= 2:
         return 'TRASH'
-    if gold_score >= 2:
-        return 'GOLD'
-    if gold_score == 1 and trash_score == 0:
-        return 'GOLD'
+
+    crm_score = sum(1 for kw in GOLD_CRM_KEYWORDS if kw in text_lower)
+    tools_score = sum(1 for kw in GOLD_TOOLS_KEYWORDS if kw in text_lower)
+    has_crm_anchor = any(a in text_lower for a in CRM_ANCHORS)
+
+    # CRM-якорь всегда побеждает — идёт в gold_synthesizer
+    if has_crm_anchor and crm_score >= 1:
+        return 'GOLD_CRM'
+    if crm_score >= 2:
+        return 'GOLD_CRM'
+    if tools_score >= 2:
+        return 'GOLD_TOOLS'
+    if tools_score == 1 and trash_score == 0:
+        return 'GOLD_TOOLS'
+    if crm_score == 1 and trash_score == 0:
+        return 'GOLD_CRM'
     return 'TRASH'
 
 
@@ -203,7 +215,7 @@ def extract_tags(text: str) -> list:
     return [v for k, v in tag_map.items() if k in text_lower][:5]
 
 
-def save_gold(filename: str, text: str, date_str: str, link: str, channel: str):
+def save_gold(filename: str, text: str, date_str: str, link: str, channel: str, target_dir: Path = None):
     main_idea = extract_main_idea(text)
     schema = extract_schema(text)
     tech_links = extract_tech_links(text)
@@ -233,7 +245,8 @@ tags: [{tags_str}]
 ## Мясо
 {meat}
 """
-    (GOLD_DIR / f"{filename}.md").write_text(content, encoding='utf-8')
+    out_dir = target_dir if target_dir else GOLD_DIR
+    (out_dir / f"{filename}.md").write_text(content, encoding='utf-8')
 
 
 def main():
@@ -249,7 +262,8 @@ def main():
         print("✅ Нет новых файлов.")
         return
 
-    gold_count = 0
+    gold_crm_count = 0
+    gold_tools_count = 0
     trash_count = 0
     processed_names = []
 
@@ -266,11 +280,16 @@ def main():
 
             category = classify(text)
 
-            if category == 'GOLD':
-                save_gold(filename, text, date_str, link, channel)
-                gold_count += 1
+            if category == 'GOLD_CRM':
+                save_gold(filename, text, date_str, link, channel, GOLD_DIR)
+                gold_crm_count += 1
                 tags = ', '.join(extract_tags(text))
-                print(f"  ✅ GOLD [{i}/{len(new_files)}] {filename} | {tags}")
+                print(f"  ✅ GOLD_CRM [{i}/{len(new_files)}] {filename} | {tags}")
+            elif category == 'GOLD_TOOLS':
+                save_gold(filename, text, date_str, link, channel, GOLD_TOOLS_DIR)
+                gold_tools_count += 1
+                tags = ', '.join(extract_tags(text))
+                print(f"  🔧 GOLD_TOOLS [{i}/{len(new_files)}] {filename} | {tags}")
             else:
                 trash_count += 1
                 print(f"  🗑️  TRASH [{i}/{len(new_files)}] {filename}")
@@ -283,8 +302,9 @@ def main():
     if processed_names:
         update_processed_log(processed_names)
 
-    print(f"\n✅ Готово: GOLD={gold_count} | TRASH={trash_count}")
-    print(f"📁 Результат: {GOLD_DIR}")
+    print(f"\n✅ Готово: GOLD_CRM={gold_crm_count} | GOLD_TOOLS={gold_tools_count} | TRASH={trash_count}")
+    print(f"📁 CRM: {GOLD_DIR}")
+    print(f"🔧 Tools: {GOLD_TOOLS_DIR}")
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 # 🏭 Мастер-стратегия: Завод ИИ-решений (AI Factory)
-**Версия:** 3.1 | **Обновлено:** 2026-05-02 | **Автор:** Максим Трофимов + Claude
+**Версия:** 3.2 | **Обновлено:** 2026-05-02 | **Автор:** Максим Трофимов + Claude
 
 > Полный алгоритм от парсинга сырых данных до готового ИИ-продукта и продажи.
 > Документ является главным референсом проекта.
@@ -10,26 +10,28 @@
 
 ```
           ┌──────────────────────────────────────────┐
-          │              СЫРЬЁ (00_RAW/)             │
-          │     Telegram (27 каналов) │ YouTube       │
-          └─────────────────┬────────────────────────┘
-                            │
-                     processor.py
-                    (без API, локально)
-                            │
-              ┌─────────────┴──────────────┐
-              │                            │
-    ┌─────────▼──────────┐    ┌────────────▼────────────┐
-    │  Gold CRM           │    │  Gold Tools              │
-    │  01_INBOX/Gold/     │    │  01_INBOX/Gold_Tools/    │
-    │  336 файлов         │    │  58 файлов               │
-    │  CRM, n8n, агенты   │    │  Cursor, LangGraph,      │
-    │  для бизнеса        │    │  Emergent, vibe coding   │
-    └─────────┬──────────┘    └────────────┬────────────┘
-              │                            │
-    ┌─────────▼──────────┐      Только для чтения.
-    │  gold_synthesizer  │      Synthesizer не читает.
+          │              СЫРЬЁ (00_RAW/)                    │
+          │  Telegram (27 каналов) │ YouTube (210 файлов)  │
+          └──────────┬─────────────────────┬───────────────┘
+                     │                     │
+              processor.py          yt_processor_2.py
+             (без API, локально)   (Claude Haiku, Actions)
+                     │                     │
+              ┌──────┴─────────────────────┴──────┐
+              │                                   │
+    ┌─────────▼──────────┐         ┌──────────────▼──────────┐
+    │  Gold CRM           │         │  Gold Tools              │
+    │  01_INBOX/Gold/     │         │  01_INBOX/Gold_Tools/    │
+    │  527 файлов         │         │  82 файла                │
+    │  374 TG + 153 YT    │         │  58 TG + 24 YT           │
+    │  CRM, n8n, агенты   │         │  Cursor, LangGraph,      │
+    │  для бизнеса        │         │  Emergent, vibe coding   │
+    └─────────┬──────────┘         └──────────────┬──────────┘
+              │                                   │
+    ┌─────────▼──────────┐           Только для чтения.
+    │  gold_synthesizer  │           Synthesizer не читает.
     │  (авто, вс 08:00)  │
+    │  YT-файлы первыми  │
     └─────────┬──────────┘
               │
     ┌─────────▼──────────────────────────────────────┐
@@ -66,8 +68,8 @@
 | Скрипт | Запуск | Назначение |
 |---|---|---|
 | `tg_discovery_v2.py` | Локально (по необходимости) | Поиск новых TG-каналов через граф-обход |
-| `yt_discovery.py` | GitHub Actions (вручную) | YouTube API поиск → `00_RAW/YouTube/` |
-| `yt_processor_2.py` | GitHub Actions (вручную) | Claude Haiku → Gold из YT |
+| `yt_discovery.py` | GitHub Actions (вручную) | 10 CRM + 10 TOOLS запросов, последние 30 дней → `00_RAW/YouTube/` |
+| `yt_processor_2.py` | GitHub Actions (вручную) | Claude Haiku → GOLD_CRM (`Gold/`) + GOLD_TOOLS (`Gold_Tools/`) |
 
 ### Протоколы (02_TOOLS/)
 | Файл | Назначение |
@@ -83,10 +85,10 @@
 | `/crm-ai-product-factory` | Синтез продуктов из Gold-файлов вручную (стандарт v3.0) |
 
 ### GitHub Actions (.github/workflows/)
-| Workflow | Расписание | Скрипты |
-|---|---|---|
-| `yt_discovery.yml` | Вручную | yt_discovery → yt_processor_2 |
-| `gold_synthesizer.yml` | **Вс 08:00 МСК** + вручную | gold_synthesizer (v2.0) |
+| Workflow | Расписание | Скрипты | API-ключи |
+|---|---|---|---|
+| `yt_discovery.yml` | Вручную | `yt_discovery.py` → `yt_processor_2.py` | `YOUTUBE_API_KEY` + `ANTHROPIC_API_KEY` |
+| `gold_synthesizer.yml` | **Вс 08:00 МСК** + вручную | `gold_synthesizer.py` (v2.0) | `ANTHROPIC_API_KEY` |
 
 ---
 
@@ -95,16 +97,13 @@
 | Источник | Файлов | Режим |
 |---|---|---|
 | Telegram-каналы (27 каналов) | 527 сырых → 394 обработано | Локально, раз в 2 нед. |
-| YouTube RSS (10 каналов) | 123 файла | Локально, раз в 2 нед. |
-| YouTube API (yt_discovery) | — | Вручную через GitHub Actions |
+| YouTube RSS (10 каналов) | 210 файлов в RAW | Локально, раз в 2 нед. |
+| YouTube API (yt_discovery) | 20 запросов, последние 30 дней | Вручную через GitHub Actions |
 
 | База знаний | Кол-во | Назначение |
 |---|---|---|
-| Gold CRM (`01_INBOX/Gold/`) | **336** | Вход для gold_synthesizer |
-| Gold Tools (`01_INBOX/Gold_Tools/`) | **58** | Инструменты, платформы, vibe coding |
-| BIZ_RECIPES | **0** (v3.0 старт) | Ждут первого воскресного синтеза |
-| SELECTED / Ideas Lab | **1** | score 20–24 |
-| RAW_IDEAS | **1** | score 18–19 |
+| Gold CRM (`01_INBOX/Gold/`) | **527** (374 TG + 153 YT) | Вход для gold_synthesizer |
+| Gold Tools (`01_INBOX/Gold_Tools/`) | **82** (58 TG + 24 YT) | Инструменты, платформы, vibe coding |
 | Референс-продуктов (vern_ideas) | **30** | `04_PROJECTS/vern_ideas.md` |
 
 ---
@@ -135,10 +134,12 @@
 
 ### Поток через GitHub Actions (вручную)
 
-**YouTube API:**
+**YouTube API (`yt_discovery.yml`):**
 1. GitHub → Actions → YouTube Discovery → Run workflow
-2. `yt_discovery.py` → YouTube Data API → `00_RAW/YouTube/`
-3. `yt_processor_2.py` → Claude Haiku → `01_INBOX/Gold/yt_*.md`
+2. `yt_discovery.py` → YouTube Data API (20 запросов: 10 CRM + 10 TOOLS, последние 30 дней) → `00_RAW/YouTube/`
+3. `yt_processor_2.py` → Claude Haiku извлекает структуру (workflow, стек, инсайты) → разветвление:
+   - **GOLD_CRM** → `01_INBOX/Gold/yt_*.md` — идёт в gold_synthesizer
+   - **GOLD_TOOLS** → `01_INBOX/Gold_Tools/yt_*.md` — инструменты, не в synthesizer
 4. `git pull` локально
 
 ### Поиск новых TG-каналов (по необходимости)
@@ -177,7 +178,8 @@ python 02_TOOLS/Scripts/tg_discovery_v2.py
 
 ### Gold Synthesizer v2.0 (авто, каждое воскресенье)
 - Читает только `01_INBOX/Gold/` (Gold_Tools не трогает — API не расходуется)
-- Берёт последние 40 файлов (BATCH_SIZE=40)
+- Берёт 40 файлов: `yt_*.md` всегда первыми (приоритет YouTube), затем TG
+- YouTube-файлы: лимит **2500 символов** (TG — 800 символов) — больше контекста для синтеза
 - Claude Sonnet синтезирует продукты по стандарту v3.0
 - Стоимость: ~$0.15–0.35 за запуск
 - Результат: карточки в `05_BIZ_RECIPES/` и `08_IDEAS_LAB/`
@@ -296,7 +298,7 @@ Trigger (Webhook / Cron / CRM Event)
 
 ```
 ВОСКРЕСЕНЬЕ (авто, 08:00 МСК)
-  → gold_synthesizer v2.0: 40 Gold_CRM файлов → новые продукты в BIZ_RECIPES
+  → gold_synthesizer v2.0: 40 Gold_CRM файлов (YT первыми, 2500 зн.) → новые продукты в BIZ_RECIPES
   → Gold_Tools не затрагивается, API не расходуется на инструментальный контент
 
 ПОНЕДЕЛЬНИК (30 мин)
@@ -348,5 +350,5 @@ Trigger (Webhook / Cron / CRM Event)
 
 ---
 
-*Документ обновлён: 2026-05-02 (v3.1)*
+*Документ обновлён: 2026-05-02 (v3.2)*
 *Следующее обновление: после первого воскресного синтеза v3.0*

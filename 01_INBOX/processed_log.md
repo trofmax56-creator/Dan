@@ -11,3 +11,6 @@ yt_6OjPWEOINPM, yt_9LLXc0iMCx4, yt_EQtamZFXYLI, yt_IJEvi0Iq01w, yt_MQJa3_F0qOg, 
 
 ### YouTube (3 видео) — 2026-05-02
 yt_KwTBlV7RnZ8, yt_YJHMZiXyM0A, yt_myTdzBHty2M
+
+### YouTube (67 видео) — 2026-05-02
+yt_-THsGjtVtyc, yt_2LEQaWmhlpA, yt_38YP2PUNGdg, yt_3t1nAhbdvk0, yt_6foQ-cefuUc, yt_8BfLQeCrBB8, yt_8wBwhvi2X_Q, yt_9dg_vht7pL4, yt_A-td33_Qtys, yt_BVAB_PBqljY, yt_BVOfzMvd34k, yt_BouFCAZWwVI, yt_CDAXAQ2fg64, yt_DpAQ3xwOvdY, yt_ETRjxhrfZv4, yt_FlX-68kilyc, yt_KDXhD2R90ag, yt_KRJm4SUZSXQ, yt_KlDFxjP3uS8, yt_KyBkxsVr8R4, yt_QBUuXlrMUtg, yt_QWrTxp0X2vk, yt_QhKuo6meaTs, yt_STvbF951Q_4, yt_TyEVXIme3nQ, yt_U6gg_bi1I70, yt_XQbCJAVlwxk, yt_XWHFJsUtTRk, yt_Xd9xgwQjHNU, yt_ZRYVWIATz9Y, yt_ZRw13_hOoZE, yt_ZqWbtBI9ZdM, yt__m3tlj7_zUQ, yt_aFWbZINFfpM, yt_cy2OoZB6ev8, yt_d8zQwpGrwbY, yt_e4m42JskKXE, yt_f5lqc5rAQZo, yt_foa_F7V3Xc4, yt_g1nniLY6WG4, yt_h297orGjRtU, yt_h4b5FwztscA, yt_hT6EK5EPTTU, yt_hTnLyIh-G3M, yt_ilhT7TyIpMk, yt_jQWenzVMbgI, yt_ksZv6hqVpRw, yt_lFUBM_tgSuU, yt_lYnGAJ3VOa0, yt_lq8HI9Lpfj8, yt_mFZHq5mTt0A, yt_n_JbDeEV9No, yt_pJDIfTH2QxQ, yt_pL8C5BttzRg, yt_ptxUWvTpfxQ, yt_sZbhqlqmv4I, yt_uHj2b2c-EJY, yt_uUd6i1rJSPU, yt_vEXZpko35cI, yt_vFcCuevkcto, yt_vZPo7IzF614, yt_wIF2HGGHGc0, yt_wIMqBgQ6dAI, yt_wRv9F4_SNT8, yt_xxiWd7O9Wy4, yt_yeDWixjPehU, yt_z5VSkoQHrao

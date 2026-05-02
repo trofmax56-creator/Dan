@@ -3,8 +3,6 @@ source: @zuevichigor
 date: 2026-03-03
 original: https://t.me/zuevichigor/1918
 category: GOLD
-status: biz_recipe
-score: Pain=8 Dev=8 Profit=7 ИТОГ=23
 tags: [n8n, Claude, AI-агент, автоматизация, API]
 ---
 

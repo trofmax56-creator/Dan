@@ -3,9 +3,7 @@ source: @edvardgrishin27
 date: 2026-03-22
 original: https://t.me/edvardgrishin27/151
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-tags: [Claude, AI-агент]
+tags: [Claude, AI-агент, Cursor]
 ---
 
 ## Главная мысль
@@ -16,6 +14,7 @@ _Не описана_
 
 ## Технические связки
 - claude → anthropic
+- claude → cursor
 
 ## Мясо
 - [АЛЬТМАН ПОПРОЩАЛСЯ С РАЗРАБОТЧИКАМИ. $27 МЛРД ВОЛОЖУ. ИИ УЧИТ СЕБЯ САМ. НОВИНКИ ОТ CLAUDE. ИИ NEWS#3

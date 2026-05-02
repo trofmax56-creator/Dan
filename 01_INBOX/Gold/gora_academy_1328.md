@@ -3,8 +3,6 @@ source: @gora_academy
 date: 2026-03-31
 original: https://t.me/gora_academy/1328
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [промпт]
 ---
 

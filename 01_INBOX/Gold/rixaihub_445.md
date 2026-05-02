@@ -1,10 +1,12 @@
 ---
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-date: 2026-04-20 03:58:52+00:00
-link: https://t.me/rixaihub/445
+source: @rixaihub
+date: 2026-04-20
+original: https://t.me/rixaihub/445
+category: GOLD
+tags: [Claude]
 ---
 
+## Главная мысль
 **RixAI** 😎**
 **`Claude Design: всё, что можно собрать за 15 минут (3 реальных кейса)
 `
@@ -19,3 +21,14 @@ link: https://t.me/rixaihub/445
 
 [[**Telegram Exporter**](https://github.com/morf3uzzz/telegram-exporter)] 
 [[**Claude Design**](https://claude.ai/design)]
+
+## Схема / Workflow
+_Не описана_
+
+## Технические связки
+- telegram → http → github
+- claude → http
+
+## Мясо
+- **`Claude Design: всё, что можно собрать за 15 минут (3 реальных кейса)
+- [[**Claude Design**](https://claude.ai/design)]

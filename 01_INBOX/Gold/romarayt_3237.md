@@ -3,9 +3,7 @@ source: @romarayt
 date: 2026-04-11
 original: https://t.me/romarayt/3237
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-tags: [Claude]
+tags: [Claude, аналитика]
 ---
 
 ## Главная мысль

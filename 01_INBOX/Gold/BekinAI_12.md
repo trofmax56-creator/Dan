@@ -3,8 +3,6 @@ source: @BekinAI
 date: 2026-02-25
 original: https://t.me/BekinAI/12
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [AI-агент]
 ---
 

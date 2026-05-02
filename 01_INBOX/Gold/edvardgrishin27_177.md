@@ -3,9 +3,7 @@ source: @edvardgrishin27
 date: 2026-04-24
 original: https://t.me/edvardgrishin27/177
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-tags: [Claude, API]
+tags: [Claude, API, DeepSeek]
 ---
 
 ## Главная мысль
@@ -18,8 +16,12 @@ _Не описана_
 
 ## Технические связки
 - claude → gpt
+- claude → deepseek
 
 ## Мясо
+- DEEPSEEK-V4 PREVIEW ТОЖЕ ТЕПЕРЬ В ГОНКЕ AI
 - Если кратко, в чем-то лучше Opus 4.7, в чем-то даже лучше GPT 5.5, но при этом открытая с весами и дешевле в разы данных моделей по API. Но что нам эти бенчи если важна экосистема выстроенная вокруг нее.А где тут она?  В целом такие модели полезны для стартапов и чтобы закрытые модели вроде Claude и GPT развивались и не поднимали сильно планку ценника(хотя все равно поднимают - нужно же окупить все сервера и вложения инвесторов).
 - Но условно представить день, когда я пересяду с Claude на DeepSeek я не могу. Хотя нет,  могу, но это значит что доступ в интернет оставили лишь в Китай и в Россию)
 - Tech Report: https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf
+- Open Weights: https://huggingface.co/collections/deepseek-ai/deepseek-v4
+- Превью-версии доступны в чат-боте DeepSeek в режиме «Эксперт»

@@ -3,8 +3,6 @@ source: @zuevichigor
 date: 2026-04-02
 original: https://t.me/zuevichigor/1944
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [n8n, Claude, AI-агент, промпт]
 ---
 
@@ -38,4 +36,4 @@ tags: [n8n, Claude, AI-агент, промпт]
 - – Как настроить четырёхслойную память для Claw агентов через Obsidian;
 - – Как настроить удобный интерфейс для работы с AI агентом;
 - – Какие сверхспособности даёт FireCrawl для Claude Code, Codex или OpenClaw;
-- – Как превратить AI агента в сотрудника и поручить ему выполнять рутину самостоятельно;
+- – Зачем вашему ИИ оркестратор для выполнения линейных задач;

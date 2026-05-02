@@ -3,9 +3,7 @@ source: @ai_newz
 date: 2026-04-27
 original: https://t.me/ai_newz/4551
 category: GOLD
-status: archive
-score: Pain=4 Dev=4 Profit=3 ИТОГ=11
-tags: [Claude, ChatGPT, AI-агент, API]
+tags: [Claude, ChatGPT, AI-агент, API, Cursor]
 ---
 
 ## Главная мысль
@@ -21,6 +19,8 @@ _Не описана_
 ## Технические связки
 - chatgpt → gpt
 - claude → http
+- http → deepseek
+- http → cursor
 
 ## Мясо
 - - [GPT 5.5](https://t.me/ai_newz/4545) — OpenAI выкатили новую модель, причём впервые с 4o поменяли базовую модель. Модель умнее на токен, но API стал заметно дороже: $5/$30 за миллион токенов для обычной, а есть же ещё и Pro.

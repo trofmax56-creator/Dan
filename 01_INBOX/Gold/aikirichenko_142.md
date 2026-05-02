@@ -1,12 +1,12 @@
 ---
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-date: 2026-04-18 07:19:56+00:00
-link: https://t.me/aikirichenko/142
+source: @aikirichenko
+date: 2026-04-18
+original: https://t.me/aikirichenko/142
+category: GOLD
+tags: [Claude, RAG, промпт]
 ---
 
-**Новое видео** уже на канале!
-
+## Главная мысль
 Чтобы найти видео, вводи в поиск ютуба:
 
 ```"Юрий Кириченко Claude Code + Obsidian: как Карпати убил RAG одним промптом"```
@@ -18,3 +18,15 @@ https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
 https://obsidian.md/
 
 Документ оставил в комментарии:
+
+## Схема / Workflow
+_Не описана_
+
+## Технические связки
+- obsidian → claude
+- obsidian → http
+
+## Мясо
+- ```"Юрий Кириченко Claude Code + Obsidian: как Карпати убил RAG одним промптом"```
+- https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f
+- https://obsidian.md/

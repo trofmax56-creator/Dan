@@ -1,12 +1,12 @@
 ---
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-date: 2026-04-20 11:56:07+00:00
-link: https://t.me/aikirichenko/143
+source: @aikirichenko
+date: 2026-04-20
+original: https://t.me/aikirichenko/143
+category: GOLD
+tags: [Claude]
 ---
 
-**Новое видео** уже на канале!
-
+## Главная мысль
 Чтобы найти видео, вводи в поиск ютуба:
 
 ```"Юрий Кириченко НОВЫЙ Claude Design - это просто БЕЗУМИЕ!"```
@@ -16,3 +16,13 @@ link: https://t.me/aikirichenko/143
 https://www.anthropic.com/news/claude-design-anthropic-labs
 
 claude.ai/design
+
+## Схема / Workflow
+_Не описана_
+
+## Технические связки
+- claude → anthropic
+
+## Мясо
+- ```"Юрий Кириченко НОВЫЙ Claude Design - это просто БЕЗУМИЕ!"```
+- https://www.anthropic.com/news/claude-design-anthropic-labs

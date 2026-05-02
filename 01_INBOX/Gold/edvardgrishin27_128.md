@@ -3,9 +3,7 @@ source: @edvardgrishin27
 date: 2026-03-02
 original: https://t.me/edvardgrishin27/128
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-tags: [Claude]
+tags: [Claude, DeepSeek, Ollama]
 ---
 
 ## Главная мысль
@@ -19,8 +17,11 @@ _Не описана_
 ## Технические связки
 - claude → gpt
 - http → github
+- http → llama → ollama
 
 ## Мясо
 - **КАКИЕ ЕСТЬ БЕСПЛАТНЫЕ  НЕЙРОСЕТИ В 2026 ГОДУ — ПОЛНЫЙ РАЗБОР**
 - — OpenRouter: 30+ модели через один ключ
 - — А также бесплатные доступы к GPT5/CLAUDE OPUS/Nano Banana 2
+- https://platform.deepseek.com/
+- https://console.mistral.ai/

@@ -3,8 +3,6 @@ source: @aikirichenko
 date: 2025-10-31
 original: https://t.me/aikirichenko/108
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [n8n, AI-агент, автоматизация, Bitrix24, amoCRM]
 ---
 

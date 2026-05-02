@@ -3,9 +3,7 @@ source: @FomoTeam0x
 date: 2026-04-16
 original: https://t.me/FomoTeam0x/2578
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-tags: [AI-агент]
+tags: [AI-агент, вайбкодинг]
 ---
 
 ## Главная мысль

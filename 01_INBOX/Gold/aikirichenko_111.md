@@ -3,8 +3,6 @@ source: @aikirichenko
 date: 2025-11-13
 original: https://t.me/aikirichenko/111
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Gemini, RAG, автоматизация, Bitrix24, amoCRM]
 ---
 

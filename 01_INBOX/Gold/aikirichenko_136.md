@@ -1,13 +1,13 @@
 ---
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-date: 2026-03-09 07:36:51+00:00
-link: https://t.me/aikirichenko/136
+source: @aikirichenko
+date: 2026-03-09
+original: https://t.me/aikirichenko/136
+category: GOLD
+tags: [n8n, Gemini, автоматизация, Bitrix24, amoCRM]
 ---
 
-**Новое видео** уже на канале!
-
- "ПРОФЕССИОНАЛЬНОЕ трио NotebookLM + DataTables + Gemini 3.1: ГРАНДИОЗНАЯ связка, экономящая ТОННЫ часов на исследование!"
+## Главная мысль
+"ПРОФЕССИОНАЛЬНОЕ трио NotebookLM + DataTables + Gemini 3.1: ГРАНДИОЗНАЯ связка, экономящая ТОННЫ часов на исследование!"
 
 https://www.youtube.com/watch?v=IDlHczGg2yw
 
@@ -18,3 +18,14 @@ https://www.youtube.com/watch?v=IDlHczGg2yw
 📎 Дополнительно:
 
 **Консультации и обучение один на один** (Zoom): пиши в сообщество https://t.me/KirichenkoFriends или напрямую @yrec12.
+
+## Схема / Workflow
+_Не описана_
+
+## Технические связки
+- bitrix24 → amocrm
+
+## Мясо
+- "ПРОФЕССИОНАЛЬНОЕ трио NotebookLM + DataTables + Gemini 3.1: ГРАНДИОЗНАЯ связка, экономящая ТОННЫ часов на исследование!"
+- 👉 **Универсальные решения с подробным разъяснением по AMOCRM, BITRIX24, обучение позиционированию себя на рынке ИИ-автоматизаций, фрилансу и продажам, использование шаблонов, которых нет в открытом доступе:** @AI_Kirichenko_premium_entry_bot
+- ❗🧠 **Лучший старт для новичков, связь со мной, база из 4000+ шаблонов и гайды по n8n, сообщество единомышленников и обучение n8n С НУЛЯ по цене двух чашек кофе: **@kirichenkoaistarter_bot

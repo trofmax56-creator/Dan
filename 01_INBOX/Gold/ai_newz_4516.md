@@ -3,9 +3,7 @@ source: @ai_newz
 date: 2026-04-05
 original: https://t.me/ai_newz/4516
 category: GOLD
-status: archive
-score: Pain=4 Dev=4 Profit=3 ИТОГ=11
-tags: [Claude, AI-агент]
+tags: [Claude, AI-агент, Cursor, Bolt]
 ---
 
 ## Главная мысль
@@ -21,6 +19,7 @@ LLM
 - claude → http
 - openai → http
 - gpt → http
+- http → cursor
 
 ## Мясо
 - - [Gemma 4](https://t.me/ai_newz/4504) — Новая линейка от Google из четырёх моделей (31B, 26B-MoE и две для смартфонов). Все ризонеры, мультимодальные (картинки, видео, аудио) и с контекстом до 256k.

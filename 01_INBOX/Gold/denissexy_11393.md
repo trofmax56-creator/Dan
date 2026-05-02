@@ -3,8 +3,6 @@ source: @denissexy
 date: 2026-04-23
 original: https://t.me/denissexy/11393
 category: GOLD
-status: ideas_lab
-score: Pain=6 Dev=7 Profit=5 ИТОГ=18
 tags: [API]
 ---
 

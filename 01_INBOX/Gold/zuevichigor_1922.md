@@ -3,8 +3,6 @@ source: @zuevichigor
 date: 2026-03-07
 original: https://t.me/zuevichigor/1922
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [n8n, Claude, промпт]
 ---
 
@@ -35,5 +33,5 @@ tags: [n8n, Claude, промпт]
 - – Как решить 3 главные проблемы скиллов Claude Code;
 - – Как организовать «ленивую загрузку» (lazy loading) скиллов Claude Code;
 - – зачем поставить официальный Skill creator от Anthropic и чем он сильнее неофициальных шаблонов;
+- – Как использовать reference файл: голос бренда, примеры контента и правила для текстов;
 - – Почему Claude игнорирует некоторые навыки и как заставить его применять нужные инструменты;
-- ➡️ **Шаблоны n8n и Все промпты** **и раздаточные материалы для Claude**, использованные в видео есть в нашей базе AI-Сообщества:** **[**https://l.igorzuevich.com/aicl**](https://l.igorzuevich.com/aicl)

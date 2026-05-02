@@ -3,8 +3,6 @@ source: @zuevichigor
 date: 2026-04-10
 original: https://t.me/zuevichigor/1951
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [Claude, AI-агент]
 ---
 

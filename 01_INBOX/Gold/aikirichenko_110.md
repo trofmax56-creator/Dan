@@ -3,8 +3,6 @@ source: @aikirichenko
 date: 2025-11-09
 original: https://t.me/aikirichenko/110
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [автоматизация, Bitrix24, amoCRM]
 ---
 

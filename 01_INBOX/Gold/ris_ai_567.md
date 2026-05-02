@@ -3,8 +3,6 @@ source: @ris_ai
 date: 2026-02-02
 original: https://t.me/ris_ai/567
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [n8n, AI-агент, автоматизация]
 ---
 

@@ -1,20 +1,23 @@
 ---
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-date: 2026-04-25 10:22:53+00:00
-link: https://t.me/aikirichenko/144
+source: @aikirichenko
+date: 2026-04-25
+original: https://t.me/aikirichenko/144
+category: GOLD
+tags: []
 ---
 
-**Новое видео** уже на канале!
-
+## Главная мысль
 Чтобы найти видео, вводи в поиск ютуба: 
 
-```"Юрий Кириченко Nano Banana Pro СВЕРГНУТ с трона! GPT-Image 2.0 и GPT 5.5 БЕЗУМНЫЕ релизы от Open AI"```
+```"Юрий Кириченко Nano Banana Pro СВЕРГНУТ с трона!
 
-Ссылки из видео:
+## Схема / Workflow
+_Не описана_
 
-https://github.com/YouMind-OpenLab/awesome-gpt-image-2
+## Технические связки
+- http → github
 
-https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts
-
-https://lmarena.ai/ru
+## Мясо
+- ```"Юрий Кириченко Nano Banana Pro СВЕРГНУТ с трона! GPT-Image 2.0 и GPT 5.5 БЕЗУМНЫЕ релизы от Open AI"```
+- https://github.com/YouMind-OpenLab/awesome-gpt-image-2
+- https://github.com/YouMind-OpenLab/awesome-nano-banana-pro-prompts

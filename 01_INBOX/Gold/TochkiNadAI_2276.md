@@ -3,8 +3,6 @@ source: @TochkiNadAI
 date: 2026-04-21
 original: https://t.me/TochkiNadAI/2276
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
 tags: [ChatGPT, AI-агент]
 ---
 

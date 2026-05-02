@@ -3,9 +3,7 @@ source: @TochkiNadAI
 date: 2026-04-27
 original: https://t.me/TochkiNadAI/2281
 category: GOLD
-status: archive
-score: Pain=5 Dev=5 Profit=4 ИТОГ=14
-tags: [Claude, AI-агент]
+tags: [Claude, AI-агент, Cursor]
 ---
 
 ## Главная мысль
@@ -17,6 +15,7 @@ tags: [Claude, AI-агент]
 _Не описана_
 
 ## Технические связки
+- claude → cursor
 - http → github
 
 ## Мясо

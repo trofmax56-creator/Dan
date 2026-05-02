@@ -3,9 +3,7 @@ source: @ai_newz
 date: 2026-04-24
 original: https://t.me/ai_newz/4547
 category: GOLD
-status: archive
-score: Pain=4 Dev=4 Profit=3 ИТОГ=11
-tags: []
+tags: [DeepSeek]
 ---
 
 ## Главная мысль
@@ -18,8 +16,11 @@ _Не описана_
 
 ## Технические связки
 - http
+- deepseek
 
 ## Мясо
+- **DeepSeek V4 вышла в превью!** 🐳
 - Это самая большая открытая модель, по бенчам обгоняет Kimi K2.6 и очень близко подбирается к закрытым моделям. Идёт в двух вариантах — Pro с 1.6T-A49B параметров и Flash с 284B-A13B. Модели поддерживают миллион токенов контекста, а новая схема аттеншна позволяет уменьшить KV кэш в 10 раз на контексте в миллион токенов.
 - Цена - $0.14/$0.28 за миллион токенов Flash, как у DeepSeek V2 и $1.74/$3.48 у Pro. Модели уже доступны в чате, Instant это Flash, а Expert это Pro. С моделью релизнули подробнейший техрепорт.
+- [Веса](https://huggingface.co/collections/deepseek-ai/deepseek-v4)
 - [Техрепорт](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro/blob/main/DeepSeek_V4.pdf)

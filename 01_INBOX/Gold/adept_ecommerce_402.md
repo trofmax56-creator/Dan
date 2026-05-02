@@ -3,8 +3,6 @@ source: @adept_ecommerce
 date: 2026-04-12
 original: https://t.me/adept_ecommerce/402
 category: GOLD
-status: biz_recipe
-score: Pain=8 Dev=7 Profit=7 ИТОГ=22
 tags: [n8n, Claude, Gemini, автоматизация]
 ---
 

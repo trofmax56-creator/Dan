@@ -1,5 +1,5 @@
 # 🏭 Мастер-стратегия: Завод ИИ-решений (AI Factory)
-**Версия:** 2.0 | **Обновлено:** 2026-04-30 | **Автор:** Максим Трофимов + Claude
+**Версия:** 3.0 | **Обновлено:** 2026-05-02 | **Автор:** Максим Трофимов + Claude
 
 > Полный алгоритм от парсинга сырых данных до готового ИИ-продукта и продажи.
 > Документ является главным референсом проекта.
@@ -9,57 +9,58 @@
 ## 🏗️ АРХИТЕКТУРА ЗАВОДА (5 Цехов)
 
 ```
-                    ┌─────────────────────────────────────┐
-                    │         СЫРЬЁ (00_RAW/)             │
-                    │  Telegram │ YouTube │ Infra Search  │
-                    └──────────────────┬──────────────────┘
-                                       │
-                    ┌──────────────────▼──────────────────┐
-                    │         GOLD БАЗА (01_INBOX/Gold/)  │
-                    │         600+ карточек идей          │
-                    └───────────┬──────────────┬──────────┘
-                                │              │
-               ┌────────────────▼──┐    ┌──────▼──────────────┐
-               │  infra_processor  │    │  gold_synthesizer   │
-               │  (авто, пн)       │    │  (авто, вс)         │
-               └────────────────┬──┘    └──────┬──────────────┘
-                                │              │
-                    ┌───────────▼──────────────▼───────────┐
-                    │       ПРОДУКТОВАЯ БИБЛИОТЕКА         │
-                    │  05_BIZ_RECIPES/   08_IDEAS_LAB/     │
-                    │  108+ рецептов     130+ идей         │
-                    └──────────────────┬───────────────────┘
-                                       │
-               ┌───────────────────────▼───────────────────┐
-               │              5 ЦЕХОВ ЗАВОДА               │
-               ├───────────────────────────────────────────┤
-               │ 1. Маркетинг  │ Контент, статьи, Reels   │
-               │ 2. Продажи    │ Квалификатор, Реаниматор  │
-               │ 3. Сборка     │ n8n workflows, интеграции │
-               │ 4. Сервис     │ Наставник, мониторинг     │
-               │ 5. Инженерный │ LangGraph, CrewAI, RAG   │
-               └───────────────────────────────────────────┘
+          ┌──────────────────────────────────────────┐
+          │              СЫРЬЁ (00_RAW/)             │
+          │     Telegram (22 канала) │ YouTube       │
+          └─────────────────┬────────────────────────┘
+                            │
+          ┌─────────────────▼────────────────────────┐
+          │         GOLD БАЗА (01_INBOX/Gold/)        │
+          │              470+ карточек                │
+          └─────────────────┬────────────────────────┘
+                            │
+                  ┌─────────▼──────────┐
+                  │  gold_synthesizer  │
+                  │  (авто, вс 08:00)  │
+                  └─────────┬──────────┘
+                            │
+          ┌─────────────────▼────────────────────────┐
+          │         ПРОДУКТОВАЯ БИБЛИОТЕКА            │
+          │  05_BIZ_RECIPES/ (32 рецепта, 051–082)   │
+          │  08_IDEAS_LAB/ (SELECTED + RAW_IDEAS)     │
+          └─────────────────┬────────────────────────┘
+                            │
+          ┌─────────────────▼────────────────────────┐
+          │               5 ЦЕХОВ ЗАВОДА              │
+          ├──────────────────────────────────────────┤
+          │ 1. Маркетинг  │ Контент, статьи, Reels   │
+          │ 2. Продажи    │ Квалификатор, Реаниматор  │
+          │ 3. Сборка     │ n8n workflows, интеграции │
+          │ 4. Сервис     │ Наставник, мониторинг     │
+          │ 5. Инженерный │ LangGraph, CrewAI, RAG    │
+          └──────────────────────────────────────────┘
 ```
 
 ---
 
 ## 📁 КАРТА ФАЙЛОВ И СКРИПТОВ
 
-### Автоматические скрипты (корень репозитория)
+### Основные скрипты (корень репозитория)
 | Скрипт | Запуск | Вход | Выход |
 |---|---|---|---|
-| `infra_discovery.py` | GitHub Actions (пн авто) | YouTube API, 60 запросов | `00_RAW/Infra/*.json` |
-| `infra_processor.py` | GitHub Actions (пн авто) | `00_RAW/Infra/*.json` | `05_BIZ_RECIPES/`, `08_IDEAS_LAB/` |
+| `parser.py` | Локально (раз в 2 нед.) | Telegram MTProto, 22 канала | `00_RAW/Telegram/` |
+| `processor.py` | Локально (после parser) | `00_RAW/Telegram/` | `01_INBOX/Gold/` |
+| `youtube_parser.py` | Локально (раз в 2 нед.) | YouTube RSS, 10 каналов | `00_RAW/YouTube/` |
 | `gold_synthesizer.py` | GitHub Actions (вс авто) | `01_INBOX/Gold/` (40 файлов) | `05_BIZ_RECIPES/`, `08_IDEAS_LAB/` |
 
-### Ручные скрипты
-| Скрипт | Запуск | Вход | Выход |
-|---|---|---|---|
-| `parser_deep.py` | Локально | Telegram API | `00_RAW/Telegram/` |
-| `processor.py` | Локально | `00_RAW/Telegram/` | `01_INBOX/Gold/` |
-| `youtube_parser.py` | GitHub Actions (вручную) | YouTube RSS каналов | `00_RAW/YouTube/` |
+### Инструменты (02_TOOLS/Scripts/)
+| Скрипт | Запуск | Назначение |
+|---|---|---|
+| `tg_discovery_v2.py` | Локально (по необходимости) | Поиск новых TG-каналов через граф-обход |
+| `yt_discovery.py` | GitHub Actions (вручную) | YouTube API поиск → `00_RAW/YouTube/` |
+| `yt_processor_2.py` | GitHub Actions (вручную) | Claude Haiku → Gold из YT |
 
-### Инструменты (02_TOOLS/)
+### Протоколы (02_TOOLS/)
 | Файл | Назначение |
 |---|---|
 | `crm-ai-product-factory.md` | Стандарт описания продукта (9 пунктов) |
@@ -75,58 +76,62 @@
 ### GitHub Actions (.github/workflows/)
 | Workflow | Расписание | Скрипты |
 |---|---|---|
-| `yt_discovery.yml` | Вручную | youtube_parser → yt_processor_2 |
-| `infra_discovery.yml` | **Пн 09:00 МСК** + вручную | infra_discovery → infra_processor |
+| `yt_discovery.yml` | Вручную | yt_discovery → yt_processor_2 |
 | `gold_synthesizer.yml` | **Вс 08:00 МСК** + вручную | gold_synthesizer |
 
 ---
 
-## 📊 СОСТОЯНИЕ БАЗЫ (на 2026-04-30)
+## 📊 СОСТОЯНИЕ БАЗЫ (на 2026-05-02)
 
-| Источник | Файлов в Gold | Авто |
+| Источник | Файлов | Режим |
 |---|---|---|
-| Telegram-каналы (21 канал) | 339 | ❌ Локально |
-| YouTube-каналы (10 каналов) | 100+ | ⚡ Вручную |
-| Infra Discovery (60 запросов) | — → дайджест в Gold | ✅ Еженедельно |
-| **Итого Gold** | **600+** | |
+| Telegram-каналы (22 канала) | 527 сырых → 470+ Gold | Локально, раз в 2 нед. |
+| YouTube RSS (10 каналов) | 123 файла | Локально, раз в 2 нед. |
+| YouTube API (yt_discovery) | — | Вручную через GitHub Actions |
 
 | Продуктовая база | Кол-во |
 |---|---|
-| BIZ_RECIPES (score ≥22) | **108+** |
-| SELECTED / Ideas Lab (score 20–24) | **130+** |
-| RAW_IDEAS (score <20) | **50+** |
+| BIZ_RECIPES (051–082) | **32** |
+| SELECTED / Ideas Lab | **1** |
+| RAW_IDEAS | **4** |
 | Синтезированных продуктов (vern_ideas) | **30** |
 
 ---
 
 ## ЭТАП 0 — СБОР СЫРЬЯ
 
-### Три параллельных потока
+### Два ручных потока (раз в 2 недели, локально)
 
-**Поток А — Telegram (раз в 2 недели, локально):**
-1. `python parser_deep.py` — собирает посты из 21 канала
-2. `python processor.py` — классифицирует GOLD/TRASH по ключевым словам
+**Поток А — Telegram:**
+1. `python parser.py` — собирает посты из 22 каналов (Telethon, бесплатно)
+2. `python processor.py` — классифицирует GOLD/TRASH по ключевым словам (без API)
 3. Результат: новые файлы в `01_INBOX/Gold/`
 
-**Поток Б — YouTube-каналы (вручную, GitHub Actions):**
+**Поток Б — YouTube RSS:**
+1. `python youtube_parser.py` — парсит RSS 10 каналов (бесплатно)
+2. Результат: новые файлы в `00_RAW/YouTube/`
+
+### Поток через GitHub Actions (вручную)
+
+**YouTube API:**
 1. GitHub → Actions → YouTube Discovery → Run workflow
-2. `youtube_parser.py` → RSS 10 каналов → `00_RAW/YouTube/`
+2. `yt_discovery.py` → YouTube Data API → `00_RAW/YouTube/`
 3. `yt_processor_2.py` → Claude Haiku → `01_INBOX/Gold/yt_*.md`
 4. `git pull` локально
 
-**Поток В — Infra Discovery (авто, каждый понедельник):**
-1. GitHub Actions запускает `infra_discovery.py` автоматически
-2. 60 хирургических запросов: замена должностей, автоматизация отделов, ROI-кейсы
-3. YouTube API → `00_RAW/Infra/YYYY-MM-DD_infra_raw.json`
-4. `infra_processor.py` → Claude Sonnet → паспорта идей → `05_BIZ_RECIPES/` + `08_IDEAS_LAB/`
-5. Дайджест → `01_INBOX/Gold/infra_digest_YYYY-MM-DD.md`
+### Поиск новых TG-каналов (по необходимости)
+```
+python 02_TOOLS/Scripts/tg_discovery_v2.py
+```
+Граф-обход по упоминаниям в `00_RAW/Telegram/`. Результат → `tg_discovered_v2.md`.
+Новые каналы добавляются вручную в `parser.py`.
 
 ### Технический стек сбора
+- YouTube RSS (бесплатно, без ключей)
 - YouTube Data API v3 (10k запросов/день, бесплатно)
-- Telegram MTProto / telethon (`dan_session` — только локально)
-- Claude claude-haiku-4-5 — классификация YT (дёшево)
-- Claude claude-sonnet-4-6 — паспорта идей (качественно)
-- GitHub Actions — облачный запуск без участия Максима
+- Telegram MTProto / Telethon (`dan_session` — только локально)
+- Claude Haiku — классификация YT (дёшево)
+- GitHub Actions — облачный запуск yt_discovery
 
 ---
 
@@ -142,23 +147,17 @@
 
 ### Роутинг по score
 ```
-ИТОГ > 24  → 05_BIZ_RECIPES/         (в производство)
-ИТОГ 20–24 → 08_IDEAS_LAB/08.2_SELECTED/  (следующий спринт)
-ИТОГ 18–19 → 08_IDEAS_LAB/08.1_RAW_IDEAS/ (идея, не срочно)
+ИТОГ > 24  → 05_BIZ_RECIPES/                   (в производство)
+ИТОГ 20–24 → 08_IDEAS_LAB/08.2_SELECTED/       (следующий спринт)
+ИТОГ 18–19 → 08_IDEAS_LAB/08.1_RAW_IDEAS/      (идея, не срочно)
 ИТОГ < 18  → frontmatter: status: archive
 ```
 
-### Два автоматических потока скоринга
-
-**infra_processor** (1 видео = 1 паспорт идеи):
-- Читает каждое видео из `00_RAW/Infra/`
-- Claude анализирует: что заменяет, экономика, артефакты, шаги
-- Сохраняет паспорт с полным описанием стека и цен
-
-**gold_synthesizer** (N Gold-файлов = 1 синтезированный продукт):
-- Берёт последние 40 Gold-файлов
-- Claude синтезирует продукты в формате vern_ideas (9 пунктов)
+### Gold Synthesizer (авто, каждое воскресенье)
+- Берёт последние 40 Gold-файлов из `01_INBOX/Gold/`
+- Claude синтезирует продукты в 9-точечном стандарте
 - Бизнес-сценарий, стек, алгоритм, ROI, цена для клиента
+- Результат: новые карточки в `05_BIZ_RECIPES/` и `08_IDEAS_LAB/`
 
 ---
 
@@ -213,7 +212,7 @@ Trigger (Webhook / Cron / CRM Event)
   → PostgreSQL / Supabase (хранение состояния)
 ```
 
-### Цех №5 — Инженерный Hub (новый)
+### Цех №5 — Инженерный Hub
 Для сложных мультиагентных решений:
 - **LangGraph / CrewAI** — агентные цепочки
 - **RAG на локальных данных** — векторные БД (Chroma, Qdrant)
@@ -274,15 +273,11 @@ Trigger (Webhook / Cron / CRM Event)
 
 ```
 ВОСКРЕСЕНЬЕ (авто, 08:00 МСК)
-  → gold_synthesizer: 40 Gold-файлов → новые продукты
+  → gold_synthesizer: 40 Gold-файлов → новые продукты в BIZ_RECIPES
 
-ПОНЕДЕЛЬНИК (авто 09:00 МСК + 5 мин Максима)
-  → infra_discovery + infra_processor: 60 запросов → паспорта
-  → git pull → посмотреть дайджест
-
-ВТОРНИК (30–60 мин)
-  → Выбрать 1 продукт из дайджестов в работу
-  → /crm-ai-product-factory — синтез по конкретным файлам если нужно
+ПОНЕДЕЛЬНИК (30 мин)
+  → git pull → разобрать новые BIZ_RECIPES
+  → выбрать 1 продукт в работу
 
 СРЕДА–ЧЕТВЕРГ (разработка)
   → Сборка n8n workflow по выбранному BIZ_RECIPE
@@ -292,9 +287,13 @@ Trigger (Webhook / Cron / CRM Event)
   → Адаптации эха (TenChat, ВК, Telegram)
 
 РАЗ В 2 НЕДЕЛИ (15 мин, локально)
-  → python parser_deep.py  (Telegram)
-  → python processor.py
-  → GitHub Actions → YouTube Discovery (вручную)
+  → python parser.py          (Telegram, 22 канала)
+  → python processor.py       (фильтрация GOLD/TRASH)
+  → python youtube_parser.py  (YouTube RSS, 10 каналов)
+
+ПО НЕОБХОДИМОСТИ
+  → python 02_TOOLS/Scripts/tg_discovery_v2.py  (поиск новых TG-каналов)
+  → GitHub Actions → YouTube Discovery          (глубокий YT поиск)
 ```
 
 ---
@@ -303,9 +302,9 @@ Trigger (Webhook / Cron / CRM Event)
 
 | Ключ | Где хранится | Используется в |
 |---|---|---|
-| `ANTHROPIC_API_KEY` | GitHub Secrets | infra_processor, gold_synthesizer, yt_processor |
-| `YOUTUBE_API_KEY` | GitHub Secrets | infra_discovery, yt_discovery |
-| Telegram сессия | `dan_session` в корне | parser_deep.py (только локально) |
+| `ANTHROPIC_API_KEY` | GitHub Secrets | gold_synthesizer, yt_processor_2 |
+| `YOUTUBE_API_KEY` | GitHub Secrets | yt_discovery |
+| Telegram сессия | `dan_session` в корне | parser.py (только локально) |
 | Bitrix24 Webhook | n8n Variables | CRM интеграции |
 
 ---
@@ -313,7 +312,7 @@ Trigger (Webhook / Cron / CRM Event)
 ## 🎯 ПРИОРИТЕТЫ В ПРОИЗВОДСТВО (топ из Demand Matrix)
 
 | # | Продукт | Score | Почему первый |
-|---|---|:---:|---|
+|---|:---:|:---:|---|
 | 1 | AI-Icebreaker Audit | 26 | Лидген-инструмент, продаёт все остальные продукты |
 | 2 | AI-Сито (Квалификатор) | 25 | Уже частично в пайплайне, массовый спрос |
 | 3 | AI-1С Integrator | 24 | Уникально, нет конкурентов, реальная боль |
@@ -321,9 +320,8 @@ Trigger (Webhook / Cron / CRM Event)
 | 5 | AI-Invoice Matcher | 24 | Бухгалтер, понятный ROI |
 
 *Полный список 30 продуктов: [`vern_ideas`](../vern_ideas)*
-*Паспорта из Infra Discovery: [`01_INBOX/Gold/infra_digest_*.md`](../01_INBOX/Gold/)*
 
 ---
 
-*Документ обновлён: 2026-04-30*
+*Документ обновлён: 2026-05-02*
 *Следующее обновление: после первого спринта разработки AI-Icebreaker Audit*

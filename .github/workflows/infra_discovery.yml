@@ -2,8 +2,8 @@ name: Infra Discovery
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 6 * * 1"  # Каждый понедельник в 06:00 UTC
+  # schedule отключён — infra pipeline не используется в основном алгоритме
+  # - cron: "0 6 * * 1"  # Каждый понедельник в 06:00 UTC
 
 jobs:
   discover:

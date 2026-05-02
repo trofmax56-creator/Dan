@@ -4,7 +4,7 @@ title: Manus AI Explained: The AI Employee Replacing Jobs in 2026 | Best Busines
 channel: US FINox 
 date: 2026-05-02
 url: https://youtube.com/watch?v=ZRw13_hOoZE
-status: trash
+status: raw
 ---
 
 ## Описание

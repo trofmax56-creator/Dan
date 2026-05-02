@@ -5,13 +5,14 @@ from datetime import date
 from pathlib import Path
 import anthropic
 
-# Script: gold_synthesizer.py (v1.0)
-# Purpose: Batch synthesis of Gold files → commercial AI products (vern_ideas format).
+# Script: gold_synthesizer.py (v2.0)
+# Purpose: Batch synthesis of Gold files → commercial AI products (v3.0 standard).
 # Input:  01_INBOX/Gold/ — last N files (sorted by mtime)
 # Output:
-#   ИТОГ > 24 → 05_BIZ_RECIPES/
+#   ИТОГ > 24  → 05_BIZ_RECIPES/
 #   ИТОГ 20–24 → 08_IDEAS_LAB/08.2_SELECTED/
-#   Digest    → 08_IDEAS_LAB/08.2_SELECTED/products_digest_YYYY-MM-DD.md
+#   ИТОГ 18–19 → 08_IDEAS_LAB/08.1_RAW_IDEAS/
+#   Digest     → 08_IDEAS_LAB/08.2_SELECTED/products_digest_YYYY-MM-DD.md
 # IMPORTANT: Does NOT modify existing scripts.
 
 ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY", "")
@@ -20,8 +21,10 @@ BASE_DIR = Path(__file__).parent
 GOLD_DIR = BASE_DIR / "01_INBOX" / "Gold"
 BIZ_RECIPES_DIR = BASE_DIR / "05_BIZ_RECIPES"
 SELECTED_DIR = BASE_DIR / "08_IDEAS_LAB" / "08.2_SELECTED"
+RAW_IDEAS_DIR = BASE_DIR / "08_IDEAS_LAB" / "08.1_RAW_IDEAS"
 
 SELECTED_DIR.mkdir(parents=True, exist_ok=True)
+RAW_IDEAS_DIR.mkdir(parents=True, exist_ok=True)
 
 # Сколько Gold-файлов брать за один прогон
 BATCH_SIZE = int(os.environ.get("GOLD_BATCH_SIZE", "40"))
@@ -40,49 +43,106 @@ def next_recipe_number() -> int:
 
 # ─── Системный промпт (кешируется) ──────────────────────────────────────────
 
-SYSTEM_PROMPT = """Ты — главный продуктовый архитектор Студии Трофимов (Россия).
+SYSTEM_PROMPT = """Ты — главный продуктовый архитектор Студии Трофимов (Россия). Стандарт продукта v3.0.
 Студия продаёт автоматизацию на ИИ малому и среднему бизнесу: n8n, Claude, Bitrix24, amoCRM, 1С, МойСклад, Wazzup.
 Клиенты: МСБ России, бюджет 50 000–500 000 руб., хотят сократить ФОТ и автоматизировать процессы.
 
-Правила:
-- Адаптируй западные решения под РФ (ЮKassa, Wazzup, СберБизнес вместо западных аналогов)
-- Бизнес-сценарий пиши живо — конкретная ситуация, диалог или кейс
-- Цены только в рублях
-- Demand Matrix: Pain + (10 − Dev) + Profit. Порог производства: ИТОГ > 24
+═══ СТАНДАРТ ОПИСАНИЯ ПРОДУКТА v3.0 ═══
+
+1. НАЗВАНИЕ: Формат строго «AI-[Роль]» + расшифровка в скобках.
+   Имя = роль = что заменяет или улучшает. Клиент с первого слова понимает что покупает.
+   ✓ Примеры: «AI-Сито» (Умный Квалификатор), «AI-Некромант» (Реаниматор базы), «AI-Ревизор» (Контроль 100% звонков).
+   ✗ Нельзя: «AI-Sales Helper», «AI-Automation Tool», «AI-Менеджер».
+
+2. СУТЬ: 1–2 предложения — только механика решения, без воды.
+
+3. БИЗНЕС-СЦЕНАРИЙ: Живая сцена по формату «ДО → ИИ делает → клиент получает».
+   Пиши конкретными словами, которые говорит клиент и что ИИ отвечает/делает.
+   Клиент должен узнать себя, читая этот абзац.
+   ✓ Можно: «Клиент пишет в WhatsApp: "Сколько стоит?" Менеджер занят. ИИ отвечает: "Привет! Подскажите, какая у вас ниша?" После ответов ИИ сам заполняет карточку в Битриксе.»
+   ✗ Нельзя: «Система помогает автоматизировать процесс квалификации».
+
+4. ЛОГИКА: Путь данных одной строкой через стрелки. Формат: Trigger → Process → Action.
+
+5. ТЕХНИЧЕСКИЙ СТЕК: Только РФ-совместимые инструменты:
+   Wazzup (не Twilio), ЮKassa (не Stripe), Dadata (не Clearbit), UIS/МТС Exolve (не Twilio Voice).
+
+6. АЛГОРИТМ РЕАЛИЗАЦИИ: 3–5 шагов для n8n-инженера.
+   Конкретные глаголы действия + числа где применимо.
+   ✓ Можно: «Рассылка по 20 сообщений в час», «Уведомление РОПу при оценке < 3».
+   ✗ Нельзя: «настроить интеграцию», «подключить API».
+
+7. ПОЧЕМУ КУПЯТ (ROI): Формула = боль + цифра + крючок-инсайт.
+   Боль: что теряет клиент прямо сейчас без этого продукта.
+   Цифра: рубли, часы, проценты — обязательно конкретно.
+   Крючок: одна фраза, которая запоминается и передаётся дальше.
+   ✓ Можно: «Заменяет штат ОКК из 2 человек (160 000 руб./мес. ФОТ). Стоимость возврата клиента в 10 раз ниже нового лида.»
+   ✗ Нельзя: «экономит время и повышает эффективность».
+
+8. ЭКОНОМИКА: Разработка для Студии / инфраструктура клиента в месяц / цена продажи клиенту.
+
+9. ИСТОЧНИК: Список исходных Gold-файлов.
+
+═══ DEMAND MATRIX ═══
+Pain + (10 − Dev) + Profit = ИТОГ (max 30).
+ИТОГ > 24 → в производство | 20–24 → следующий спринт | 18–19 → идея (не срочно) | < 18 → пропуск.
 
 Формат ответа — строго JSON-массив продуктов."""
 
 # ─── Промпт синтеза ──────────────────────────────────────────────────────────
 
 def build_prompt(gold_content: str) -> str:
-    return f"""Проанализируй эти материалы из папки GOLD и синтезируй коммерческие ИИ-продукты для Студии Трофимов.
+    return f"""Проанализируй эти материалы из папки GOLD и синтезируй коммерческие ИИ-продукты для Студии Трофимов по стандарту v3.0.
 
 --- МАТЕРИАЛЫ GOLD ---
 {gold_content}
 --- КОНЕЦ МАТЕРИАЛОВ ---
 
-Из этих материалов выдели идеи с ИТОГ > 18 и опиши каждую как готовый продукт.
+Из этих материалов выдели идеи с ИТОГ ≥ 18 и опиши каждую как готовый продукт.
+
+СТРОГИЕ ТРЕБОВАНИЯ К ФОРМАТУ (стандарт v3.0):
+
+"name": Формат «AI-[Роль]» + пробел + «(Расшифровка)». Имя = что заменяет.
+  ✓ «AI-Сито (Умный Квалификатор)», «AI-Некромант (Реаниматор базы)»
+  ✗ «AI-Helper», «AI-Sales Tool»
+
+"scenario": Живая сцена «ДО → ИИ делает → клиент получает».
+  Включи реальные слова клиента в кавычках. Клиент должен узнать себя.
+  ✓ «Менеджер занят. Клиент пишет в WhatsApp: "Сколько стоит?" ИИ отвечает: "Привет! Подскажите нишу и кол-во сотрудников?" После ответов ИИ сам заполняет карточку в Битрикс24.»
+  ✗ «Система автоматизирует процесс квалификации входящих лидов.»
+
+"algorithm": Конкретные глаголы + числа где применимо.
+  ✓ ["Настроить webhook в n8n на входящие WhatsApp-сообщения через Wazzup", "Claude извлекает 5 параметров квалификации из диалога", "Уведомление РОПу если скор < 3 из 5"]
+  ✗ ["Настроить интеграцию", "Подключить API", "Протестировать"]
+
+"why_buy": Формула боль + цифра + крючок-инсайт (запоминаемая фраза).
+  ✓ «Менеджер тратит 40 мин на квалификацию одного лида вручную — 120 лидов/мес × 40 мин = 80 часов = 2 рабочие недели. AI-Сито делает это за 3 минуты. Крючок: "Менеджер продаёт, а не анкетирует."»
+  ✗ «Экономит время и повышает конверсию.»
 
 Ответ — строго JSON-массив:
 [
   {{
-    "name": "AI-[Название]",
-    "essence": "1-2 предложения — механика решения",
-    "scenario": "Конкретная ситуация клиента — как будто ты описываешь реальный кейс",
-    "logic": "Trigger → Process → Action",
-    "stack": ["n8n", "Claude 3.5 Sonnet", "..."],
-    "integrations": "Как сервисы соединены (n8n как оркестратор)",
-    "algorithm": ["Шаг 1", "Шаг 2", "Шаг 3"],
-    "why_buy": "Экономия ФОТ или деньги — конкретные цифры",
-    "cost_dev": "Стоимость разработки, например '60 000 – 100 000 руб.'",
-    "cost_infra": "Инфраструктура/мес, например '5 000 – 10 000 руб./мес'",
-    "price_client": "Цена для клиента, например '150 000 – 250 000 руб.'",
-    "source_files": ["filename1.md", "filename2.md"],
+    "name": "AI-[Роль] (Расшифровка)",
+    "essence": "1-2 предложения — только механика, без воды",
+    "scenario": "Живая сцена ДО → ИИ делает → клиент получает. Слова клиента в кавычках.",
+    "logic": "Trigger → Process → Action (через стрелки, одна строка)",
+    "stack": ["n8n", "claude-sonnet-4-6", "Wazzup", "Bitrix24"],
+    "integrations": "Wazzup → n8n Webhook → Claude (квалификация) → Bitrix24 REST API",
+    "algorithm": [
+      "Шаг с глаголом + число/параметр",
+      "Шаг с глаголом + число/параметр",
+      "Шаг с глаголом + число/параметр"
+    ],
+    "why_buy": "Боль (что теряет сейчас) + цифра в рублях/часах + крючок-инсайт",
+    "cost_dev": "40 000 – 80 000 руб.",
+    "cost_infra": "3 000 – 7 000 руб./мес",
+    "price_client": "80 000 – 150 000 руб. + 15 000 руб./мес поддержка",
+    "source_files": ["filename1.md"],
     "pain": 8,
     "dev": 4,
     "profit": 9,
-    "score": 23,
-    "verdict": "Одно предложение: стоит ли брать в работу"
+    "score": 25,
+    "verdict": "Одно предложение: стоит ли брать в производство и почему"
   }}
 ]
 
@@ -111,62 +171,73 @@ def load_gold_batch(batch_size: int) -> tuple[str, list[str]]:
 # ─── Рендер Markdown ─────────────────────────────────────────────────────────
 
 def render_product(p: dict, today: str) -> str:
-    stack = ", ".join(p.get("stack", []))
+    stack_list = p.get("stack", [])
+    stack = "\n".join(f"- {s}" for s in stack_list)
+    stack_tags = ", ".join(stack_list)
     algo = "\n".join(f"{i+1}. {s}" for i, s in enumerate(p.get("algorithm", [])))
-    sources = ", ".join(f"[[{s}]]" for s in p.get("source_files", []))
+    sources = "\n".join(f"- [[{s}]]" for s in p.get("source_files", []))
     pain = p.get("pain", 0)
     dev = p.get("dev", 0)
     profit = p.get("profit", 0)
     score = p.get("score", pain + (10 - dev) + profit)
+    name = p.get("name", "—")
+    slug_name = name.split("(")[0].strip() if "(" in name else name
+    subtitle = name.split("(")[1].rstrip(")").strip() if "(" in name else ""
 
     return f"""---
+title: {name}
 date: {today}
-source: Gold Synthesis
-category: PRODUCT
-score: Pain={pain} Dev={dev} Profit={profit} ИТОГ={score}
-tags: [{stack}]
+source: Gold Synthesis v3.0
+score: {score}
+pain: {pain}
+dev: {dev}
+profit: {profit}
+status: {"production" if score > 24 else "selected" if score >= 20 else "raw"}
+tags: [{stack_tags}]
 ---
 
-# 🚀 Продукт: {p.get("name", "—")}
+## 1. Название
+**{slug_name}** — {subtitle}
 
-**Суть:** {p.get("essence", "—")}
+## 2. Суть
+{p.get("essence", "—")}
 
----
-
-## 🎯 Бизнес-сценарий
+## 3. Бизнес-сценарий
 {p.get("scenario", "—")}
 
-## ⚙️ Логика
+## 4. Логика
+```
 {p.get("logic", "—")}
+```
 
-## 🛠 Технический стек
+## 5. Технический стек
 {stack}
 
-## 🔗 Связки инструментов
+## 6. Связки инструментов
+```
 {p.get("integrations", "—")}
+```
 
-## 📋 Алгоритм реализации
+## 7. Алгоритм реализации
 {algo}
 
-## 💰 Почему купят (ROI)
+## 8. Почему купят (ROI)
 {p.get("why_buy", "—")}
 
-## 💵 Экономика
-
-| Параметр | Значение |
+## 9. Экономика
+| Статья | Сумма |
 |---|---|
-| Стоимость разработки | {p.get("cost_dev", "—")} |
-| Инфраструктура/мес | {p.get("cost_infra", "—")} |
-| **Цена для клиента** | **{p.get("price_client", "—")}** |
+| Разработка для Студии | {p.get("cost_dev", "—")} |
+| Инфраструктура клиента | {p.get("cost_infra", "—")} |
+| Цена продажи клиенту | {p.get("price_client", "—")} |
 
-## 📊 Demand Matrix
-| Pain | Dev | Profit | **ИТОГ** |
-|:---:|:---:|:---:|:---:|
-| {pain} | {dev} | {profit} | **{score}** |
+---
+
+**Demand Matrix:** Pain={pain} | Dev={dev} | Profit={profit} | **ИТОГ={score}**
 
 **Вердикт:** {p.get("verdict", "—")}
 
-## 📚 Источники
+## Источники
 {sources}
 """
 
@@ -183,10 +254,11 @@ def slugify(text: str) -> str:
 def render_digest(products: list, today: str, source_files: list) -> str:
     top = [p for p in products if p["score"] > 24]
     mid = [p for p in products if 20 <= p["score"] <= 24]
+    raw = [p for p in products if 18 <= p["score"] < 20]
 
     lines = [
-        f"# 🏭 Gold Synthesizer — {today}\n",
-        f"**Файлов обработано:** {len(source_files)} | **Продуктов:** {len(products)} | **В производство (>24):** {len(top)} | **Ideas Lab (20–24):** {len(mid)}\n",
+        f"# 🏭 Gold Synthesizer v3.0 — {today}\n",
+        f"**Файлов:** {len(source_files)} | **Продуктов:** {len(products)} | **BIZ_RECIPES (>24):** {len(top)} | **SELECTED (20–24):** {len(mid)} | **RAW (18–19):** {len(raw)}\n",
         "---\n",
     ]
     if top:
@@ -195,8 +267,13 @@ def render_digest(products: list, today: str, source_files: list) -> str:
             lines.append(f"- **{p['name']}** — ИТОГ={p['score']}")
             lines.append(f"  > {p['verdict']}\n")
     if mid:
-        lines.append("## 🟠 IDEAS LAB (20–24)\n")
+        lines.append("## 🟠 SELECTED (20–24)\n")
         for p in mid:
+            lines.append(f"- **{p['name']}** — ИТОГ={p['score']}")
+            lines.append(f"  > {p['verdict']}\n")
+    if raw:
+        lines.append("## 🟡 RAW IDEAS (18–19)\n")
+        for p in raw:
             lines.append(f"- **{p['name']}** — ИТОГ={p['score']}")
             lines.append(f"  > {p['verdict']}\n")
     return "\n".join(lines)
@@ -249,7 +326,7 @@ def run():
     print(f"✅ Синтезировано продуктов: {len(products)}\n")
 
     recipe_num = next_recipe_number()
-    counts = {"biz": 0, "selected": 0, "skip": 0}
+    counts = {"biz": 0, "selected": 0, "raw": 0, "skip": 0}
 
     for p in products:
         score = p.get("score", 0)
@@ -268,6 +345,11 @@ def run():
             (SELECTED_DIR / filename).write_text(content, encoding="utf-8")
             print(f"  🟠 SELECTED [{score}] {name}")
             counts["selected"] += 1
+        elif score >= 18:
+            filename = f"raw_{slug}_{today}.md"
+            (RAW_IDEAS_DIR / filename).write_text(content, encoding="utf-8")
+            print(f"  🟡 RAW_IDEAS [{score}] {name}")
+            counts["raw"] += 1
         else:
             print(f"  ⚫ Пропуск [{score}] {name}")
             counts["skip"] += 1
@@ -280,6 +362,7 @@ def run():
     print(f"\n✅ Готово!")
     print(f"  🔴 BIZ_RECIPES: {counts['biz']}")
     print(f"  🟠 SELECTED:    {counts['selected']}")
+    print(f"  🟡 RAW_IDEAS:   {counts['raw']}")
     print(f"  ⚫ Пропущено:   {counts['skip']}")
     print(f"  📄 Дайджест:    {digest_path}")
 

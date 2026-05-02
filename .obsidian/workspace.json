@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "11_CONTENT FACTORY/11_1_DRAFTS/post_006_ai_workflow_mistakes.md",
+                    "file": "04_PROJECTS/AI_Sales_Content_5Agents.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "post_006_ai_workflow_mistakes"
+                  "title": "AI_Sales_Content_5Agents"
                 }
               }
             ]
@@ -353,6 +353,8 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/083_ai_excel_finance_modeler.md",
+    "11_CONTENT FACTORY/11_1_DRAFTS/post_006_ai_workflow_mistakes.md",
     "11_CONTENT FACTORY/11_1_DRAFTS/post_005_n8n_25_critical_nodes.md",
     "11_CONTENT FACTORY/11_1_DRAFTS/post_004_zapier_vs_make_vs_n8n.md",
     "11_CONTENT FACTORY/11_1_DRAFTS/post_003_managed_vs_selfbuilt_agents.md",
@@ -377,8 +379,6 @@
     "02_TOOLS/crm-ai-ideator.md",
     "02_TOOLS/Brief_AI_KPI_Prompt.md",
     "02_TOOLS/Booster_N8N_Workflow_Blueprint.md",
-    "02_TOOLS/Booster_N8N_Schema.md",
-    "02_TOOLS/Booster_Field_Mapping.md",
     "__pycache__/processor.cpython-312.pyc",
     "__pycache__/parser_deep.cpython-312.pyc",
     "__pycache__",

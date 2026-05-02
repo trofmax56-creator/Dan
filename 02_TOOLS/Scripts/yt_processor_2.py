@@ -22,21 +22,48 @@ _yt_api = YouTubeTranscriptApi()
 
 BASE_DIR = Path(__file__).parent.parent.parent
 RAW_YT_DIR = BASE_DIR / "00_RAW" / "YouTube"
-GOLD_DIR = BASE_DIR / "01_INBOX" / "Gold"
+GOLD_CRM_DIR = BASE_DIR / "01_INBOX" / "Gold"        # → gold_synthesizer (продукты CRM)
+GOLD_TOOLS_DIR = BASE_DIR / "01_INBOX" / "Gold_Tools"  # → справочник инструментов
 PROCESSED_LOG = BASE_DIR / "01_INBOX" / "processed_log.md"
 
-GOLD_DIR.mkdir(parents=True, exist_ok=True)
+GOLD_CRM_DIR.mkdir(parents=True, exist_ok=True)
+GOLD_TOOLS_DIR.mkdir(parents=True, exist_ok=True)
 
-GOLD_KEYWORDS = [
+# ── GOLD_CRM — бизнес-автоматизация, CRM-интеграции (→ gold_synthesizer) ──────
+GOLD_CRM_KEYWORDS = [
     "n8n", "make.com", "zapier", "workflow", "автоматизация", "автоматизировать",
-    "claude", "chatgpt", "gpt-", "openai", "anthropic", "gemini", "llm", "llama",
-    "агент", "agent", "prompt", "промпт", "api", "интеграция", "интегратор",
-    "bitrix", "amocrm", "retailcrm", "1с", "crm",
-    "кейс", "схема", "гайд", "инструкция", "пошагово", "туториал",
-    "python", "langchain", "rag", "vector", "embeddings",
-    "claude code", "obsidian", "notion", "второй мозг",
+    "bitrix", "amocrm", "retailcrm", "1с", "crm", "интеграция", "интегратор",
+    "api", "webhook",
+    "агент", "agent", "prompt", "промпт",
+    "claude", "chatgpt", "gpt-", "openai", "anthropic", "gemini", "llm",
     "нейросет", "нейронн", "модель", "релиз",
+    "python", "langchain", "rag", "vector", "embeddings",
+    "кейс", "схема", "гайд", "инструкция", "пошагово", "туториал",
+    "obsidian", "notion", "второй мозг",
+    "аналитик", "дашборд", "визуализаци", "метрик",
 ]
+
+# ── GOLD_TOOLS — инструменты, платформы, вайбкодинг (→ Gold_Tools) ────────────
+GOLD_TOOLS_KEYWORDS = [
+    # Мультиагентные системы
+    "мультиагент", "multiagent", "multi-agent", "агентная архитектур",
+    "langgraph", "crewai", "autogen", "оркестратор",
+    # Vibe coding и AI-IDE
+    "вайбкодинг", "vibecoding", "vibe coding", "vibe-coding",
+    "cursor", "windsurf", "bolt", "lovable", "replit", "claude code", "copilot",
+    # Новые AI-платформы
+    "emergent", "same.dev", "v0.dev", "vercel ai", "atoms",
+    "dify", "flowise", "langflow",
+    # Установка и деплой
+    "деплой", "deploy", "self-hosted", "установка", "настройк", "docker compose",
+    # Модели нового поколения
+    "deepseek", "mistral", "qwen", "llama", "ollama", "sonnet", "opus", "gpt-5",
+    # Контент и публикации
+    "контент", "публикаци", "постинг",
+]
+
+# ── CRM-якоря: если есть — всегда GOLD_CRM ────────────────────────────────────
+CRM_ANCHORS = ["bitrix", "amocrm", "retailcrm", "crm", "n8n", "make.com", "webhook", "интеграц"]
 
 TRASH_KEYWORDS = [
     "крипт", "биткоин", "токен", "nft", "майнинг", "трейдинг",
@@ -194,15 +221,26 @@ def fetch_transcript(video_id: str) -> str:
 # --- Классификация ---
 
 def classify(text: str) -> str:
+    """Возвращает: GOLD_CRM | GOLD_TOOLS | TRASH"""
     text_lower = text.lower()
     trash_score = sum(1 for kw in TRASH_KEYWORDS if kw in text_lower)
-    gold_score = sum(1 for kw in GOLD_KEYWORDS if kw in text_lower)
     if trash_score >= 2:
         return "TRASH"
-    if gold_score >= 2:
-        return "GOLD"
-    if gold_score == 1 and trash_score == 0:
-        return "GOLD"
+
+    crm_score = sum(1 for kw in GOLD_CRM_KEYWORDS if kw in text_lower)
+    tools_score = sum(1 for kw in GOLD_TOOLS_KEYWORDS if kw in text_lower)
+    has_crm_anchor = any(a in text_lower for a in CRM_ANCHORS)
+
+    if has_crm_anchor and crm_score >= 1:
+        return "GOLD_CRM"
+    if crm_score >= 2:
+        return "GOLD_CRM"
+    if tools_score >= 2:
+        return "GOLD_TOOLS"
+    if tools_score == 1 and trash_score == 0:
+        return "GOLD_TOOLS"
+    if crm_score == 1 and trash_score == 0:
+        return "GOLD_CRM"
     return "TRASH"
 
 
@@ -318,7 +356,7 @@ def _regex_tags(text: str) -> list:
 
 # --- Сохранение GOLD ---
 
-def save_gold(video_id: str, video: dict, text: str) -> str:
+def save_gold(video_id: str, video: dict, text: str, category: str) -> str:
     extracted = extract_with_claude(text, video["title"])
 
     if extracted:
@@ -353,12 +391,13 @@ def save_gold(video_id: str, video: dict, text: str) -> str:
         return "\n".join(f"{n}. {s}" for n, s in enumerate(items, 1))
 
     tags_str = ", ".join(tags)
+    target_dir = GOLD_CRM_DIR if category == "GOLD_CRM" else GOLD_TOOLS_DIR
 
     content = f"""---
 source: YouTube / {video['channel']}
 date: {video['date']}
 original: {video['url']}
-category: GOLD
+category: {category}
 tags: [{tags_str}]
 extracted_by: {mode}
 ---
@@ -387,7 +426,7 @@ extracted_by: {mode}
 ## Подводные камни
 {fmt_list(gotchas, "_Не упомянуты_")}
 """
-    (GOLD_DIR / f"yt_{video_id}.md").write_text(content, encoding="utf-8")
+    (target_dir / f"yt_{video_id}.md").write_text(content, encoding="utf-8")
     return mode
 
 
@@ -407,7 +446,8 @@ def main():
 
     print(f"Новых для обработки: {len(videos)}\n")
 
-    gold_count = 0
+    gold_crm_count = 0
+    gold_tools_count = 0
     trash_count = 0
     processed_ids = []
 
@@ -421,23 +461,29 @@ def main():
 
         category = classify(full_text)
 
-        if category == "GOLD":
-            mode = save_gold(vid, video, full_text)
-            update_raw_file(video["filepath"], video["content"], "gold", transcript)
-            gold_count += 1
-            print(f"    GOLD [{mode}]  →  01_INBOX/Gold/yt_{vid}.md")
+        if category == "GOLD_CRM":
+            mode = save_gold(vid, video, full_text, "GOLD_CRM")
+            update_raw_file(video["filepath"], video["content"], "gold_crm", transcript)
+            gold_crm_count += 1
+            print(f"    ✅ GOLD_CRM [{mode}]  →  01_INBOX/Gold/yt_{vid}.md")
+        elif category == "GOLD_TOOLS":
+            mode = save_gold(vid, video, full_text, "GOLD_TOOLS")
+            update_raw_file(video["filepath"], video["content"], "gold_tools", transcript)
+            gold_tools_count += 1
+            print(f"    🔧 GOLD_TOOLS [{mode}]  →  01_INBOX/Gold_Tools/yt_{vid}.md")
         else:
             update_raw_file(video["filepath"], video["content"], "trash", transcript)
             trash_count += 1
-            print(f"    TRASH")
+            print(f"    🗑️  TRASH")
 
         processed_ids.append(f"yt_{vid}")
 
     if processed_ids:
         update_processed_log(processed_ids)
 
-    print(f"\nГотово: GOLD={gold_count} | TRASH={trash_count}")
-    print(f"Папка: {GOLD_DIR}")
+    print(f"\nГотово: GOLD_CRM={gold_crm_count} | GOLD_TOOLS={gold_tools_count} | TRASH={trash_count}")
+    print(f"📁 CRM: {GOLD_CRM_DIR}")
+    print(f"🔧 Tools: {GOLD_TOOLS_DIR}")
 
 
 if __name__ == "__main__":

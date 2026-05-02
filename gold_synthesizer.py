@@ -152,15 +152,21 @@ def build_prompt(gold_content: str) -> str:
 # ─── Чтение Gold-файлов ──────────────────────────────────────────────────────
 
 def load_gold_batch(batch_size: int) -> tuple[str, list[str]]:
-    files = sorted(GOLD_DIR.glob("*.md"), key=lambda f: f.stat().st_mtime, reverse=True)
-    files = [f for f in files if not f.name.startswith("infra_digest")]
-    files = files[:batch_size]
+    all_files = sorted(GOLD_DIR.glob("*.md"), key=lambda f: f.stat().st_mtime, reverse=True)
+    all_files = [f for f in all_files if not f.name.startswith("infra_digest")]
+
+    # YouTube-файлы идут первыми — они богаче по содержанию
+    yt_files = [f for f in all_files if f.name.startswith("yt_")]
+    tg_files = [f for f in all_files if not f.name.startswith("yt_")]
+    files = (yt_files + tg_files)[:batch_size]
 
     chunks = []
     names = []
     for f in files:
         try:
-            content = f.read_text(encoding="utf-8")[:800]
+            # YouTube-файлы содержат workflow + config + insights — нужно больше контекста
+            char_limit = 2500 if f.name.startswith("yt_") else 800
+            content = f.read_text(encoding="utf-8")[:char_limit]
             chunks.append(f"=== {f.name} ===\n{content}")
             names.append(f.name)
         except Exception:
@@ -294,7 +300,9 @@ def run():
         print("❌ Gold-папка пуста.")
         return
 
-    print(f"✅ Загружено: {len(source_files)} файлов")
+    yt_count = sum(1 for f in source_files if f.startswith("yt_"))
+    tg_count = len(source_files) - yt_count
+    print(f"✅ Загружено: {len(source_files)} файлов (YouTube: {yt_count} × 2500 зн. | TG: {tg_count} × 800 зн.)")
     print("🤖 Отправляю в Claude для синтеза продуктов...\n")
 
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)

@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "01_INBOX/Gold_Tools/yt_A-td33_Qtys.md",
+                    "file": "01_INBOX/Gold_Tools/yt_BVOfzMvd34k.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "yt_A-td33_Qtys"
+                  "title": "yt_BVOfzMvd34k"
                 }
               }
             ]
@@ -353,6 +353,8 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "01_INBOX/Gold_Tools/yt_BVAB_PBqljY.md",
+    "01_INBOX/Gold_Tools/yt_A-td33_Qtys.md",
     "01_INBOX/Gold_Tools/yt_38YP2PUNGdg.md",
     "01_INBOX/Gold_Tools/yt_9dg_vht7pL4.md",
     "01_INBOX/Gold_Tools/yt_8BfLQeCrBB8.md",
@@ -377,8 +379,6 @@
     "TEMPLATES/T1.md",
     "TEMPLATES/T_Recipe.md",
     "TEMPLATES/T_Project.md",
-    "TEMPLATES/T_Idea.md",
-    "Dan_Manual.md",
     "__pycache__/processor.cpython-312.pyc",
     "__pycache__/parser_deep.cpython-312.pyc",
     "__pycache__",

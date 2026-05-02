@@ -179,7 +179,7 @@ def extract_meat(text: str) -> str:
             continue
         # Строки с числами, процентами, конкретными данными
         has_numbers = bool(re.search(r'\d+[%\+\-×xX]|\d{4,}|\d+\s*(руб|тыс|млн|мин|час|сек)', line))
-        has_tech = any(kw in line.lower() for kw in GOLD_KEYWORDS)
+        has_tech = any(kw in line.lower() for kw in GOLD_CRM_KEYWORDS + GOLD_TOOLS_KEYWORDS)
         if has_numbers or has_tech:
             meat_lines.append(f"- {line}")
     if not meat_lines:

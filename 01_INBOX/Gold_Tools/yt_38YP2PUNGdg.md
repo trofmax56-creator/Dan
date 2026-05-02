@@ -6,7 +6,7 @@ category: GOLD_TOOLS
 tags: [LlamaMan, llama.cpp, LLM, Docker, Orchestration, AI deployment, inference, load balancing, DevOps, API, автоматизация]
 extracted_by: Claude Haiku
 ---
-
+6
 ## Суть
 LlamaMan — инструмент для управления и оркестрации LLM-моделей. Позволяет просто развёртывать и управлять llama.cpp серверами в Docker без потери производительности, автоматизируя развёртывание, масштабирование и координацию множества LLM-инстансов.
 

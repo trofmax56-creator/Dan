@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "01_INBOX/Gold_Tools/yt_38YP2PUNGdg.md",
+                    "file": "01_INBOX/Gold_Tools/yt_A-td33_Qtys.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "yt_38YP2PUNGdg"
+                  "title": "yt_A-td33_Qtys"
                 }
               }
             ]
@@ -353,6 +353,7 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "01_INBOX/Gold_Tools/yt_38YP2PUNGdg.md",
     "01_INBOX/Gold_Tools/yt_9dg_vht7pL4.md",
     "01_INBOX/Gold_Tools/yt_8BfLQeCrBB8.md",
     "01_INBOX/Gold_Tools/yt_6foQ-cefuUc.md",
@@ -378,7 +379,6 @@
     "TEMPLATES/T_Project.md",
     "TEMPLATES/T_Idea.md",
     "Dan_Manual.md",
-    "04_PROJECTS/WhatsApp_Bitrix24_Construction.md",
     "__pycache__/processor.cpython-312.pyc",
     "__pycache__/parser_deep.cpython-312.pyc",
     "__pycache__",

@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "01_INBOX/Gold_Tools/BekinAI_43.md",
+                    "file": "01_INBOX/Gold_Tools/kyloai_1349.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "BekinAI_43"
+                  "title": "kyloai_1349"
                 }
               }
             ]
@@ -353,6 +353,10 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "01_INBOX/Gold_Tools/gora_academy_1359.md",
+    "01_INBOX/Gold_Tools/FomoTeam0x_2584.md",
+    "01_INBOX/Gold_Tools/edvardgrishin27_181.md",
+    "01_INBOX/Gold_Tools/BekinAI_43.md",
     "01_INBOX/Gold_Tools/ai_newz_4544.md",
     "01_INBOX/Gold_Tools/ai_newz_4536.md",
     "01_INBOX/Gold_Tools/ai_newz_4535.md",
@@ -375,10 +379,6 @@
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Sales_Director.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Partner_Agents_Architecture.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Estimator.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/AI_Content_Manager.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.2 Gold идеи CRM + ИИ/01_Smart_Qualifier.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ/07_AI_PR_Manager.md",
-    "08_IDEAS_LAB/08.1_RAW_IDEAS/08.1.1 Общие идеи CRM + ИИ/05_Supply_Assistant.md",
     "__pycache__/processor.cpython-312.pyc",
     "__pycache__/parser_deep.cpython-312.pyc",
     "__pycache__",

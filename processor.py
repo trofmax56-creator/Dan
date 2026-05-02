@@ -12,14 +12,44 @@ GOLD_DIR.mkdir(parents=True, exist_ok=True)
 
 # GOLD — практический AI/автоматизация контент
 GOLD_KEYWORDS = [
+    # CRM и автоматизация (основной фокус)
     'n8n', 'make.com', 'zapier', 'workflow', 'автоматизация', 'автоматизировать',
-    'claude', 'chatgpt', 'gpt-', 'openai', 'anthropic', 'gemini', 'llm', 'llama',
-    'агент', 'agent', 'prompt', 'промпт', 'api', 'интеграция', 'интегратор',
-    'bitrix', 'amocrm', 'retailcrm', '1с', 'crm',
-    'кейс', 'схема', 'гайд', 'инструкция', 'пошагово', 'туториал',
-    'python', 'langchain', 'rag', 'vector', 'embeddings',
-    'claude code', 'obsidian', 'notion', 'второй мозг',
+    'bitrix', 'amocrm', 'retailcrm', '1с', 'crm', 'интеграция', 'интегратор',
+    'api', 'webhook',
+
+    # AI модели и платформы
+    'claude', 'chatgpt', 'gpt-', 'gpt-5', 'openai', 'anthropic', 'gemini',
+    'llm', 'llama', 'deepseek', 'mistral', 'qwen', 'sonnet', 'opus',
     'нейросет', 'нейронн', 'модель', 'релиз',
+
+    # Мультиагентные системы
+    'мультиагент', 'multiagent', 'multi-agent', 'агентн',
+    'langgraph', 'crewai', 'autogen', 'агентная архитектур',
+    'оркестратор', 'orchestrat',
+
+    # Vibe coding и AI-разработка
+    'вайбкодинг', 'vibecoding', 'vibe coding', 'vibe-coding',
+    'cursor', 'windsurf', 'bolt', 'lovable', 'replit',
+    'claude code', 'copilot',
+
+    # Новые AI-платформы и инструменты
+    'emergent', 'same.dev', 'v0.dev', 'vercel ai', 'atoms',
+    'dify', 'flowise', 'langflow',
+
+    # Промпты и агенты
+    'агент', 'agent', 'prompt', 'промпт', 'system prompt', 'контекст окн',
+
+    # Разработка и инфраструктура
+    'python', 'langchain', 'rag', 'vector', 'embeddings',
+    'docker', 'деплой', 'deploy', 'self-hosted', 'установка', 'настройк',
+
+    # Аналитика и контент
+    'аналитик', 'дашборд', 'визуализаци', 'метрик',
+    'контент', 'публикаци', 'постинг',
+
+    # Форматы знаний
+    'кейс', 'схема', 'гайд', 'инструкция', 'пошагово', 'туториал', 'гайды',
+    'obsidian', 'notion', 'второй мозг',
 ]
 
 # TRASH — мусор, не берём
@@ -40,6 +70,10 @@ TOOLS = [
     'api', 'webhook', 'http', 'rest', 'graphql',
     'google sheets', 'airtable', 'postgresql', 'mysql', 'redis',
     'docker', 'vps', 'server', 'github',
+    # Новые инструменты
+    'langgraph', 'crewai', 'autogen', 'cursor', 'windsurf', 'bolt', 'lovable',
+    'emergent', 'dify', 'flowise', 'langflow', 'replit', 'vercel',
+    'deepseek', 'mistral', 'llama', 'ollama',
 ]
 
 
@@ -156,6 +190,15 @@ def extract_tags(text: str) -> list:
         'автоматизаци': 'автоматизация', 'bitrix': 'Bitrix24',
         'amocrm': 'amoCRM', 'python': 'Python', 'api': 'API',
         'промпт': 'промпт', 'workflow': 'workflow',
+        # Новые теги
+        'мультиагент': 'мультиагент', 'langgraph': 'LangGraph',
+        'crewai': 'CrewAI', 'autogen': 'AutoGen',
+        'вайбкодинг': 'вайбкодинг', 'vibecoding': 'вайбкодинг',
+        'cursor': 'Cursor', 'windsurf': 'Windsurf', 'bolt': 'Bolt',
+        'emergent': 'Emergent', 'dify': 'Dify', 'flowise': 'Flowise',
+        'deepseek': 'DeepSeek', 'ollama': 'Ollama',
+        'аналитик': 'аналитика', 'дашборд': 'дашборд',
+        'деплой': 'деплой', 'self-hosted': 'self-hosted',
     }
     return [v for k, v in tag_map.items() if k in text_lower][:5]
 

@@ -7,6 +7,7 @@ api_hash = 'bb31ab995b5956294a2e80f619a0a3de'
 phone_number = '+79606945766'
 
 channels = [
+    # CRM + AI автоматизация (основное)
     'ris_ai',
     'BekinAI',
     'edvardgrishin27', 'gora_academy', 'zuevichigor', 'FomoTeam0x',
@@ -15,7 +16,14 @@ channels = [
     'neural_network_news', 'denis_ai', 'adept_ecommerce',
     'alexyarygin',
     'TochkiNadAI', 'n8node', 'vibecod3rs', 'kyloai', 'denissexy',
-    'startupfomo'
+    'startupfomo',
+
+    # Мультиагентный AI, vibe coding, новые платформы
+    'aiagents101',       # AI агенты — обзоры и гайды
+    'cursor_ai_ru',      # Cursor на русском
+    'n8n_ru',            # n8n русскоязычное сообщество
+    'llm_under_hood',    # Техническая механика LLM
+    'the_ai_lab',        # Новые AI-инструменты и платформы
 ]
 
 # Автоматическое определение папки скрипта

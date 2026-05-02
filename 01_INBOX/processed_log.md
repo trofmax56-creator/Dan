@@ -8,3 +8,6 @@ BekinAI_10, BekinAI_12, BekinAI_14, BekinAI_17, BekinAI_18, BekinAI_19, BekinAI_
 
 ### YouTube (19 видео) — 2026-05-02
 yt_6OjPWEOINPM, yt_9LLXc0iMCx4, yt_EQtamZFXYLI, yt_IJEvi0Iq01w, yt_MQJa3_F0qOg, yt_ROOYnaAl1K8, yt_TIGLjciRV8M, yt_Yd606jGD55k, yt_ZRw13_hOoZE, yt_ZZ2JY7V7waE, yt_bUWtPVH2Cvc, yt_g-ooz6OoFGE, yt_hjVWMzsKH6M, yt_ilhT7TyIpMk, yt_kSMGu_IDvQU, yt_nxC_v8HfKjI, yt_p2EsWs0GjGY, yt_tRvNhDhM1Hw, yt_tUufFo-JTZQ
+
+### YouTube (3 видео) — 2026-05-02
+yt_KwTBlV7RnZ8, yt_YJHMZiXyM0A, yt_myTdzBHty2M

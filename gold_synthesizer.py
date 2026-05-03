@@ -22,7 +22,9 @@ GOLD_DIR = BASE_DIR / "01_INBOX" / "Gold"
 BIZ_RECIPES_DIR = BASE_DIR / "05_BIZ_RECIPES"
 SELECTED_DIR = BASE_DIR / "08_IDEAS_LAB" / "08.2_SELECTED"
 RAW_IDEAS_DIR = BASE_DIR / "08_IDEAS_LAB" / "08.1_RAW_IDEAS"
+SYNTHESIZED_LOG = BASE_DIR / ".synthesized_files.txt"
 
+BIZ_RECIPES_DIR.mkdir(parents=True, exist_ok=True)
 SELECTED_DIR.mkdir(parents=True, exist_ok=True)
 RAW_IDEAS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -151,9 +153,22 @@ def build_prompt(gold_content: str) -> str:
 
 # ─── Чтение Gold-файлов ──────────────────────────────────────────────────────
 
+def load_synthesized_log() -> set:
+    if not SYNTHESIZED_LOG.exists():
+        return set()
+    return set(SYNTHESIZED_LOG.read_text(encoding="utf-8").splitlines())
+
+
+def append_synthesized_log(names: list[str]):
+    with SYNTHESIZED_LOG.open("a", encoding="utf-8") as f:
+        for name in names:
+            f.write(name + "\n")
+
+
 def load_gold_batch(batch_size: int) -> tuple[str, list[str]]:
+    already_done = load_synthesized_log()
     all_files = sorted(GOLD_DIR.glob("*.md"), key=lambda f: f.stat().st_mtime, reverse=True)
-    all_files = [f for f in all_files if not f.name.startswith("infra_digest")]
+    all_files = [f for f in all_files if not f.name.startswith("infra_digest") and f.name not in already_done]
 
     # YouTube-файлы идут первыми — они богаче по содержанию
     yt_files = [f for f in all_files if f.name.startswith("yt_")]
@@ -372,12 +387,15 @@ def run():
     digest_path = SELECTED_DIR / f"products_digest_{today}.md"
     digest_path.write_text(digest, encoding="utf-8")
 
+    append_synthesized_log(source_files)
+
     print(f"\n✅ Готово!")
     print(f"  🔴 BIZ_RECIPES: {counts['biz']}")
     print(f"  🟠 SELECTED:    {counts['selected']}")
     print(f"  🟡 RAW_IDEAS:   {counts['raw']}")
     print(f"  ⚫ Пропущено:   {counts['skip']}")
     print(f"  📄 Дайджест:    {digest_path}")
+    print(f"  📋 Лог обработанных: +{len(source_files)} файлов → {SYNTHESIZED_LOG.name}")
 
 if __name__ == "__main__":
     run()

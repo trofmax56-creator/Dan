@@ -327,9 +327,14 @@ def run():
     try:
         products = json.loads(raw)
     except json.JSONDecodeError as e:
-        print(f"❌ Ошибка парсинга JSON: {e}")
-        print(raw[:500])
-        return
+        try:
+            from json_repair import repair_json
+            products = json.loads(repair_json(raw))
+            print(f"⚠️ JSON автоматически исправлен (исходная ошибка: {e})")
+        except Exception:
+            print(f"❌ Ошибка парсинга JSON: {e}")
+            print(raw[:500])
+            return
 
     print(f"✅ Синтезировано продуктов: {len(products)}\n")
 

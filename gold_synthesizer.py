@@ -309,7 +309,7 @@ def run():
 
     response = client.messages.create(
         model="claude-sonnet-4-6",
-        max_tokens=8000,
+        max_tokens=16000,
         system=[{
             "type": "text",
             "text": SYSTEM_PROMPT,

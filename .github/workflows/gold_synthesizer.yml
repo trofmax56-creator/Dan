@@ -31,6 +31,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add 05_BIZ_RECIPES/ 08_IDEAS_LAB/08.1_RAW_IDEAS/ 08_IDEAS_LAB/08.2_SELECTED/
+          git add 05_BIZ_RECIPES/ 08_IDEAS_LAB/08.1_RAW_IDEAS/ 08_IDEAS_LAB/08.2_SELECTED/ 2>/dev/null || true
           git diff --cached --quiet || git commit -m "synth: gold_synthesizer — $(date +%Y-%m-%d)"
           git push

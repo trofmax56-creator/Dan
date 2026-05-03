@@ -1,6 +1,5 @@
 import os
 import json
-import time
 from datetime import date
 from pathlib import Path
 import anthropic
@@ -34,14 +33,11 @@ BATCH_SIZE = int(os.environ.get("GOLD_BATCH_SIZE", "40"))
 # ─── Счётчик BIZ_RECIPES ────────────────────────────────────────────────────
 
 def next_recipe_number() -> int:
-    existing = sorted(BIZ_RECIPES_DIR.glob("0*.md"))
+    existing = [f for f in BIZ_RECIPES_DIR.glob("*.md") if f.stem.split("_")[0].isdigit()]
     if not existing:
         return 100
-    last = existing[-1].stem.split("_")[0]
-    try:
-        return int(last) + 1
-    except ValueError:
-        return 100
+    last = max(int(f.stem.split("_")[0]) for f in existing)
+    return last + 1
 
 # ─── Системный промпт (кешируется) ──────────────────────────────────────────
 
@@ -273,9 +269,9 @@ def slugify(text: str) -> str:
 # ─── Дайджест ────────────────────────────────────────────────────────────────
 
 def render_digest(products: list, today: str, source_files: list) -> str:
-    top = [p for p in products if p["score"] > 24]
-    mid = [p for p in products if 20 <= p["score"] <= 24]
-    raw = [p for p in products if 18 <= p["score"] < 20]
+    top = [p for p in products if p.get("score", 0) > 24]
+    mid = [p for p in products if 20 <= p.get("score", 0) <= 24]
+    raw = [p for p in products if 18 <= p.get("score", 0) < 20]
 
     lines = [
         f"# 🏭 Gold Synthesizer v3.0 — {today}\n",
@@ -357,7 +353,12 @@ def run():
     counts = {"biz": 0, "selected": 0, "raw": 0, "skip": 0}
 
     for p in products:
-        score = p.get("score", 0)
+        pain = p.get("pain", 0)
+        dev = p.get("dev", 0)
+        profit = p.get("profit", 0)
+        # Пересчитываем по формуле стратегии — не доверяем Claude
+        score = pain + (10 - dev) + profit
+        p["score"] = score
         name = p.get("name", "unknown")
         slug = slugify(name)
         content = render_product(p, today)

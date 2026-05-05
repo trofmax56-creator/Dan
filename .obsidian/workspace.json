@@ -18,12 +18,12 @@
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "08_IDEAS_LAB/08.1_RAW_IDEAS/raw_aiдиктор_контентконвейер_для_соцсетей_2026-05-03.md",
+                    "file": "11_CONTENT FACTORY/11_2_n8n_Content/ContentPlan_04-10.05.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "raw_aiдиктор_контентконвейер_для_соцсетей_2026-05-03"
+                  "title": "ContentPlan_04-10.05"
                 }
               }
             ]
@@ -353,6 +353,7 @@
   },
   "active": "1c76f09f1c534af1",
   "lastOpenFiles": [
+    "08_IDEAS_LAB/08.1_RAW_IDEAS/raw_aiдиктор_контентконвейер_для_соцсетей_2026-05-03.md",
     "08_IDEAS_LAB/08.2_SELECTED/product_aiаналитик_автоотчёты_без_рук_2026-05-03.md",
     "08_IDEAS_LAB/08.1_RAW_IDEAS/raw_aiконтентщик_фабрика_постов_для_соцсетей_2026-05-03.md",
     "01_INBOX/Gold_Tools/yt_QBUuXlrMUtg.md",
@@ -379,7 +380,6 @@
     "08_IDEAS_LAB/08.2_SELECTED/product_aiпрораб_автоматизация_задач_через_teleg_2026-05-03.md",
     "08_IDEAS_LAB/08.2_SELECTED/product_aiпрораб_автоматизатор_бизнеспроцессов_2026-05-03.md",
     "08_IDEAS_LAB/08.2_SELECTED/product_aiпамять_база_знаний_компании_с_живым_по_2026-05-03.md",
-    "08_IDEAS_LAB/08.2_SELECTED/product_aiонбордер_автоматический_ввод_в_должнос_2026-05-03.md",
     "08_IDEAS_LAB/08.2_SELECTED",
     "05_BIZ_RECIPES",
     "__pycache__/processor.cpython-312.pyc",

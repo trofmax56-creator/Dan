@@ -31,6 +31,7 @@ GOLD_TOOLS_KEYWORDS = [
     # Мультиагентные системы
     'мультиагент', 'multiagent', 'multi-agent', 'агентная архитектур',
     'langgraph', 'crewai', 'autogen', 'оркестратор',
+    'hermes agent', 'hermes',
 
     # Vibe coding и AI-IDE
     'вайбкодинг', 'vibecoding', 'vibe coding', 'vibe-coding',
@@ -39,12 +40,14 @@ GOLD_TOOLS_KEYWORDS = [
     # Новые AI-платформы
     'emergent', 'same.dev', 'v0.dev', 'vercel ai', 'atoms',
     'dify', 'flowise', 'langflow',
+    'omi', 'open clow', 'openrouter', 'perplexity', 'antigravity',
 
     # Установка и деплой
     'деплой', 'deploy', 'self-hosted', 'установка', 'настройк', 'docker compose',
 
     # Модели нового поколения
     'deepseek', 'mistral', 'qwen', 'llama', 'ollama', 'sonnet', 'opus', 'gpt-5',
+    'gemma',
 
     # Контент и публикации
     'контент', 'публикаци', 'постинг',
@@ -75,6 +78,7 @@ TOOLS = [
     'langgraph', 'crewai', 'autogen', 'cursor', 'windsurf', 'bolt', 'lovable',
     'emergent', 'dify', 'flowise', 'langflow', 'replit', 'vercel',
     'deepseek', 'mistral', 'llama', 'ollama',
+    'openrouter', 'perplexity', 'hermes', 'omi', 'gemma', 'antigravity',
 ]
 
 
